@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+{% load i18n %}
+{% block conteudo %}
+
+	<!-- Contato
+	================================================== -->
+	<div >
+		
+		<form method="post" >{% csrf_token %}	
+			
+			{{form}}
+			
+			<input id= "id_enviar_contato" type="submit" value='ENVIAR'/>
+			
+		</form>
+		
+	<!-- Fecha container
+	================================================== -->
+	</div>
+
+{% endblock conteudo %}

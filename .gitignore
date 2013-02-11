@@ -33,3 +33,5 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+PyProject_ShiftIT/log
+PyProject_ShiftIT/log
