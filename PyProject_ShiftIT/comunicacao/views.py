@@ -3,8 +3,8 @@ from django.shortcuts                           import render_to_response
 from django.template                            import RequestContext
 from django.http                                import HttpResponseRedirect
 
-from PyProject_Startuplay.comunicacao.forms     import FormContato
-from PyProject_Startuplay.comunicacao.controle  import Controle as ComunicacaoControle
+from PyProject_ShiftIT.comunicacao.forms     import FormContato
+from PyProject_ShiftIT.comunicacao.controle  import Controle as ComunicacaoControle
 
 import datetime
 

@@ -89,6 +89,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'flatpages',
     'comunicacao',
+    'autenticacao',
 )
 
 LOGGING = {

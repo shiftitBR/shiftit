@@ -6,7 +6,7 @@ Created on Mar 5, 2012
 '''
 
 from django                                     import forms
-from PyProject_Startuplay.comunicacao.models    import Contato
+from PyProject_ShiftIT.comunicacao.models       import Contato
 
 
 class FormContato(forms.ModelForm):
