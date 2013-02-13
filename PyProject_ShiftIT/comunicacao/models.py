@@ -41,6 +41,7 @@ class Contato(models.Model):
     nome                = models.CharField(max_length=500, verbose_name='Nome') 
     email               = models.CharField(max_length=500, verbose_name='E-mail') 
     telefone            = models.CharField(max_length=500, verbose_name='Telefone') 
+    data                = models.DateTimeField(null= True, verbose_name='Data')
         
     class Meta:
         db_table= 'tb_contato'

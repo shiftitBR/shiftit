@@ -1,8 +1,8 @@
 eclipse.preferences.version=1
 encoding//PyProject_ShiftIT/autenticacao/admin.py=utf-8
-encoding//PyProject_ShiftIT/autenticacao/controle.py=utf-8
 encoding//PyProject_ShiftIT/autenticacao/forms.py=utf-8
 encoding//PyProject_ShiftIT/autenticacao/models.py=utf-8
+encoding//PyProject_ShiftIT/autenticacao/tests.py=utf-8
 encoding//PyProject_ShiftIT/autenticacao/views.py=utf-8
 encoding//PyProject_ShiftIT/bugtracker/views.py=utf-8
 encoding//PyProject_ShiftIT/comunicacao/forms.py=utf-8
