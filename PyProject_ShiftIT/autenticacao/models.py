@@ -17,8 +17,15 @@ import logging
 #---------------------------USUARIO -----------------------------------    
     
 class Usuario(User):
+    cnpj            = models.CharField(max_length=60, null= True, blank=True, verbose_name='CNPJ')
+    razao_social    = models.CharField(max_length=500, null= True, blank=True, verbose_name='Razão Social')
+    nome_fantasia   = models.CharField(max_length=500, null= True, blank=True, verbose_name='Nome Fantasia')
+    endereco        = models.CharField(max_length=500, null= True, blank=True, verbose_name='Endereço')
+    cidade          = models.CharField(max_length=100, null= True, blank=True, verbose_name='Cidade')
+    uf              = models.CharField(max_length=100, null= True, blank=True, verbose_name='Estado')
+    nome_responsavel= models.CharField(max_length=200, null= True, blank=True, verbose_name='Responsável')
     telefone        = models.CharField(max_length=60, null= True, blank=True, verbose_name='Telefone')
-    slug            = models.SlugField(max_length=100, blank=True, unique=True)
+    slug            = models.SlugField(max_length=500, blank=True, unique=True)
     
     class Meta:
         db_table= 'tb_usuario'
@@ -75,8 +82,7 @@ def usuario_pre_save(signal, instance, sender, **kwargs):
     artigo com o mesmo slug e acrescenta um numero ao final para evitar
     duplicidade"""
     try:
-        iNome = instance.first_name + ' ' + instance.last_name
-        slug = slugify(iNome)
+        slug = slugify(instance.nome_fantasia)
         novo_slug = slug
         contador = 0
     except Exception, e:
