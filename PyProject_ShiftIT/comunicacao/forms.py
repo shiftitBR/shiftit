@@ -2,21 +2,21 @@
 '''
 Created on Mar 5, 2012
 
-@author: spengler
+@author: Shift IT | www.shiftit.com.br
 '''
 
 from django                                     import forms
-from PyProject_ShiftIT.comunicacao.models       import Contato
+from PyProject_ShiftIT.comunicacao.models       import Email
 
 
-class FormContato(forms.ModelForm):
+class FormEmail(forms.ModelForm):
     nome        = forms.CharField(max_length=50)
     email       = forms.EmailField(required=False)
     telefone    = forms.CharField(max_length=50)
     mensagem    = forms.Field(widget=forms.Textarea)
     
     class Meta:
-        model = Contato
+        model = Email
         fields = ('nome', 'email', 'telefone', 'mensagem', ) 
     
     def clean_nome(self):
@@ -40,7 +40,7 @@ class FormContato(forms.ModelForm):
         return self.cleaned_data['mensagem']
     
     def __init__(self, *args, **kwargs):
-        super(FormContato, self).__init__(*args, **kwargs)
+        super(FormEmail, self).__init__(*args, **kwargs)
         self.fields['email'].error_messages['required'] = u'O campo E-mail é obrigatório'
         self.fields['nome'].error_messages['required'] = u'O campo Nome é obrigatório'
         self.fields['mensagem'].error_messages['required'] = u'O campo Mensagem é obrigatório'

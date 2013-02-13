@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.test                                import TestCase
-from PyProject_ShiftIT.comunicacao.models       import Contato
+from PyProject_ShiftIT.comunicacao.models       import Email
     
 import datetime
 
@@ -12,13 +12,13 @@ class Test(TestCase):
     
     
     def tearDown(self):
-        Contato.objects.all().delete()
+        Email.objects.all().delete()
         pass
     
     #-----------------------------------------------------MOKS---------------------------------------------------
 
     def mokarEmail(self):
-        iEmail                      = Contato()
+        iEmail                      = Email()
         iEmail.nome                 = 'Diego Costa'
         iEmail.email                = 'diego.costa@shiftit.com.br'
         iEmail.telefone             = '(48) 3333-33-33'

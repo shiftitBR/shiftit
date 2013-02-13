@@ -9,9 +9,8 @@ from django.db                                      import models
 
 #-----------------------------EMAIL---------------------------------------
 
-
-class Contato(models.Model):
-    id_contato          = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
+class Email(models.Model):
+    id_email            = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
     nome                = models.CharField(max_length=500, verbose_name='Nome') 
     email               = models.CharField(max_length=500, verbose_name='E-mail') 
     telefone            = models.CharField(max_length=500, verbose_name='Telefone') 
@@ -19,9 +18,34 @@ class Contato(models.Model):
     data                = models.DateTimeField(null= True, verbose_name='Data')
         
     class Meta:
+        db_table= 'tb_email'
+        verbose_name = 'Email'
+        verbose_name_plural = 'Email'
+    
+    def __unicode__(self):
+        return str(self.id_email)
+    
+    def save(self):  
+        if self.id_email == '' or self.id_email== None:
+            if len(Email.objects.order_by('-id_email')) > 0:   
+                iUltimoRegistro = Email.objects.order_by('-id_email')[0] 
+                self.id_email= iUltimoRegistro.pk + 1
+            else:
+                self.id_email= 1
+        super(Email, self).save()
+
+#-----------------------------CONTATO---------------------------------------
+
+class Contato(models.Model):
+    id_contato          = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
+    nome                = models.CharField(max_length=500, verbose_name='Nome') 
+    email               = models.CharField(max_length=500, verbose_name='E-mail') 
+    telefone            = models.CharField(max_length=500, verbose_name='Telefone') 
+        
+    class Meta:
         db_table= 'tb_contato'
         verbose_name = 'Contato'
-        verbose_name_plural = 'Contato'
+        verbose_name_plural = 'Contatos'
     
     def __unicode__(self):
         return str(self.id_contato)
@@ -34,4 +58,51 @@ class Contato(models.Model):
             else:
                 self.id_contato= 1
         super(Contato, self).save()
-
+        
+#-----------------------------PERGUNTA CONTATO---------------------------------------
+        
+class Pergunta_Contato(models.Model):
+    id_pergunta_contato = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
+    pergunta            = models.CharField(max_length=500, verbose_name='Pergunta') 
+        
+    class Meta:
+        db_table= 'tb_pergunta_contato'
+        verbose_name = 'Pergunta de Contato'
+        verbose_name_plural = 'Perguntas de Contato'
+    
+    def __unicode__(self):
+        return str(self.id_pergunta_contato)
+    
+    def save(self):  
+        if self.id_pergunta_contato == '' or self.id_pergunta_contato== None:
+            if len(Pergunta_Contato.objects.order_by('-id_pergunta_contato')) > 0:   
+                iUltimoRegistro = Pergunta_Contato.objects.order_by('-id_pergunta_contato')[0] 
+                self.id_pergunta_contato= iUltimoRegistro.pk + 1
+            else:
+                self.id_pergunta_contato= 1
+        super(Pergunta_Contato, self).save()
+        
+#-----------------------------RESPOSTA CONTATO---------------------------------------
+        
+class Resposta_Contato(models.Model):
+    id_resposta_contato = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
+    pergunta            = models.ForeignKey(Pergunta_Contato, null= False, verbose_name='Pergunta de Contato')
+    contato             = models.ForeignKey(Contato, null= False, verbose_name='Contato')
+    resposta            = models.CharField(max_length=500, verbose_name='Resposta') 
+        
+    class Meta:
+        db_table= 'tb_resposta_contato'
+        verbose_name = 'Resposta de Contato'
+        verbose_name_plural = 'Respostas de Contato'
+    
+    def __unicode__(self):
+        return str(self.id_resposta_contato)
+    
+    def save(self):  
+        if self.id_resposta_contato == '' or self.id_resposta_contato== None:
+            if len(Resposta_Contato.objects.order_by('-id_pergunta_contato')) > 0:   
+                iUltimoRegistro = Resposta_Contato.objects.order_by('-id_pergunta_contato')[0] 
+                self.id_resposta_contato= iUltimoRegistro.pk + 1
+            else:
+                self.id_resposta_contato= 1
+        super(Resposta_Contato, self).save()
