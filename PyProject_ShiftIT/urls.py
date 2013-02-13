@@ -9,4 +9,5 @@ urlpatterns = patterns('',
     (r'^', include('flatpages.urls')),
     (r'^', include('comunicacao.urls')),
     (r'^', include('autenticacao.urls')),
+    (r'^', include('bugtracker.urls')),
 )

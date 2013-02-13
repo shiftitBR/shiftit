@@ -90,6 +90,7 @@ INSTALLED_APPS = (
     'flatpages',
     'comunicacao',
     'autenticacao',
+    'bugtracker',
 )
 
 LOGGING = {
