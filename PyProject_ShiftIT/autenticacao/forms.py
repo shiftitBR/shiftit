@@ -2,7 +2,7 @@
 '''
 Created on Jan 30, 2012
 
-@author: spengler
+@author: Shift IT | www.shiftit.com.br
 '''
 
 from django.contrib.auth.forms  import UserCreationForm

@@ -2,7 +2,7 @@
 '''
 Created on Jan 17, 2012
 
-@author: Shift IT
+@author: Shift IT | www.shiftit.com.br
 '''
 
 from django.contrib                         import admin
