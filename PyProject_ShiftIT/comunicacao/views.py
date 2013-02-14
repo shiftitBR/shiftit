@@ -29,4 +29,12 @@ def contato (vRequest, vTitulo):
         context_instance=RequestContext(vRequest),
         )
     
-
+def briefing (vRequest, vTitulo):
+    
+    if vRequest.method == 'POST':
+        print '>>>>>>>>>>>>'
+    return render_to_response(
+        'briefing/briefing.html',
+        locals(),
+        context_instance=RequestContext(vRequest),
+        )
