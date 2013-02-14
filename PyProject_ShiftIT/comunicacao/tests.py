@@ -50,7 +50,7 @@ class Test(TestCase):
         iPerguntaContato.save()
         
     def mokarRespostaContato(self):
-        iRespostaContato              = Pergunta_Contato()
+        iRespostaContato              = Resposta_Contato()
         iRespostaContato.pergunta     = Pergunta_Contato.objects.all()[0]
         iRespostaContato.contato      = Contato.objects.all()[0]
         iRespostaContato.resposta     = 'Meu nome não é Johny'
