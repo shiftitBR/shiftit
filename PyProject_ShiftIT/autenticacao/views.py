@@ -16,7 +16,7 @@ def login(vRequest, vTitulo):
         try:
             username= vRequest.POST.get('login')
             password= vRequest.POST.get('senha')
-        
+                
             user = authenticate(username=username, password=password)
             if user is not None:
                 auth_login(vRequest, user)

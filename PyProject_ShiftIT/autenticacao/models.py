@@ -42,14 +42,9 @@ class Usuario(User):
         if self.username == '':
             if len(User.objects.order_by('-id')) > 0:   
                 iUltimoRegistro = User.objects.order_by('-id')[0] 
-                self.username= "%06d" % (int(iUltimoRegistro.pk) + 1)
+                self.id= iUltimoRegistro.pk + 1
             else:
-                self.username= "%06d" % 1
-        try:
-            this = Usuario.objects.get(id=self.id)
-            if this.avatar != self.avatar:
-                this.avatar.delete()
-        except: pass
+                self.id= 1
         super(Usuario, self).save()  
         
     def possuiUsuario(self, vIDUser):

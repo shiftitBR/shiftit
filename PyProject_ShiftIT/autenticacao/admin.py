@@ -21,7 +21,7 @@ class AdminUsuario(admin.ModelAdmin):
     list_display    = ('get_nome',  )
     search_fields   = UserAdmin.search_fields
     exclude         = ('last_login', 'date_joined', 'is_superuser', 'user_permissions', 
-                       'username', 'is_staff', 'slug', 'is_active', 'groups') 
+                       'is_staff', 'slug', 'is_active', 'groups') 
     
     def get_nome(self, obj):
         return '%s %s'%(obj.first_name, obj.last_name)

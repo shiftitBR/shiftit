@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts                       import render_to_response
 from django.template                        import RequestContext
+from django.contrib.auth.decorators         import login_required
 
-
-
+@login_required   
 def adicionar_bug(vRequest, vTitulo):
     
 
@@ -13,6 +13,7 @@ def adicionar_bug(vRequest, vTitulo):
         context_instance=RequestContext(vRequest),
         )
     
+@login_required   
 def documentos(vRequest, vTitulo):
     
 
@@ -22,6 +23,7 @@ def documentos(vRequest, vTitulo):
         context_instance=RequestContext(vRequest),
         )
     
+@login_required   
 def painel_controle(vRequest, vTitulo):
     
 

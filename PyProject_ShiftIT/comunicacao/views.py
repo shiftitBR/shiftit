@@ -31,8 +31,6 @@ def contato (vRequest, vTitulo):
     
 def briefing (vRequest, vTitulo):
     
-    if vRequest.method == 'POST':
-        print '>>>>>>>>>>>>'
     return render_to_response(
         'briefing/briefing.html',
         locals(),

@@ -10,7 +10,7 @@
   	{% block meta %}
     <meta charset="utf-8">
     <title>Startuplay</title>
-	<meta name="description" content="Startuplay é um ...">
+	<meta name="description" content="Shift IT é uma ...">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	{% endblock meta %}
 	
@@ -27,10 +27,17 @@
   <body>
 		
 		<p>Menu</p>
+		
+		{% if user.is_authenticated %}
+			<p><a href="/login/">Login</a></p>
+		{% else %}
+			<p><a href="/logout/">Logout</a></p>
+		{% endif %}
 			
 	    {% block conteudo %}
 	    {% endblock conteudo %}
 	    
 	    {% include "rodape.html" %}
+	    
   </body>
 </html>
