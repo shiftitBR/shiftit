@@ -15,6 +15,9 @@ from PyProject_ShiftIT.autenticacao.models      import Usuario
 from PyProject_ShiftIT.comunicacao.models       import Contato
 from PyProject_ShiftIT.comunicacao.models       import Pergunta_Contato
 from PyProject_ShiftIT.comunicacao.models       import Resposta_Contato
+from PyProject_ShiftIT.bugtracker.models        import Documento, Bug,\
+    Estado_Bug, Pergunta_Bug, Resposta_Bug
+
 
 
 class AdminUsuario(admin.ModelAdmin): 
@@ -42,6 +45,31 @@ class AdminRespostaContato(admin.ModelAdmin):
     search_fields   = ('resposta', 'pergunta.pergunta', 'contato.first_name', 'contato.last_name')
     exclude         = ('id_resposta_contato',) 
     
+class AdminDocumento(admin.ModelAdmin): 
+    list_display    = ('usuario', 'assunto', 'arquivo' )
+    search_fields   = ('assunto', 'usuario.first_name', 'usuario.last_name')
+    exclude         = ('id_documento',) 
+    
+    
+class AdminBug(admin.ModelAdmin): 
+    list_display    = ('usuario', 'tipo_prioridade', 'descricao', 'nome_contato', 'email_contato', 'telefone_contato', 'imagem', 'data' )
+    search_fields   = ('descricao', 'usuario.first_name', 'usuario.last_name', 'nome_contato', 'email_contato', 'telefone_contato', 'tipo_prioridade.descricao')
+    exclude         = ('id_bug',) 
+    
+class AdminEstadoBug(admin.ModelAdmin): 
+    list_display    = ('bug', 'tipo_estado', 'comentario', 'data' )
+    search_fields   = ('bug.descricao', 'bug.nome_contato', 'comentario', 'tipo_estado.descricao')
+    exclude         = ('id_estado_bug',) 
+    
+class AdminPerguntaBug(admin.ModelAdmin): 
+    list_display    = ('pergunta',  )
+    search_fields   = ('pergunta', )
+    exclude         = ('id_pergunta_bug',) 
+    
+class AdminRespostaBug(admin.ModelAdmin): 
+    list_display    = ('pergunta', 'bug', 'resposta' )
+    search_fields   = ('resposta', 'pergunta.pergunta', 'bug.descricao')
+    exclude         = ('id_resposta_bug',) 
     
 admin.site.unregister(User)
 admin.site.unregister(Site)
@@ -50,3 +78,8 @@ admin.site.register(Usuario, AdminUsuario)
 admin.site.register(Contato, AdminContato)
 admin.site.register(Pergunta_Contato, AdminPerguntaContato)
 admin.site.register(Resposta_Contato, AdminRespostaContato)
+admin.site.register(Documento, AdminDocumento)
+admin.site.register(Bug, AdminBug)
+admin.site.register(Estado_Bug, AdminEstadoBug)
+admin.site.register(Pergunta_Bug, AdminPerguntaBug)
+admin.site.register(Resposta_Bug, AdminRespostaBug)

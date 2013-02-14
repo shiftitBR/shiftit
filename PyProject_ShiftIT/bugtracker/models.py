@@ -142,7 +142,7 @@ class Estado_Bug(models.Model):
 #-----------------------------PERGUNTA BUG---------------------------------------
         
 class Pergunta_Bug(models.Model):
-    id_pergunta_Bug     = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
+    id_pergunta_bug     = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
     pergunta            = models.CharField(max_length=500, verbose_name='Pergunta') 
         
     class Meta:
