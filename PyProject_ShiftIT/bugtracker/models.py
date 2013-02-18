@@ -154,12 +154,12 @@ class Pergunta_Bug(models.Model):
         return str(self.id_pergunta_bug)
     
     def save(self):  
-        if self.id_pergunta_Bug == '' or self.id_pergunta_Bug== None:
-            if len(Pergunta_Bug.objects.order_by('-id_pergunta_Bug')) > 0:   
-                iUltimoRegistro = Pergunta_Bug.objects.order_by('-id_pergunta_Bug')[0] 
-                self.id_pergunta_Bug= iUltimoRegistro.pk + 1
+        if self.id_pergunta_bug == '' or self.id_pergunta_bug== None:
+            if len(Pergunta_Bug.objects.order_by('-id_pergunta_bug')) > 0:   
+                iUltimoRegistro = Pergunta_Bug.objects.order_by('-id_pergunta_bug')[0] 
+                self.id_pergunta_bug= iUltimoRegistro.pk + 1
             else:
-                self.id_pergunta_Bug= 1
+                self.id_pergunta_bug= 1
         super(Pergunta_Bug, self).save()
         
 #-----------------------------RESPOSTA CONTATO---------------------------------------
