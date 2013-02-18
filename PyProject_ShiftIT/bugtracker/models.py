@@ -19,7 +19,7 @@ class Documento(models.Model):
     id_documento        = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
     usuario             = models.ForeignKey(Usuario, null= False, verbose_name='Usuário')
     assunto             = models.CharField(max_length=200, verbose_name='Assunto') 
-    arquivo             = models.FileField(upload_to='/multimidia/', max_length=100)
+    arquivo             = models.FileField(upload_to='/documentos/', max_length=100)
     
     class Meta:
         db_table= 'tb_documento'
@@ -144,7 +144,7 @@ class Bug(models.Model):
     
     def obtemEstadoAtual(self, vIDBug):
         try:
-            iEstadoAtual= Estado_Bug.objects.filter(bug__id_bug= vIDBug).order_by('data')[0]
+            iEstadoAtual= Estado_Bug.objects.filter(bug__id_bug= vIDBug).order_by('-data')[0]
             return iEstadoAtual
         except Exception, e:
             logging.getLogger('PyProject_ShiftIT.controle').error('Nao foi possivel obter o estado atual do bug: ' + str(e))
