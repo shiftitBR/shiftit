@@ -7,6 +7,7 @@ from PyProject_ShiftIT.bugtracker.models        import Documento, Tipo_Prioridad
     Estado_Bug, Pergunta_Bug, Resposta_Bug
     
 import datetime
+from PyProject_ShiftIT import constantes
 
 class Test(TestCase):
     
@@ -15,9 +16,11 @@ class Test(TestCase):
         self.mokarDocumento()
         self.mokarTipoPrioridade()
         self.mokarBug()
+        self.mokarTipoEstado()
         self.mokarEstadoBug()
-        self.mokarPerguntaBug()
-        self.mokarRespostaBug()
+        self.mokarAlteraEstadoBug()
+#        self.mokarPerguntaBug()
+#        self.mokarRespostaBug()
         pass
     
     
@@ -32,6 +35,45 @@ class Test(TestCase):
         pass
     
     #-----------------------------------------------------MOKS---------------------------------------------------
+    
+    def testCriarBug_Simples(self):
+        iBug                        = Bug()
+        iBug.usuario                = Usuario.objects.all()[0]
+        iBug.tipo_prioridade        = Tipo_Prioridade.objects.all()[0]
+        iBug.descricao              = 'descricao_teste'
+        iBug.nome_contato           = 'nome_teste'
+        iBug.email_contato          = 'emai_teste'
+        iBug.telefone_contato       = 'telefone_teste'
+        iBug.imagem                 = '%s/media/testes/teste.pdf' % settings.MEDIA_ROOT
+        iBug.data                   = datetime.datetime.now()
+        iBug.save()
+        self.assertEquals(Bug.objects.count(), 2)
+    
+    def testCriarBug_Metodo(self):
+        iBug                        = Bug()
+        iUsuario                    = Usuario.objects.all()[0].id
+        iTipoPrioridade             = Tipo_Prioridade.objects.all()[0].id_tipo_prioridade
+        iDescricao                  = 'descricao_teste'
+        iNomeContato                = 'nome_teste'
+        iEmailContato               = 'emai_teste'
+        iTelefoneContato            = 'telefone_teste'
+        iImagem                     = '%s/media/testes/teste.pdf' % settings.MEDIA_ROOT
+        iBug.criaBug(iUsuario, iTipoPrioridade, iDescricao, iNomeContato, iEmailContato, iTelefoneContato, iImagem)
+        self.assertEquals(Bug.objects.count(), 2)
+        
+    
+    def testAlteraEstadoBug(self):
+        iBug        = Bug.objects.filter(id_bug= 1)[0]
+        iComentario = 'Comentario teste'
+        iBug.alteraEstado(iBug, constantes.cntEstadoBug_EmAnalise, iComentario)
+        self.assertEquals(Estado_Bug.objects.filter(bug__id_bug= 1)[0].tipo_estado.id_tipo_estado, constantes.cntEstadoBug_EmAnalise)
+    
+    def testObtemEstadoAtualDoBug(self):
+        iBug        = Bug.objects.filter(id_bug= 1)[0]
+        iEstadoAtual= iBug.obtemEstadoAtual(iBug.id_bug)
+        self.assertEquals(iEstadoAtual.tipo_estado.id_tipo_estado, constantes.cntEstadoBug_EmAnalise)
+        
+#----------------------------------------------MOKS-------------------------------------
     
     def mokarUsuario(self):
         iUsuario                    = Usuario()
@@ -59,7 +101,32 @@ class Test(TestCase):
         
     def mokarTipoEstado(self):
         iTipoEstado                 = Tipo_Estado()
-        iTipoEstado.descricao       = 'teste'
+        iTipoEstado.id_tipo_estado  = constantes.cntEstadoBug_Novo
+        iTipoEstado.descricao       = 'novo'
+        iTipoEstado.save()
+        
+        iTipoEstado.id_tipo_estado  = constantes.cntEstadoBug_EmAnalise
+        iTipoEstado.descricao       = 'em analise'
+        iTipoEstado.save()
+        
+        iTipoEstado.id_tipo_estado  = constantes.cntEstadoBug_EmEspera
+        iTipoEstado.descricao       = 'em espera'
+        iTipoEstado.save()
+        
+        iTipoEstado.id_tipo_estado  = constantes.cntEstadoBug_EmDesenvolvimento
+        iTipoEstado.descricao       = 'em desenvolvimento'
+        iTipoEstado.save()
+        
+        iTipoEstado.id_tipo_estado  = constantes.cntEstadoBug_AguardandoAprovacao
+        iTipoEstado.descricao       = 'aguardando aprovacao'
+        iTipoEstado.save()
+        
+        iTipoEstado.id_tipo_estado  = constantes.cntEstadoBug_Finalizado
+        iTipoEstado.descricao       = 'finalizado'
+        iTipoEstado.save()
+        
+        iTipoEstado.id_tipo_estado  = constantes.cntEstadoBug_EmProducao
+        iTipoEstado.descricao       = 'em producao'
         iTipoEstado.save()
     
     def mokarBug(self):
@@ -81,15 +148,20 @@ class Test(TestCase):
         iEstadoBug.comentario       = 'teste'
         iEstadoBug.data             = datetime.datetime.now()
         iEstadoBug.save()
+    
+    def mokarAlteraEstadoBug(self):
+        iBug        = Bug.objects.filter(id_bug= 1)[0]
+        iComentario = 'Comentario teste'
+        iBug.alteraEstado(iBug, constantes.cntEstadoBug_Novo, iComentario)
         
-    def mokarPerguntaBug(self):
-        iPerguntaBug              = Pergunta_Bug()
-        iPerguntaBug.pergunta     = 'Qual seu nome?'
-        iPerguntaBug.save()
-        
-    def mokarRespostaBug(self):
-        iRespostaBug              = Resposta_Bug()
-        iRespostaBug.pergunta     = Pergunta_Bug.objects.all()[0]
-        iRespostaBug.Bug          = Bug.objects.all()[0]
-        iRespostaBug.resposta     = 'Meu nome não é Johny'
-        iRespostaBug.save()
+#    def mokarPerguntaBug(self):
+#        iPerguntaBug              = Pergunta_Bug()
+#        iPerguntaBug.pergunta     = 'Qual seu nome?'
+#        iPerguntaBug.save()
+#        
+#    def mokarRespostaBug(self):
+#        iRespostaBug              = Resposta_Bug()
+#        iRespostaBug.pergunta     = Pergunta_Bug.objects.all()[0]
+#        iRespostaBug.bug          = Bug.objects.all()[0]
+#        iRespostaBug.resposta     = 'Meu nome não é Johny'
+#        iRespostaBug.save()
