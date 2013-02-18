@@ -12,6 +12,59 @@
 		
 		<p><a href="/">Home</a></p>
 		
+		
+		{% for field in form %}
+            {{ field.errors }}
+        {% endfor %}
+		
+		{% for message in messages %}
+			<p><strong>{{ message }}</strong></p>
+		{% endfor %}
+		
+		<form method="post" >{% csrf_token %}
+			
+			<p>
+				<label>Nome:</label>
+				{{form.nome_contato}}
+			</p>
+			
+			<p>
+				<label>Email:</label>
+				{{form.email_contato}}
+			</p>
+			
+			<p>
+				<label>Telefone:</label>
+				{{form.telefone_contato}}
+			</p>
+			
+			<p>
+				<label>Tipo de Prioridade:</label>
+				{{form.tipo_prioridade}}
+			</p>
+			
+			<p>
+				<label>Descrição:</label>
+				{{form.descricao}}
+			</p>
+			
+			<p>
+				<label>Imagem:</label>
+				{{form.imagem}}
+			</p>
+			
+			{% for pergunta in iListaPerguntas %}
+			
+				<p>
+					<label>{{pergunta.pergunta}}</label>
+					<textarea id="id_perguntas" rows="10" cols="40" name="resposta_{{pergunta.id_pergunta_bug}}"></textarea>
+				</p>
+			
+			{% endfor %}
+			
+			<input id= "id_enviar_contato" type="submit" value='ENVIAR'/>
+		</form>
+		
 	<!-- Fecha container
 	================================================== -->
 	</div>
