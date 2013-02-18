@@ -8,6 +8,8 @@ Created on Jul 11, 2012
 from django.db                                          import models
 
 from PyProject_ShiftIT.autenticacao.models              import Usuario
+import logging
+import datetime
 
        
         
@@ -71,7 +73,7 @@ class Tipo_Estado(models.Model):
         verbose_name_plural = 'Tipos de Estado'
     
     def __unicode__(self):
-        return self.descricao
+        return '(%s - %s)' % (str(self.id_tipo_estado), self.descricao)
     
     def save(self):  
         if self.id_tipo_estado == '' or self.id_tipo_estado== None:
@@ -111,7 +113,42 @@ class Bug(models.Model):
             else:
                 self.id_bug= 1
         super(Bug, self).save()
-
+        
+    def criaBug(self, vIDUsuario, vIDTipoPrioridade, vDescricao, vNomeContato, vEmailContato, vTelefoneContato, vImagem):
+        try:
+            iBug                        = Bug()
+            iBug.usuario                = Usuario.objects.filter(id= vIDUsuario)[0]
+            iBug.tipo_prioridade        = Tipo_Prioridade.objects.filter(id_tipo_prioridade= vIDTipoPrioridade)[0]
+            iBug.descricao              = vDescricao
+            iBug.nome_contato           = vNomeContato
+            iBug.email_contato          = vEmailContato
+            iBug.telefone_contato       = vTelefoneContato
+            iBug.imagem                 = vImagem
+            iBug.data                   = datetime.datetime.now()
+            iBug.save()
+        except Exception, e:
+            logging.getLogger('PyProject_ShiftIT.controle').error('Nao foi possivel criar bug: ' + str(e))
+            return False
+    
+    def alteraEstado(self, vBug, vIDTipoEstado, vComentario):
+        try:
+            iEstadoBug              = Estado_Bug()
+            iEstadoBug.bug          = vBug 
+            iEstadoBug.tipo_estado  = Tipo_Estado.objects.filter(id_tipo_estado= vIDTipoEstado)[0]
+            iEstadoBug.comentario   = vComentario
+            iEstadoBug.data         = datetime.datetime.now()
+            iEstadoBug.save()
+        except Exception, e:
+            logging.getLogger('PyProject_ShiftIT.controle').error('Nao foi possivel alterar estado: ' + str(e))
+            return False
+    
+    def obtemEstadoAtual(self, vIDBug):
+        try:
+            iEstadoAtual= Estado_Bug.objects.filter(bug__id_bug= vIDBug).order_by('data')[0]
+            return iEstadoAtual
+        except Exception, e:
+            logging.getLogger('PyProject_ShiftIT.controle').error('Nao foi possivel obter o estado atual do bug: ' + str(e))
+            return False
 #---------------------------ESTADO BUG -----------------------------------   
         
 class Estado_Bug(models.Model):
@@ -154,12 +191,12 @@ class Pergunta_Bug(models.Model):
         return str(self.id_pergunta_bug)
     
     def save(self):  
-        if self.id_pergunta_Bug == '' or self.id_pergunta_Bug== None:
-            if len(Pergunta_Bug.objects.order_by('-id_pergunta_Bug')) > 0:   
-                iUltimoRegistro = Pergunta_Bug.objects.order_by('-id_pergunta_Bug')[0] 
-                self.id_pergunta_Bug= iUltimoRegistro.pk + 1
+        if self.id_pergunta_bug == '' or self.id_pergunta_bug== None:
+            if len(Pergunta_Bug.objects.order_by('-id_pergunta_bug')) > 0:   
+                iUltimoRegistro = Pergunta_Bug.objects.order_by('-id_pergunta_bug')[0] 
+                self.id_pergunta_bug= iUltimoRegistro.pk + 1
             else:
-                self.id_pergunta_Bug= 1
+                self.id_pergunta_bug= 1
         super(Pergunta_Bug, self).save()
         
 #-----------------------------RESPOSTA CONTATO---------------------------------------

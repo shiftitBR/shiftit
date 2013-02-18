@@ -13,7 +13,7 @@ TEMPLATE_DEBUG = DEBUG
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', 
-        'NAME': 'shift_shiftit',
+        'NAME': 'shift_shiftit_01',
         'USER': 'postgres',                      
         'PASSWORD': 'db@shift',                                                            
     }

@@ -35,3 +35,4 @@ nosetests.xml
 .pydevproject
 PyProject_ShiftIT/log
 PyProject_ShiftIT/log
+PyProject_ShiftIT/local_settings.py
