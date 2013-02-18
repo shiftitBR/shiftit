@@ -17,9 +17,9 @@ import datetime
     
 class Documento(models.Model):
     id_documento        = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
-    usuario             = models.ForeignKey(Usuario, null= False, verbose_name='Usuário')
-    assunto             = models.CharField(max_length=200, verbose_name='Assunto') 
-    arquivo             = models.FileField(upload_to='/multimidia/', max_length=100)
+    usuario             = models.ForeignKey(Usuario, null= False, blank=True, verbose_name='Usuário')
+    assunto             = models.CharField(max_length=200, blank=True, verbose_name='Assunto') 
+    arquivo             = models.FileField(upload_to='multimidia/fotos/', max_length=100)
     
     class Meta:
         db_table= 'tb_documento'
@@ -42,7 +42,7 @@ class Documento(models.Model):
         
 class Tipo_Prioridade(models.Model):
     id_tipo_prioridade  = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
-    descricao           = models.CharField(max_length=200) 
+    descricao           = models.CharField(max_length=200, blank=True) 
             
     class Meta:
         db_table= 'tb_tipo_prioridade'
@@ -60,6 +60,22 @@ class Tipo_Prioridade(models.Model):
             else:
                 self.id_tipo_prioridade= 1
         super(Tipo_Prioridade, self).save()
+        
+    def obtemListaTipoPrioridade(self,):
+        try:
+            iLista= Tipo_Prioridade.objects.all()
+            return iLista
+        except Exception, e:
+            logging.getLogger('PyProject_ShiftIT.controle').error('Nao foi possivel obtem Lista Tipo Prioridade: ' + str(e))
+            return None  
+        
+    def obtemTipoPrioridade(self, iIDTipoPrioridade):
+        try:
+            iTipoPrioridade= Tipo_Prioridade.objects.filter(id_tipo_prioridade = iIDTipoPrioridade)[0]
+            return iTipoPrioridade
+        except Exception, e:
+            logging.getLogger('PyProject_ShiftIT.controle').error('Nao foi possivel obtem Tipo Prioridade: ' + str(e))
+            return None  
         
 #---------------------------TIPO ESTADO -----------------------------------   
         
@@ -88,14 +104,14 @@ class Tipo_Estado(models.Model):
     
 class Bug(models.Model):
     id_bug              = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
-    usuario             = models.ForeignKey(Usuario, null= False, verbose_name='Usuário')
-    tipo_prioridade     = models.ForeignKey(Tipo_Prioridade, null= False, verbose_name='Tipo de Prioridade')
-    descricao           = models.CharField(max_length=500, verbose_name='Descrição') 
-    nome_contato        = models.CharField(max_length=200, verbose_name='Nome de Contato')
-    email_contato       = models.CharField(max_length=200, verbose_name='Email')
-    telefone_contato    = models.CharField(max_length=100, verbose_name='Telefone')
-    imagem              = models.FileField(upload_to='/multimidia/', max_length=100)
-    data                = models.DateTimeField(null= True, verbose_name='Data')
+    usuario             = models.ForeignKey(Usuario, null= False, blank=True, verbose_name='Usuário')
+    tipo_prioridade     = models.ForeignKey(Tipo_Prioridade, null= False, blank=True, verbose_name='Tipo de Prioridade')
+    descricao           = models.CharField(max_length=500, blank=True, verbose_name='Descrição') 
+    nome_contato        = models.CharField(max_length=200, blank=True, verbose_name='Nome de Contato')
+    email_contato       = models.CharField(max_length=200, blank=True, verbose_name='Email')
+    telefone_contato    = models.CharField(max_length=100, blank=True, verbose_name='Telefone')
+    imagem              = models.FileField(upload_to='/multimidia/fotos/', blank=True, max_length=100)
+    data                = models.DateTimeField(null= True, blank=True, verbose_name='Data')
     
     class Meta:
         db_table= 'tb_bug'
@@ -198,6 +214,14 @@ class Pergunta_Bug(models.Model):
             else:
                 self.id_pergunta_bug= 1
         super(Pergunta_Bug, self).save()
+        
+    def obtemPerguntaBug(self, vIDPerguntaBug):
+        try:
+            iPerguntaBug= Pergunta_Bug.objects.filter(id_pergunta_bug= vIDPerguntaBug)[0]
+            return iPerguntaBug
+        except Exception, e:
+            logging.getLogger('PyProject_ShiftIT.controle').error('Nao foi possivel obtem Pergunta Bug: ' + str(e))
+            return None   
         
 #-----------------------------RESPOSTA CONTATO---------------------------------------
         

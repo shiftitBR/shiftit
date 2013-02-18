@@ -19,8 +19,8 @@ class Test(TestCase):
         self.mokarTipoEstado()
         self.mokarEstadoBug()
         self.mokarAlteraEstadoBug()
-#        self.mokarPerguntaBug()
-#        self.mokarRespostaBug()
+        self.mokarPerguntaBug()
+        self.mokarRespostaBug()
         pass
     
     
@@ -34,7 +34,7 @@ class Test(TestCase):
         Resposta_Bug.objects.all().delete()
         pass
     
-    #-----------------------------------------------------MOKS---------------------------------------------------
+    #-----------------------------------------------------TESTES---------------------------------------------------
     
     def testCriarBug_Simples(self):
         iBug                        = Bug()
@@ -71,7 +71,7 @@ class Test(TestCase):
     def testObtemEstadoAtualDoBug(self):
         iBug        = Bug.objects.filter(id_bug= 1)[0]
         iEstadoAtual= iBug.obtemEstadoAtual(iBug.id_bug)
-        self.assertEquals(iEstadoAtual.tipo_estado.id_tipo_estado, constantes.cntEstadoBug_EmAnalise)
+        self.assertEquals(iEstadoAtual.tipo_estado.id_tipo_estado, constantes.cntEstadoBug_Novo)
         
 #----------------------------------------------MOKS-------------------------------------
     
@@ -154,14 +154,14 @@ class Test(TestCase):
         iComentario = 'Comentario teste'
         iBug.alteraEstado(iBug, constantes.cntEstadoBug_Novo, iComentario)
         
-#    def mokarPerguntaBug(self):
-#        iPerguntaBug              = Pergunta_Bug()
-#        iPerguntaBug.pergunta     = 'Qual seu nome?'
-#        iPerguntaBug.save()
-#        
-#    def mokarRespostaBug(self):
-#        iRespostaBug              = Resposta_Bug()
-#        iRespostaBug.pergunta     = Pergunta_Bug.objects.all()[0]
-#        iRespostaBug.bug          = Bug.objects.all()[0]
-#        iRespostaBug.resposta     = 'Meu nome não é Johny'
-#        iRespostaBug.save()
+    def mokarPerguntaBug(self):
+        iPerguntaBug              = Pergunta_Bug()
+        iPerguntaBug.pergunta     = 'Qual seu nome?'
+        iPerguntaBug.save()
+        
+    def mokarRespostaBug(self):
+        iRespostaBug              = Resposta_Bug()
+        iRespostaBug.pergunta     = Pergunta_Bug.objects.all()[0]
+        iRespostaBug.bug          = Bug.objects.all()[0]
+        iRespostaBug.resposta     = 'Meu nome não é Johny'
+        iRespostaBug.save()
