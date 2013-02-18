@@ -145,14 +145,14 @@ class Test(TestCase):
         iEstadoBug                  = Estado_Bug()
         iEstadoBug.bug              = Bug.objects.all()[0]  
         iEstadoBug.tipo_estado      = Tipo_Estado.objects.all()[0]
-        iEstadoBug.comentario       = 'teste'
+        iEstadoBug.comentario       = 'teste - novo'
         iEstadoBug.data             = datetime.datetime.now()
         iEstadoBug.save()
     
     def mokarAlteraEstadoBug(self):
         iBug        = Bug.objects.filter(id_bug= 1)[0]
         iComentario = 'Comentario teste'
-        iBug.alteraEstado(iBug, constantes.cntEstadoBug_Novo, iComentario)
+        iBug.alteraEstado(iBug, constantes.cntEstadoBug_EmAnalise, iComentario)
         
     def mokarPerguntaBug(self):
         iPerguntaBug              = Pergunta_Bug()

@@ -160,7 +160,7 @@ class Bug(models.Model):
     
     def obtemEstadoAtual(self, vIDBug):
         try:
-            iEstadoAtual= Estado_Bug.objects.filter(bug__id_bug= vIDBug).order_by('data')[0]
+            iEstadoAtual= Estado_Bug.objects.filter(bug__id_bug= vIDBug).order_by('-data')[0]
             return iEstadoAtual
         except Exception, e:
             logging.getLogger('PyProject_ShiftIT.controle').error('Nao foi possivel obter o estado atual do bug: ' + str(e))
