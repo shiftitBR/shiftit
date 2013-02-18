@@ -29,9 +29,9 @@
 		<p>Menu</p>
 		
 		{% if user.is_authenticated %}
-			<p><a href="/login/">Login</a></p>
+			<p><a href="/logout/">Logout</a> - {{user.username}}</p>
 		{% else %}
-			<p><a href="/logout/">Logout</a></p>
+			<p><a href="/login/">Login</a></p>
 		{% endif %}
 			
 	    {% block conteudo %}

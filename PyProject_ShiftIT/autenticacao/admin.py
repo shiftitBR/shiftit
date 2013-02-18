@@ -41,7 +41,7 @@ class AdminPerguntaContato(admin.ModelAdmin):
     exclude         = ('id_pergunta_contato',) 
     
 class AdminRespostaContato(admin.ModelAdmin): 
-    list_display    = ('pergunta', 'contato', 'resposta' )
+    list_display    = ('pergunta', 'contato', 'resposta', )
     search_fields   = ('resposta', 'pergunta.pergunta', 'contato.first_name', 'contato.last_name')
     exclude         = ('id_resposta_contato',) 
     
@@ -67,7 +67,7 @@ class AdminPerguntaBug(admin.ModelAdmin):
     exclude         = ('id_pergunta_bug',) 
     
 class AdminRespostaBug(admin.ModelAdmin): 
-    list_display    = ('pergunta', 'bug', 'resposta' )
+    list_display    = ('pergunta', 'bug', 'resposta', )
     search_fields   = ('resposta', 'pergunta.pergunta', 'bug.descricao')
     exclude         = ('id_resposta_bug',) 
     

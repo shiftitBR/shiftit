@@ -24,6 +24,10 @@ class Test(TestCase):
         Pergunta_Contato.objects.all().delete()
         Resposta_Contato.objects.all().delete()
         pass
+
+    def testsobtemPerguntaContato(self):
+        iPerguntaContato= Pergunta_Contato().obtemPerguntaContato(1)
+        self.assertEquals(1, iPerguntaContato.id_pergunta_contato)
     
     #-----------------------------------------------------MOKS---------------------------------------------------
 

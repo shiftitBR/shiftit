@@ -7,6 +7,8 @@ Created on Jul 11, 2012
 
 from django.db                                      import models
 
+import logging
+
 #-----------------------------EMAIL---------------------------------------
 
 class Email(models.Model):
@@ -49,7 +51,7 @@ class Contato(models.Model):
         verbose_name_plural = 'Contatos'
     
     def __unicode__(self):
-        return str(self.id_contato)
+        return self.nome
     
     def save(self):  
         if self.id_contato == '' or self.id_contato== None:
@@ -72,7 +74,7 @@ class Pergunta_Contato(models.Model):
         verbose_name_plural = 'Perguntas de Contato'
     
     def __unicode__(self):
-        return str(self.id_pergunta_contato)
+        return self.pergunta
     
     def save(self):  
         if self.id_pergunta_contato == '' or self.id_pergunta_contato== None:
@@ -82,6 +84,14 @@ class Pergunta_Contato(models.Model):
             else:
                 self.id_pergunta_contato= 1
         super(Pergunta_Contato, self).save()
+    
+    def obtemPerguntaContato(self, vIDPerguntaContato):
+        try:
+            iPerguntaContato= Pergunta_Contato.objects.filter(id_pergunta_contato= vIDPerguntaContato)[0]
+            return iPerguntaContato
+        except Exception, e:
+            logging.getLogger('PyProject_ShiftIT.controle').error('Nao foi possivel obtem Pergunta Contato: ' + str(e))
+            return None   
         
 #-----------------------------RESPOSTA CONTATO---------------------------------------
         
@@ -97,12 +107,12 @@ class Resposta_Contato(models.Model):
         verbose_name_plural = 'Respostas de Contato'
     
     def __unicode__(self):
-        return str(self.id_resposta_contato)
+        return self.resposta
     
     def save(self):  
         if self.id_resposta_contato == '' or self.id_resposta_contato== None:
-            if len(Resposta_Contato.objects.order_by('-id_pergunta_contato')) > 0:   
-                iUltimoRegistro = Resposta_Contato.objects.order_by('-id_pergunta_contato')[0] 
+            if len(Resposta_Contato.objects.order_by('-id_resposta_contato')) > 0:   
+                iUltimoRegistro = Resposta_Contato.objects.order_by('-id_resposta_contato')[0] 
                 self.id_resposta_contato= iUltimoRegistro.pk + 1
             else:
                 self.id_resposta_contato= 1

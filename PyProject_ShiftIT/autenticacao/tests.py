@@ -9,7 +9,6 @@ class Test(TestCase):
         self.mokarUsuario()
         pass
     
-    
     def tearDown(self):
         Usuario.objects.all().delete()
         pass
@@ -17,6 +16,10 @@ class Test(TestCase):
     def testsObtemUsuario(self):
         iUsuario = Usuario().obtemUsuario(1)
         self.assertEquals(1, iUsuario.id)
+        
+    def testspossuiUsuario(self):
+        iPossuiUsuario = Usuario().possuiUsuario(1)
+        self.assertEquals(True, iPossuiUsuario)
  
     #-----------------------------------------------------MOKS---------------------------------------------------
         
