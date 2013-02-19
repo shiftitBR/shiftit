@@ -12,7 +12,7 @@ import logging
 #-----------------------------EMAIL---------------------------------------
 
 class Email(models.Model):
-    id_email            = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
+    id_email            = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     nome                = models.CharField(max_length=500, verbose_name='Nome') 
     email               = models.CharField(max_length=500, verbose_name='E-mail') 
     telefone            = models.CharField(max_length=500, verbose_name='Telefone') 
@@ -39,7 +39,7 @@ class Email(models.Model):
 #-----------------------------CONTATO---------------------------------------
 
 class Contato(models.Model):
-    id_contato          = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
+    id_contato          = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     nome                = models.CharField(max_length=500, verbose_name='Nome') 
     email               = models.CharField(max_length=500, verbose_name='E-mail') 
     telefone            = models.CharField(max_length=500, verbose_name='Telefone') 
@@ -65,7 +65,7 @@ class Contato(models.Model):
 #-----------------------------PERGUNTA CONTATO---------------------------------------
         
 class Pergunta_Contato(models.Model):
-    id_pergunta_contato = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
+    id_pergunta_contato = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     pergunta            = models.CharField(max_length=500, verbose_name='Pergunta') 
         
     class Meta:
@@ -96,8 +96,8 @@ class Pergunta_Contato(models.Model):
 #-----------------------------RESPOSTA CONTATO---------------------------------------
         
 class Resposta_Contato(models.Model):
-    id_resposta_contato = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
-    pergunta            = models.ForeignKey(Pergunta_Contato, null= False, verbose_name='Pergunta de Contato')
+    id_resposta_contato = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
+    pergunta            = models.ForeignKey(Pergunta_Contato, null= False, verbose_name='Pergunta')
     contato             = models.ForeignKey(Contato, null= False, verbose_name='Contato')
     resposta            = models.CharField(max_length=500, verbose_name='Resposta') 
         

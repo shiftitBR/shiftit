@@ -13,7 +13,6 @@ from django.core.urlresolvers                           import reverse
 
 import logging
        
-        
 #---------------------------USUARIO -----------------------------------    
     
 class Usuario(User):
@@ -29,11 +28,11 @@ class Usuario(User):
     
     class Meta:
         db_table= 'tb_usuario'
-        verbose_name = 'Usuário'
-        verbose_name_plural = 'Usuários'
+        verbose_name = 'Cliente'
+        verbose_name_plural = 'Clientes'
     
     def __unicode__(self):
-        return "%s %s" % (self.first_name, self.last_name)
+        return self.nome_fantasia
     
     def get_absolute_url(self):
         return reverse('autenticacao.views.perfil', kwargs={'slug': self.slug})
@@ -92,8 +91,5 @@ def usuario_pre_save(signal, instance, sender, **kwargs):
         novo_slug = '%s-%d'%(slug, contador)
 
     instance.slug = novo_slug
-    
 
 signals.pre_save.connect(usuario_pre_save, sender=Usuario)
-
-    
