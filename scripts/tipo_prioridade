@@ -1,0 +1,11 @@
+﻿INSERT INTO tb_tipo_prioridade(
+            id_tipo_prioridade, descricao)
+    VALUES (1, 'Baixa');
+
+INSERT INTO tb_tipo_prioridade(
+            id_tipo_prioridade, descricao)
+    VALUES (2, 'Média');
+
+INSERT INTO tb_tipo_prioridade(
+            id_tipo_prioridade, descricao)
+    VALUES (3, 'Alta');
