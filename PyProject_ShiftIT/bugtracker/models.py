@@ -16,7 +16,7 @@ import datetime
 #---------------------------DOCUMENTO -----------------------------------    
     
 class Documento(models.Model):
-    id_documento        = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
+    id_documento        = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     usuario             = models.ForeignKey(Usuario, null= False, blank=True, verbose_name='Usuário')
     assunto             = models.CharField(max_length=200, blank=True, verbose_name='Assunto') 
     arquivo             = models.FileField(upload_to='multimidia/fotos/', max_length=100)
@@ -41,7 +41,7 @@ class Documento(models.Model):
 #---------------------------TIPO PRIORIDADE -----------------------------------   
         
 class Tipo_Prioridade(models.Model):
-    id_tipo_prioridade  = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
+    id_tipo_prioridade  = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     descricao           = models.CharField(max_length=200, blank=True) 
             
     class Meta:
@@ -80,7 +80,7 @@ class Tipo_Prioridade(models.Model):
 #---------------------------TIPO ESTADO -----------------------------------   
         
 class Tipo_Estado(models.Model):
-    id_tipo_estado      = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
+    id_tipo_estado      = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     descricao           = models.CharField(max_length=200) 
             
     class Meta:
@@ -103,9 +103,9 @@ class Tipo_Estado(models.Model):
 #---------------------------BUG -----------------------------------    
     
 class Bug(models.Model):
-    id_bug              = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
+    id_bug              = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     usuario             = models.ForeignKey(Usuario, null= False, blank=True, verbose_name='Usuário')
-    tipo_prioridade     = models.ForeignKey(Tipo_Prioridade, null= False, blank=True, verbose_name='Tipo de Prioridade')
+    tipo_prioridade     = models.ForeignKey(Tipo_Prioridade, null= False, blank=True, verbose_name='Tipo Prioridade')
     descricao           = models.CharField(max_length=500, blank=True, verbose_name='Descrição') 
     nome_contato        = models.CharField(max_length=200, blank=True, verbose_name='Nome de Contato')
     email_contato       = models.CharField(max_length=200, blank=True, verbose_name='Email')
@@ -168,9 +168,9 @@ class Bug(models.Model):
 #---------------------------ESTADO BUG -----------------------------------   
         
 class Estado_Bug(models.Model):
-    id_estado_bug       = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
+    id_estado_bug       = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     bug                 = models.ForeignKey(Bug, null= False, verbose_name='Bug')
-    tipo_estado         = models.ForeignKey(Tipo_Estado, null= False, verbose_name='Tipo de Estado')
+    tipo_estado         = models.ForeignKey(Tipo_Estado, null= False, verbose_name='Tipo Estado')
     comentario          = models.CharField(max_length=500) 
     data                = models.DateTimeField(null= True, verbose_name='Data')
             
@@ -195,7 +195,7 @@ class Estado_Bug(models.Model):
 #-----------------------------PERGUNTA BUG---------------------------------------
         
 class Pergunta_Bug(models.Model):
-    id_pergunta_bug     = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
+    id_pergunta_bug     = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     pergunta            = models.CharField(max_length=500, verbose_name='Pergunta') 
         
     class Meta:
@@ -204,7 +204,7 @@ class Pergunta_Bug(models.Model):
         verbose_name_plural = 'Perguntas de Bug'
     
     def __unicode__(self):
-        return str(self.id_pergunta_bug)
+        return self.pergunta
     
     def save(self):  
         if self.id_pergunta_bug == '' or self.id_pergunta_bug== None:
@@ -226,7 +226,7 @@ class Pergunta_Bug(models.Model):
 #-----------------------------RESPOSTA CONTATO---------------------------------------
         
 class Resposta_Bug(models.Model):
-    id_resposta_bug     = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True)
+    id_resposta_bug     = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     pergunta            = models.ForeignKey(Pergunta_Bug, null= False, verbose_name='Pergunta')
     bug                 = models.ForeignKey(Bug, null= False, verbose_name='Bug')
     resposta            = models.CharField(max_length=500, verbose_name='Resposta') 
@@ -237,7 +237,7 @@ class Resposta_Bug(models.Model):
         verbose_name_plural = 'Respostas de Bug'
     
     def __unicode__(self):
-        return str(self.id_resposta_bug)
+        return self.resposta
     
     def save(self):  
         if self.id_resposta_bug == '' or self.id_resposta_bug== None:

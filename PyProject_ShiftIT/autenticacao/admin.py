@@ -23,6 +23,8 @@ class DocumentoInLine(admin.StackedInline):
     list_display    = ('usuario', 'assunto', 'arquivo' )
     search_fields   = ('assunto', 'usuario.first_name', 'usuario.last_name')
     exclude         = ('id_documento',) 
+    verbose_name    = 'Documento'
+    verbose_name_plural = 'Documentos'
     extra           = 0
 
 class AdminUsuario(admin.ModelAdmin): 
@@ -32,7 +34,7 @@ class AdminUsuario(admin.ModelAdmin):
             'fields': ('username', 'first_name', 'last_name', 'cnpj', 'razao_social', 'nome_fantasia', 
                        'telefone', 'endereco', 'cidade', 'uf', 'nome_responsavel')
         }),
-        ('Advanced options', {
+        ('Opções Avançadas', {
             'classes': ('collapse',),
             'fields': ('last_login', 'date_joined', 'is_superuser', 'user_permissions', 
                        'is_staff', 'slug', 'is_active', 'groups')
@@ -45,33 +47,18 @@ class RepostaContatoInline(admin.StackedInline):
     model           = Resposta_Contato
     list_display    = ('pergunta', 'contato', 'resposta', )
     search_fields   = ('resposta', 'pergunta.pergunta', 'contato.first_name', 'contato.last_name')
-    exclude         = ('id_resposta_contato',) 
     extra           = 0
+#    readonly_fields = ('id_resposta_contato',)
+#    exclude         = ('id_resposta_contato',) 
+#    verbose_name    = 'Resposta de Contato'
+#    verbose_name_plural = 'Respostas de Contato'
     
 class AdminContato(admin.ModelAdmin): 
     inlines         = (RepostaContatoInline,)
     list_display    = ('nome', 'email', 'telefone', 'data', )
     search_fields   = ('nome', 'email', 'telefone', 'data', )
     exclude         = ('id_contato',) 
-    
-    def save_model(self, vRequest, obj, form, change):
-        print '>>>>>>>>>>>>>>>> 004'
-        obj.save()
-    
-    def response_change(self, request, obj):
-        print '>>>>>>>>>>>>>>>>>>> 002'
-    
-    def response_add(self, request, new_object):
-        print '>>>>>>>>>>>>>>>>>> 003'
         
-    def save_formset(self, request, form, formset, change):
-        print '>>>>>>>>>>>>>>>>>> 001'
-        instances = formset.save(commit=False)
-        for instance in instances:
-            if isinstance(instance, Resposta_Contato):
-                instance.id_resposta_contato = 4
-                instance.save()
-    
 class AdminPerguntaContato(admin.ModelAdmin): 
     list_display    = ('pergunta',  )
     search_fields   = ('pergunta', )
@@ -81,15 +68,19 @@ class RespostaBugInLIne(admin.StackedInline):
     model           = Resposta_Bug
     list_display    = ('pergunta', 'bug', 'resposta', )
     search_fields   = ('resposta', 'pergunta.pergunta', 'bug.descricao')
-    exclude         = ('id_resposta_bug',) 
     extra           = 0
+#    exclude         = ('id_resposta_bug',) 
+#    verbose_name    = 'Resposta de Bug'
+#    verbose_name_plural = 'Respostas de Bug'
     
 class EstadoBugInLine(admin.StackedInline): 
     model           = Estado_Bug
     list_display    = ('bug', 'tipo_estado', 'comentario', 'data' )
     search_fields   = ('bug.descricao', 'bug.nome_contato', 'comentario', 'tipo_estado.descricao')
-    exclude         = ('id_estado_bug',) 
     extra           = 0
+#    exclude         = ('id_estado_bug',) 
+#    verbose_name    = 'Estado de Bug'
+#    verbose_name_plural = 'Estados de Bug'
     
 class AdminBug(admin.ModelAdmin): 
     inlines         = (RespostaBugInLIne, EstadoBugInLine, )

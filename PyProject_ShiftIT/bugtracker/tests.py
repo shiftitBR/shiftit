@@ -71,7 +71,7 @@ class Test(TestCase):
     def testObtemEstadoAtualDoBug(self):
         iBug        = Bug.objects.filter(id_bug= 1)[0]
         iEstadoAtual= iBug.obtemEstadoAtual(iBug.id_bug)
-        self.assertEquals(iEstadoAtual.tipo_estado.id_tipo_estado, constantes.cntEstadoBug_Novo)
+        self.assertEquals(iEstadoAtual.tipo_estado.id_tipo_estado, constantes.cntEstadoBug_EmAnalise)
         
 #----------------------------------------------MOKS-------------------------------------
     
