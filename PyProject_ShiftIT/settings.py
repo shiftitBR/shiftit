@@ -2,6 +2,7 @@
 # Django settings for PyProject_ShiftIT project.
 
 import os
+import sys
 
 PROJECT_ROOT_PATH= os.path.dirname(os.path.abspath(__file__))
 
@@ -25,7 +26,10 @@ SITE_ID = 1
 USE_I18N = True
 
 try:
-    from local_settings import *
+    if 'test' in sys.argv:
+        from test_settings import *
+    else:
+        from local_settings import *
 except ImportError:
     pass
 
