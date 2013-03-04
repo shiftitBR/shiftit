@@ -47,7 +47,7 @@ class Test(TestCase):
         iBug.imagem                 = '%s/media/testes/teste.pdf' % settings.MEDIA_ROOT
         iBug.data                   = datetime.datetime.now()
         iBug.save()
-        self.assertEquals(Bug.objects.count(), 2)
+        self.assertEquals(Bug.objects.count(), 3)
     
     def testCriarBug_Metodo(self):
         iBug                        = Bug()
@@ -59,14 +59,14 @@ class Test(TestCase):
         iTelefoneContato            = 'telefone_teste'
         iImagem                     = '%s/media/testes/teste.pdf' % settings.MEDIA_ROOT
         iBug.criaBug(iUsuario, iTipoPrioridade, iDescricao, iNomeContato, iEmailContato, iTelefoneContato, iImagem)
-        self.assertEquals(Bug.objects.count(), 2)
+        self.assertEquals(Bug.objects.count(), 3)
         
     
     def testAlteraEstadoBug(self):
-        iBug        = Bug.objects.filter(id_bug= 1)[0]
+        iBug        = Bug.objects.filter(id_bug= 2)[0]
         iComentario = 'Comentario teste'
         iBug.alteraEstado(iBug, constantes.cntEstadoBug_EmAnalise, iComentario)
-        self.assertEquals(Estado_Bug.objects.filter(bug__id_bug= 1)[0].tipo_estado.id_tipo_estado, constantes.cntEstadoBug_EmAnalise)
+        self.assertEquals(Estado_Bug.objects.filter(bug__id_bug= 2)[0].tipo_estado.id_tipo_estado, constantes.cntEstadoBug_EmAnalise)
     
     def testObtemEstadoAtualDoBug(self):
         iBug        = Bug.objects.filter(id_bug= 1)[0]
@@ -133,10 +133,21 @@ class Test(TestCase):
         iBug                        = Bug()
         iBug.usuario                = Usuario.objects.all()[0]
         iBug.tipo_prioridade        = Tipo_Prioridade.objects.all()[0]
-        iBug.descricao              = 'teste'
-        iBug.nome_Contato           = 'teste'
-        iBug.email_Contato          = 'teste'
-        iBug.telefone_Contato       = 'teste'
+        iBug.descricao              = 'teste1'
+        iBug.nome_Contato           = 'teste1'
+        iBug.email_Contato          = 'teste1'
+        iBug.telefone_Contato       = 'teste1'
+        iBug.imagem                 = '%s/media/testes/teste.pdf' % settings.MEDIA_ROOT
+        iBug.data                   = datetime.datetime.now()
+        iBug.save()
+        
+        iBug                        = Bug()
+        iBug.usuario                = Usuario.objects.all()[0]
+        iBug.tipo_prioridade        = Tipo_Prioridade.objects.all()[0]
+        iBug.descricao              = 'teste2'
+        iBug.nome_Contato           = 'teste2'
+        iBug.email_Contato          = 'teste2'
+        iBug.telefone_Contato       = 'teste2'
         iBug.imagem                 = '%s/media/testes/teste.pdf' % settings.MEDIA_ROOT
         iBug.data                   = datetime.datetime.now()
         iBug.save()
