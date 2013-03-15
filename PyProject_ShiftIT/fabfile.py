@@ -58,10 +58,10 @@ def pull():
 def fetch():
     local('git fetch')
 
-def fetch_pull_remoto(vDiretorio):
+def fetch_pull_remoto(vDiretorio, vBranch):
     with cd(vDiretorio):
-        run('git fetch')
-        run('git pull')
+        run('git fetch origin %s' % vBranch)
+        run('git pull origin %s' % vBranch)
 
 def clone_producao(vDiretorio):
     try:
@@ -135,7 +135,7 @@ def deploy_teste():
     checkout('master')
     pull() #master
     roda_teste()    
-    fetch_pull_remoto(iDiretorioApp)
+    fetch_pull_remoto(iDiretorioApp, 'master')
     sincronizaBanco_remoto(iDiretorioApp)
 #    instalaDependencias_remoto()
     reiniciaApache_remoto(iDiretorioApache)
