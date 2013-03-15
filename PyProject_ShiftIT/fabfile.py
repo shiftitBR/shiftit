@@ -4,7 +4,7 @@ from fabric.contrib.console import confirm
 
 import datetime
 
-env.hosts = ['shift@shift.webfactional.com']
+env.hosts = ['shift@web380.webfaction.com']
 
 
 def roda_teste():
@@ -54,6 +54,9 @@ def checkout(vBranch):
     
 def pull():
     local('git pull')
+    
+def fetch():
+    local('git fetch')
 
 def fetch_pull_remoto(vDiretorio):
     with cd(vDiretorio):
@@ -94,33 +97,45 @@ def merge_branch():
     roda_teste()
     local('git push -u origin master')
         
-def deploy(vNovaVersao=False, vNomeTag=None):
-    iDiretorioProducao= '/home/shift/webapps/freelati/git/'
-    iDiretorioApache= '/home/shift/webapps/freelati/apache2/bin/'
-    iDiretorioApp= '/home/shift/webapps/freelati/git/PyProject_FreelaTI/src/PyProject_FreelaTI/'
-    iDiretorioArquivos= '/home/shift/webapps/freelati/arquivos/'
-    if vNovaVersao:
-        print '>>>>>>>>>>>>>>>>>>>> Nova versao'
-        checkout('master')
-        pull() #master
-        roda_teste()
-        cria_tag_master(vNomeTag)
-        push_tag() #master
-        cria_branch()
-        push_producao() 
-        cria_tag_producao(vNomeTag)
-        push_tag() #producao
-        clone_producao(iDiretorioProducao)
-        checkout_remoto(iDiretorioProducao)
-        cria_pastaLog(iDiretorioApp)
-        copia_settingsLocal(iDiretorioArquivos, iDiretorioApp)
-    else:
-        print '>>>>>>>>>>>>>>>>>>>> Versao atual'
-        checkout('producao')
-        pull() #producao
-        roda_teste()
-    
-    fetch_pull_remoto(iDiretorioProducao)
-    #roda_teste_remoto(iDiretorioApp)
+#def deploy_producao(vNovaVersao=False, vNomeTag=None):
+#    iDiretorioProducao= '/home/shift/webapps/freelati/git/'
+#    iDiretorioApache= '/home/shift/webapps/freelati/apache2/bin/'
+#    iDiretorioApp= '/home/shift/webapps/freelati/git/PyProject_FreelaTI/src/PyProject_FreelaTI/'
+#    iDiretorioArquivos= '/home/shift/webapps/freelati/arquivos/'
+#    if vNovaVersao:
+#        print '>>>>>>>>>>>>>>>>>>>> Nova versao'
+#        checkout('master')
+#        pull() #master
+#        roda_teste()
+#        cria_tag_master(vNomeTag)
+#        push_tag() #master
+#        cria_branch()
+#        push_producao() 
+#        cria_tag_producao(vNomeTag)
+#        push_tag() #producao
+#        clone_producao(iDiretorioProducao)
+#        checkout_remoto(iDiretorioProducao)
+#        cria_pastaLog(iDiretorioApp)
+#        copia_settingsLocal(iDiretorioArquivos, iDiretorioApp)
+#    else:
+#        print '>>>>>>>>>>>>>>>>>>>> Versao atual'
+#        checkout('producao')
+#        pull() #producao
+#        roda_teste()
+#    
+#    fetch_pull_remoto(iDiretorioProducao)
+#    #roda_teste_remoto(iDiretorioApp)
+#    sincronizaBanco_remoto(iDiretorioApp)
+#    reiniciaApache_remoto(iDiretorioApache)
+
+def deploy_teste():
+    iDiretorioApache= '/home/shift/webapps/teste_shiftit/apache2/bin/'
+    iDiretorioApp= '/home/shift/webapps/teste_shiftit/PyProject_ShiftIT/'
+    fetch()
+    checkout('master')
+    pull() #master
+    roda_teste()    
+    fetch_pull_remoto(iDiretorioApp)
     sincronizaBanco_remoto(iDiretorioApp)
+#    instalaDependencias_remoto()
     reiniciaApache_remoto(iDiretorioApache)
