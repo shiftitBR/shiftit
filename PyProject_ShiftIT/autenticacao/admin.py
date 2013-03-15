@@ -12,7 +12,7 @@ from django.contrib.auth.models                 import Group
 from django.contrib.sites.models                import Site
 
 from PyProject_ShiftIT.autenticacao.models      import Usuario
-from PyProject_ShiftIT.comunicacao.models       import Contato
+from PyProject_ShiftIT.comunicacao.models       import Contato, Email
 from PyProject_ShiftIT.comunicacao.models       import Pergunta_Contato
 from PyProject_ShiftIT.comunicacao.models       import Resposta_Contato
 from PyProject_ShiftIT.bugtracker.models        import Documento, Bug,\
@@ -95,6 +95,11 @@ class AdminPerguntaBug(admin.ModelAdmin):
     search_fields   = ('pergunta', )
     exclude         = ('id_pergunta_bug',) 
     
+class AdminEmail(admin.ModelAdmin): 
+    list_display    = ('nome', 'email', 'telefone', 'mensagem', 'data')
+    search_fields   = ('nome', 'email', 'telefone', 'mensagem', 'data')
+    exclude         = ('id_email',)
+    
 admin.site.unregister(User)
 admin.site.unregister(Site)
 admin.site.unregister(Group)
@@ -103,6 +108,7 @@ admin.site.register(Contato, AdminContato)
 admin.site.register(Pergunta_Contato, AdminPerguntaContato)
 admin.site.register(Bug, AdminBug)
 admin.site.register(Pergunta_Bug, AdminPerguntaBug)
+admin.site.register(Email, AdminEmail)
 #admin.site.register(Resposta_Contato, AdminRespostaContato)
 #admin.site.register(Documento, AdminDocumento)
 #admin.site.register(Estado_Bug, AdminEstadoBug)
