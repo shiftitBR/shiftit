@@ -94,7 +94,7 @@ def criaSouthMigration():
 def aplicaSouthMigration(vDiretorio):
     with cd(vDiretorio):
         for iApp in AppList:
-            run(' python manage.py migrate %s' % iApp)
+            run(' python2.7 manage.py migrate %s' % iApp)
 
 def reiniciaApache_remoto(vDiretorio):
     with cd(vDiretorio):
@@ -158,7 +158,7 @@ def deploy_teste():
     pull() #master
     roda_teste()    
     fetch_pull_remoto(iDiretorioApp, 'master')
-    sincronizaBanco_remoto(iDiretorioApp)
+    #sincronizaBanco_remoto(iDiretorioApp)
     instalaDependencias_remoto(iDiretorioHelp)
     aplicaSouthMigration(iDiretorioApp)
     reiniciaApache_remoto(iDiretorioApache)
