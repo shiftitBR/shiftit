@@ -95,6 +95,7 @@ INSTALLED_APPS = (
     'comunicacao',
     'autenticacao',
     'bugtracker',
+    'south',
 )
 
 LOGGING = {

@@ -5,6 +5,7 @@ from fabric.contrib.console import confirm
 import datetime
 
 env.hosts = ['shift@web380.webfaction.com']
+AppList=['autenticacao', 'bugtracker', 'comunicacao']
 
 
 def roda_teste():
@@ -79,6 +80,22 @@ def sincronizaBanco_remoto(vDiretorio):
     with cd(vDiretorio):
         run('python2.7 %s%s syncdb' % (vDiretorio, 'manage.py'))
 
+def inicializaSouth():
+#    local(' python manage.py syncdb')
+    for iApp in AppList:
+        local(' python manage.py schemamigration %s --initial' % iApp)
+        local(' python manage.py migrate %s' % iApp)
+
+def criaSouthMigration():
+    for iApp in AppList:
+        local(' python manage.py schemamigration %s --auto' % iApp)
+        local(' python manage.py migrate %s' % iApp)
+
+def aplicaSouthMigration(vDiretorio):
+    with cd(vDiretorio):
+        for iApp in AppList:
+            run(' python manage.py migrate %s' % iApp)
+
 def reiniciaApache_remoto(vDiretorio):
     with cd(vDiretorio):
         run('./restart')
@@ -143,4 +160,5 @@ def deploy_teste():
     fetch_pull_remoto(iDiretorioApp, 'master')
     sincronizaBanco_remoto(iDiretorioApp)
     instalaDependencias_remoto(iDiretorioHelp)
+    aplicaSouthMigration(iDiretorioApp)
     reiniciaApache_remoto(iDiretorioApache)
