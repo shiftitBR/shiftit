@@ -83,6 +83,10 @@ def reiniciaApache_remoto(vDiretorio):
     with cd(vDiretorio):
         run('./restart')
 
+def instalaDependencias_remoto(vDiretorio):
+    with cd(vDiretorio):
+        run('pip install --quiet -r ../help/requirements.txt')
+
 def cria_pastaLog(vDiretorio):
     with cd(vDiretorio):
         run('mkdir %s%s' % (vDiretorio, 'log/')) 
@@ -130,12 +134,12 @@ def merge_branch():
 
 def deploy_teste():
     iDiretorioApache= '/home/shift/webapps/teste_shiftit/apache2/bin/'
-    iDiretorioApp= '/home/shift/webapps/teste_shiftit/PyProject_ShiftIT/'
+    iDiretorioApp= '/home/shift/webapps/teste_shiftit/git/PyProject_ShiftIT/PyProject_ShiftIT/'
     fetch()
     checkout('master')
     pull() #master
     roda_teste()    
     fetch_pull_remoto(iDiretorioApp, 'master')
     sincronizaBanco_remoto(iDiretorioApp)
-#    instalaDependencias_remoto()
+    instalaDependencias_remoto(iDiretorioApp)
     reiniciaApache_remoto(iDiretorioApache)
