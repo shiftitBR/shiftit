@@ -162,7 +162,19 @@ def deploy_teste():
     pull() #master
     roda_teste()    
     fetch_pull_remoto(iDiretorioApp, 'master')
-    #sincronizaBanco_remoto(iDiretorioApp)
+    instalaDependencias_remoto(iDiretorioHelp)
+    aplicaSouthMigration(iDiretorioApp)
+    reiniciaApache_remoto(iDiretorioApache)
+
+def deploy_producao():
+    iDiretorioApache= '/home/shift/webapps/shiftit/apache2/bin/'
+    iDiretorioApp= '/home/shift/webapps/shiftit/PyProject_ShiftIT/'
+    iDiretorioHelp= '/home/shift/webapps/shiftit/git/PyProject_ShiftIT/help/'
+    fetch()
+    checkout('producao')
+    pull() #producao
+    roda_teste()    
+    fetch_pull_remoto(iDiretorioApp, 'producao')
     instalaDependencias_remoto(iDiretorioHelp)
     aplicaSouthMigration(iDiretorioApp)
     reiniciaApache_remoto(iDiretorioApache)
