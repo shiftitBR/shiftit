@@ -4,7 +4,7 @@ from fabric.contrib.console import confirm
 
 import datetime
 
-env.hosts = ['shift@web380.webfaction.com']
+
 AppList=['autenticacao', 'bugtracker', 'comunicacao']
 
 
@@ -150,6 +150,7 @@ def merge_branch():
 #    reiniciaApache_remoto(iDiretorioApache)
 
 def deploy_teste():
+    env.hosts = ['shift@web380.webfaction.com']
     iDiretorioApache= '/home/shift/webapps/teste_shiftit/apache2/bin/'
     iDiretorioApp= '/home/shift/webapps/teste_shiftit/PyProject_ShiftIT/'
     iDiretorioHelp= '/home/shift/webapps/teste_shiftit/git/PyProject_ShiftIT/help/'
