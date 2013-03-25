@@ -4,8 +4,13 @@ from fabric.contrib.console import confirm
 
 import datetime
 
-env.hosts = ['shift@shift.webfactional.com']
+AppList=['autenticacao', 'bugtracker', 'comunicacao']
 
+def teste():
+    env.hosts = ['shift@web380.webfaction.com']
+
+def producao():
+    env.hosts = ['shift@web318.webfaction.com']
 
 def roda_teste():
     with settings(warn_only=True):
@@ -54,11 +59,14 @@ def checkout(vBranch):
     
 def pull():
     local('git pull')
+    
+def fetch():
+    local('git fetch')
 
-def fetch_pull_remoto(vDiretorio):
+def fetch_pull_remoto(vDiretorio, vBranch):
     with cd(vDiretorio):
-        run('git fetch')
-        run('git pull')
+        run('git fetch origin %s' % vBranch)
+        run('git pull origin %s' % vBranch)
 
 def clone_producao(vDiretorio):
     try:
@@ -76,9 +84,29 @@ def sincronizaBanco_remoto(vDiretorio):
     with cd(vDiretorio):
         run('python2.7 %s%s syncdb' % (vDiretorio, 'manage.py'))
 
+def inicializaSouth():
+#    local(' python manage.py syncdb')
+    for iApp in AppList:
+        local(' python manage.py schemamigration %s --initial' % iApp)
+        local(' python manage.py migrate %s' % iApp)
+
+def criaSouthMigration():
+    for iApp in AppList:
+        local(' python manage.py schemamigration %s --auto' % iApp)
+        local(' python manage.py migrate %s' % iApp)
+
+def aplicaSouthMigration(vDiretorio):
+    with cd(vDiretorio):
+        for iApp in AppList:
+            run(' python2.7 manage.py migrate %s' % iApp)
+
 def reiniciaApache_remoto(vDiretorio):
     with cd(vDiretorio):
         run('./restart')
+
+def instalaDependencias_remoto(vDiretorio):
+    with cd(vDiretorio):
+        run('pip-2.7 install --quiet -r requirements.txt')
 
 def cria_pastaLog(vDiretorio):
     with cd(vDiretorio):
@@ -94,33 +122,59 @@ def merge_branch():
     roda_teste()
     local('git push -u origin master')
         
-def deploy(vNovaVersao=False, vNomeTag=None):
-    iDiretorioProducao= '/home/shift/webapps/freelati/git/'
-    iDiretorioApache= '/home/shift/webapps/freelati/apache2/bin/'
-    iDiretorioApp= '/home/shift/webapps/freelati/git/PyProject_FreelaTI/src/PyProject_FreelaTI/'
-    iDiretorioArquivos= '/home/shift/webapps/freelati/arquivos/'
-    if vNovaVersao:
-        print '>>>>>>>>>>>>>>>>>>>> Nova versao'
-        checkout('master')
-        pull() #master
-        roda_teste()
-        cria_tag_master(vNomeTag)
-        push_tag() #master
-        cria_branch()
-        push_producao() 
-        cria_tag_producao(vNomeTag)
-        push_tag() #producao
-        clone_producao(iDiretorioProducao)
-        checkout_remoto(iDiretorioProducao)
-        cria_pastaLog(iDiretorioApp)
-        copia_settingsLocal(iDiretorioArquivos, iDiretorioApp)
-    else:
-        print '>>>>>>>>>>>>>>>>>>>> Versao atual'
-        checkout('producao')
-        pull() #producao
-        roda_teste()
-    
-    fetch_pull_remoto(iDiretorioProducao)
-    #roda_teste_remoto(iDiretorioApp)
-    sincronizaBanco_remoto(iDiretorioApp)
+#def deploy_producao(vNovaVersao=False, vNomeTag=None):
+#    iDiretorioProducao= '/home/shift/webapps/freelati/git/'
+#    iDiretorioApache= '/home/shift/webapps/freelati/apache2/bin/'
+#    iDiretorioApp= '/home/shift/webapps/freelati/git/PyProject_FreelaTI/src/PyProject_FreelaTI/'
+#    iDiretorioArquivos= '/home/shift/webapps/freelati/arquivos/'
+#    if vNovaVersao:
+#        print '>>>>>>>>>>>>>>>>>>>> Nova versao'
+#        checkout('master')
+#        pull() #master
+#        roda_teste()
+#        cria_tag_master(vNomeTag)
+#        push_tag() #master
+#        cria_branch()
+#        push_producao() 
+#        cria_tag_producao(vNomeTag)
+#        push_tag() #producao
+#        clone_producao(iDiretorioProducao)
+#        checkout_remoto(iDiretorioProducao)
+#        cria_pastaLog(iDiretorioApp)
+#        copia_settingsLocal(iDiretorioArquivos, iDiretorioApp)
+#    else:
+#        print '>>>>>>>>>>>>>>>>>>>> Versao atual'
+#        checkout('producao')
+#        pull() #producao
+#        roda_teste()
+#    
+#    fetch_pull_remoto(iDiretorioProducao)
+#    #roda_teste_remoto(iDiretorioApp)
+#    sincronizaBanco_remoto(iDiretorioApp)
+#    reiniciaApache_remoto(iDiretorioApache)
+
+def deploy_teste():
+    iDiretorioApache= '/home/shift/webapps/teste_shiftit/apache2/bin/'
+    iDiretorioApp= '/home/shift/webapps/teste_shiftit/PyProject_ShiftIT/'
+    iDiretorioHelp= '/home/shift/webapps/teste_shiftit/git/PyProject_ShiftIT/help/'
+    fetch()
+    checkout('master')
+    pull() #master
+    roda_teste()    
+    fetch_pull_remoto(iDiretorioApp, 'master')
+    instalaDependencias_remoto(iDiretorioHelp)
+    aplicaSouthMigration(iDiretorioApp)
+    reiniciaApache_remoto(iDiretorioApache)
+
+def deploy_producao():
+    iDiretorioApache= '/home/shift/webapps/shiftit/apache2/bin/'
+    iDiretorioApp= '/home/shift/webapps/shiftit/PyProject_ShiftIT/'
+    iDiretorioHelp= '/home/shift/webapps/shiftit/git/PyProject_ShiftIT/help/'
+    fetch()
+    checkout('producao')
+    pull() #producao
+    roda_teste()    
+    fetch_pull_remoto(iDiretorioApp, 'producao')
+    instalaDependencias_remoto(iDiretorioHelp)
+    aplicaSouthMigration(iDiretorioApp)
     reiniciaApache_remoto(iDiretorioApache)
