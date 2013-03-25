@@ -7,50 +7,76 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Shift it</title>
-        <meta name="description" content="A Shift it é uma Startup com a ideia de desenvolver softwares para web, buscando facilitar a vida das pessoas através do uso da internet.">
+        <title>Shift it - Desenvolvemos softwares web que buscam facilitar a vida das pessoas</title>
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         
-		<!-- CSS
+        <!-- CSS
 		================================================== -->
-        <link rel="stylesheet" href="{{ MEDIA_URL }}css/normalize.css">
-        <link rel="stylesheet" href="{{ MEDIA_URL }}css/main.css">
-        <link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
-        
-        <!-- FAVION
+        <link rel="stylesheet" href="{{MEDIA_URL}}css/normalize.css">
+        <link rel="stylesheet" href="{{MEDIA_URL}}css/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+		<!-- JS
+		================================================== -->
+		<script src="{{MEDIA_URL}}js/vendor/modernizr-2.6.2.min.js"></script>
+		
+		<!-- FAVION
 		================================================== -->
 		<link rel="shortcut icon" href="{{ MEDIA_URL }}img/icones/favicon.ico">
-		
-    </head>
 
-	<body>
-		<!--[if lt IE 7]>
-		    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-		<![endif]-->
-		
-		<div class="container">
-			<p><img src="{{ MEDIA_URL }}img/shiftit.png" id="logo"></p>
-			<p>A Shift it é uma Startup com a ideia de desenvolver softwares para web, buscando facilitar a vida das pessoas através do uso da internet. Para isso procuramos inovar, empreender, criar e por fim satisfazer.</p>
-		    <p>Estamos desenvolvendo nosso novo site. Entre em contato conosco através do email contato@shiftit.com.br ou utilizando o formulário abaixo.</p>
-		    <hr>
-			<div id="contato">
-				{% for message in messages %}
-			    	<p><strong>{{ message }}</strong></p>
-			    {% endfor %}
-			
-				<form method="post" class="col span_12">{% csrf_token %}
-				<fieldset>
-				<p><label for="contatoNome">Nome</label><input id="contatoNome" name="nome" type="text"></p>
-				<p><label for="contatoEmail">Email</label><input id="contatoEmail" name="email" type="email" required></p>
-				<p><label for="contatoTel">Telefone</label><input id="contatoTel" name="telefone" type="text"></p>
-				<p><label for="contatoMsg">Mensagem</label><textarea id="contatoMsg" name="mensagem"> </textarea></p>
-				</fieldset>
-				<p><button type="submit">ENVIAR</button></p>
-				</form>
-			</div>
-		</div>
-		
-		<!-- Google Analytics
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div class="container">
+            <div class="cabecalho shift" style="background:url('{{MEDIA_URL}}img/bg_shiftit.png'); background-size:cover;">
+                <img id="logo" src="{{MEDIA_URL}}img/shiftitmarca.png">
+                <p id="textologo">Desenvolvemos <strong>softwares web</strong><br>que buscam <strong>facilitar a vida das pessoas.</strong></p>
+            </div>
+            <div class="cabecalho menu">
+                <nav id="menuprincipal">
+                    <ul>
+                        <li><a href='/o_que_fazemos/'>O que fazemos</a></li>
+                        <li><a href='/como_fazemos/'>Como fazemos</a></li>
+                        <li><a href='/time/'>Conheça o time</a></li>
+                        <li><a href='/contato/'>Contato</a></li>
+                    </ul>
+                </nav>
+                <a href='/'><img id="logomenu" src="{{MEDIA_URL}}img/shiftitmarcamenu.png"></a>
+            </div>
+            <div class="cabecalho introducao" style="background:url('{{MEDIA_URL}}img/bg_intro_landing.png'); background-size:cover;">
+                <div class="centratexto">
+                    <p>Somos uma empresa de <em>desenvolvimento para web</em> sediada em Florianópolis, Santa catarina.<br>
+                    Trabalhamos com metodologias ágeis e buscamos desenvolver <em>soluções simples</em> e <em>escaláveis</em><br>
+                    para produtos em fase inicial de desenvolvimento.</p>
+                </div>
+            </div>
+            <div class="conteudoprincipal">
+                <div style="width:960px;margin: 0 auto;clear:both;">
+                    <p>Teste</p>
+                    <div class="blocodetexto">
+                        <p>With so many robust open source technologies available for web development, it pays to know which best suits your needs. This is where Crystalnix is strongest, as we have wide experience and skill between Django, Tornado, HTML5, jQuery technologies, as well as many of the new technologies that frequently surface.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rodape">
+                Bla bla bla
+            </div>
+        </div>
+
+		<!-- JS
+		================================================== -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+        <script src="{{MEDIA_URL}}js/plugins.js"></script>
+        <script src="{{MEDIA_URL}}js/main.js"></script>
+        
+        <!-- Google Analytics
 		================================================== -->
 		<script type="text/javascript">
 		  var _gaq = _gaq || [];
@@ -63,23 +89,5 @@
 		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  })();
 		</script>
-	</body>
+    </body>
 </html>
-
-
-	<!-- Home
-	================================================== 
-	<div>
-		
-		<p>Home</p>
-		
-		<p><a href="/painel_de_controle/">Painel de Controle</a></p>
-		
-		<p><a href="/contato/">Contato</a></p>
-		
-		<p><a href="/briefing/">Briefing</a></p>
-		
-	</div>	
-	
-	Fecha container
-	================================================== -->

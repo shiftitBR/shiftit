@@ -92,44 +92,217 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-body {
-    background: #f4f4f4;
-    font-family: 'PT Mono', sans-serif;
-}
 
-#logo {
-    width:300px;
-    display: block;
-    margin:0 auto;
+body {
+    background: url(../img/bg_textura.png);
+    font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .container {
-    width:580px;
+    width:100%;
     margin: 0 auto;
+    position: relative;
+    background-color: ;
 }
 
-#contato label {
-  width:20.5%;
-  margin-right: 2%;
-  float: left;
-  display: inline-block;
+.cabecalho {
+    width: 100%;
 }
 
-#contato input {
-  padding: 1%;
-  width:74.5%;
-  border: 1px solid #aeaeae;
+.shift {
+    height:400px;
+    top: 0;
+    background-color: #efefef;
 }
 
-#contato textarea {
-  padding: 1%;
-  width:74.5%;
-  border: 1px solid #aeaeae;
+#logo {
+    margin: 0 auto;
+    padding-top: 110px;
+    display: block;
+    width: 250px;
+    height:56px;
 }
 
-#contato button {
-  margin-left: 22.5%;
-  padding: 1% 5%;
+#textologo {
+    margin: 80px auto;
+    text-align: center;
+    font-size: 18pt;
+}
+
+.menu {
+    height: 75px;
+    background: #8CC63F;
+}
+
+#logomenu {
+    margin: 26px 30px 26px 30px;
+    float:right;
+    width: 103px;
+    height: 23px;
+}
+
+.introducao {
+    height: 250px;
+    background-color: #333333;
+    color: #E0A131;
+    text-align: center;
+}
+
+.centratexto {
+    height: 84px;
+    top: 83px;
+    position: relative;
+}
+
+.introducao p {
+    margin: 0 0 0 0;
+    font-size: 14pt;
+}
+
+.introducao em {
+    font-style: normal;
+    color: #fff;
+}
+
+#menuprincipal ul {
+    display: block;
+    float: left;
+}
+    #menuprincipal ul li {
+        font-size: 14pt;
+        font-weight: normal;
+        color:#fff;
+        line-height: 23px;
+
+        display: inline-block;
+        margin:10px 30px auto auto;
+    }
+
+.conteudoprincipal {
+    background-color: #E6E6E6;
+    padding-top:55px;
+    width: 100%;
+    float:left;
+    position: relative;
+}
+
+.blocodetexto {
+    position:relative;
+    width: 560px;
+    float: right;
+    font-family: 'Open Sans';
+    font-weight: 300;
+}
+
+#shiftitbrasao {
+    margin: 0 auto;
+    display: block;
+    width: 240px;
+    height: 230px;
+    position:relative;
+}
+
+#timealexandre {
+    width:215px;
+    height: 215px;
+    display: block;
+    margin: 0 auto;
+    top: 135px;
+    position: relative;
+}
+
+#timediego {
+    width:215px;
+    height: 215px;
+    display: block;
+    margin: 0 auto;
+    top: 35px;
+    position: relative;
+}
+
+#timeglauco {
+    width:215px;
+    height: 215px;
+    display: block;
+    margin: 0 auto;
+    top: 135px;
+    position: relative;
+}
+
+.div33 {
+    width: 33%;
+    float:left;
+    position: relative;
+}
+
+.destaque {
+    font-size:18pt;
+    text-align: center;
+}
+
+.rodape {
+    width:100%;
+    background-color: #333;
+    color: #fff;
+    font-family: 'Opens Sans', sans-serif;
+    font-weight: 300;
+}
+
+/* CSS Flip Cards */
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+
+}
+  /* flip the pane when hovered */
+  .flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+  }
+
+.flip-container, .front, .back {
+  width: 215px;
+  height: 215px;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+
+  -moz-transition: 0.6s;
+  -moz-transform-style: preserve-3d;
+
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
 }
 
 /* ==========================================================================

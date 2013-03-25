@@ -34,3 +34,31 @@ def home(vRequest, vTitulo):
         locals(),
         context_instance=RequestContext(vRequest),
         )
+
+
+def time(vRequest, vTitulo):
+    iUsuario           = Usuario().obtemUsuario(vRequest.user.id)
+    
+    return render_to_response(
+        'time/time.html',
+        locals(),
+        context_instance=RequestContext(vRequest),
+        )
+    
+def como_fazemos(vRequest, vTitulo):
+    iUsuario           = Usuario().obtemUsuario(vRequest.user.id)
+    
+    return render_to_response(
+        'como_fazemos/como_fazemos.html',
+        locals(),
+        context_instance=RequestContext(vRequest),
+        )
+    
+def o_que_fazemos(vRequest, vTitulo):
+    iUsuario           = Usuario().obtemUsuario(vRequest.user.id)
+    
+    return render_to_response(
+        'o_que_fazemos/o_que_fazemos.html',
+        locals(),
+        context_instance=RequestContext(vRequest),
+        )

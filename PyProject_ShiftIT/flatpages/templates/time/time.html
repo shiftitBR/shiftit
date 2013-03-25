@@ -1,0 +1,59 @@
+{% extends "base.html"%}
+{% load i18n %}
+{% block conteudo %}
+
+	<div class="cabecalho introducao" style="background:url('{{ MEDIA_URL }}img/bg_intro_otime.png'); background-size:cover;">
+	    <div class="centratexto">
+	        <p>Prezamos pela simplicidade em todos os momentos. Buscamos manter nossa equipe<br>
+			enxuta e equilibrada, contando com membros que podem desempenhar suas funções de forma integrada.<br>
+			Mais que talentos individuais, formamos uma <em>equipe eficiente</em>.
+			</p>
+	    </div>
+	</div>
+	<div class="conteudoprincipal">
+	    <div style="width:960px;height:525px;margin: 0 auto;clear:both;">
+	    <div class="div33">
+	        <div id="timealexandre">
+	            <div class="flip-container">
+	              <div class="flipper">
+	                <div class="front" style="background-image: url('{{ MEDIA_URL }}img/time_alexandre.png'); background-size: cover;">
+	                </div>
+	                <div class="back" style="background-image: url('{{ MEDIA_URL }}img/time_alexandre_back.png'); background-size: cover;">
+	                </div>
+	              </div>
+	            </div>
+	        </div>
+	    </div>
+	
+	    <div class="div33">
+	        <img id="shiftitbrasao" src="{{ MEDIA_URL }}img/shiftitbrasao.png">
+	        <div id="timediego">
+	            <div class="flip-container">
+	              <div class="flipper">
+	                <div class="front" style="background-image: url('{{ MEDIA_URL }}img/time_diego.png'); background-size: cover;">
+	                </div>
+	                <div class="back" style="background-image: url('{{ MEDIA_URL }}img/time_diego_back.png'); background-size: cover;">
+	                </div>
+	              </div>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="div33">
+	        <div id="timeglauco">
+	             <div class="flip-container">
+	              <div class="flipper">
+	                <div class="front" style="background-image: url('{{ MEDIA_URL }}img/time_glauco.png'); background-size: cover;">
+	                </div>
+	                <div class="back" style="background-image: url('{{ MEDIA_URL }}img/time_glauco_back.png'); background-size: cover;">
+	                </div>
+	              </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div style="clear:both;">
+	    <p class="destaque">Para nos auxiliar contamos com a ajuda<br>de <strong>parceiros estratégicos</strong> que complementam nossos serviços.</p>
+	</div>
+	</div>
+
+{% endblock conteudo %}
