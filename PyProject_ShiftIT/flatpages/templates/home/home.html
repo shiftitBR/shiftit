@@ -18,11 +18,17 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
+ 		<!-- CSS - Slider
+		================================================== -->
+		<link rel="stylesheet" href="{{MEDIA_URL}}slider/css/default.css" type="text/css" media="screen" />
+	    <link rel="stylesheet" href="{{MEDIA_URL}}slider/css/nivo-slider.css" type="text/css" media="screen" />
+	    <link rel="stylesheet" href="{{MEDIA_URL}}slider/css/style.css" type="text/css" media="screen" />
+
 		<!-- JS
 		================================================== -->
 		<script src="{{MEDIA_URL}}js/vendor/modernizr-2.6.2.min.js"></script>
 		
-		<!-- FAVION
+		<!-- FAVICON
 		================================================== -->
 		<link rel="shortcut icon" href="{{ MEDIA_URL }}img/icones/favicon.ico">
 
@@ -32,13 +38,18 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
         <div class="container">
-            <div class="cabecalho shift" style="background:url('{{MEDIA_URL}}img/bg_shiftit.png'); background-size:cover;">
-                <img id="logo" src="{{MEDIA_URL}}img/shiftitmarca.png">
-                <p id="textologo">Desenvolvemos <strong>softwares web</strong><br>que buscam <strong>facilitar a vida das pessoas.</strong></p>
-            </div>
-            <div class="cabecalho menu">
+        	
+            <div id="wrapper">
+		        <div class="slider-wrapper theme-default cabecalho shift">
+		            <div id="slider" class="nivoSlider">
+		                <img src="{{MEDIA_URL}}img/bg_shiftit.png" alt=""  />
+		                <img src="http://images2.layoutsparks.com/1/184460/rudolf-should-been-girl.gif" alt="" />
+		            </div>
+		        </div>
+		    </div>
+            
+            <div class="cabecalho menulanding">
                 <nav id="menuprincipal">
                     <ul>
                         <li><a href='/o_que_fazemos/'>O que fazemos</a></li>
@@ -49,6 +60,7 @@
                 </nav>
                 <a href='/'><img id="logomenu" src="{{MEDIA_URL}}img/shiftitmarcamenu.png"></a>
             </div>
+            
             <div class="cabecalho introducao" style="background:url('{{MEDIA_URL}}img/bg_intro_landing.png'); background-size:cover;">
                 <div class="centratexto">
                     <p>Somos uma empresa de <em>desenvolvimento para web</em> sediada em Florianópolis, Santa catarina.<br>
@@ -58,15 +70,39 @@
             </div>
             <div class="conteudoprincipal">
                 <div style="width:960px;margin: 0 auto;clear:both;">
-                    <p>Teste</p>
-                    <div class="blocodetexto">
-                        <p>With so many robust open source technologies available for web development, it pays to know which best suits your needs. This is where Crystalnix is strongest, as we have wide experience and skill between Django, Tornado, HTML5, jQuery technologies, as well as many of the new technologies that frequently surface.</p>
+                    <div class="div44">
+                        <h2>Teste</h2>
+                        <p>Todas estas questões, devidamente ponderadas, levantam dúvidas sobre se o acompanhamento das preferências de consumo exige a precisão e a definição dos paradigmas corporativos.</p>
+                    </div>
+
+                    <div class="div44 margin44">
+                        <h2>Teste</h2>
+                        <p>O que temos que ter sempre em mente é que o acompanhamento das preferências de consumo aponta para a melhoria das condições financeiras e administrativas exigidas.</p>
+                    </div>
+
+                    <div class="div44">
+                        <h2>Teste</h2>
+                        <p>Todas estas questões, devidamente ponderadas, levantam dúvidas sobre se o acompanhamento das preferências de consumo exige a precisão e a definição dos paradigmas corporativos.</p>
+                    </div>
+
+                    <div class="div44 margin44">
+                        <h2>Teste</h2>
+                        <p>O que temos que ter sempre em mente é que o acompanhamento das preferências de consumo aponta para a melhoria das condições financeiras e administrativas exigidas.</p>
                     </div>
                 </div>
             </div>
+            
             <div class="rodape">
-                Bla bla bla
-            </div>
+		        <div class ="facebookrodape">
+		            <a href='https://www.facebook.com/ShiftIT.br' target='_blank'><img src="{{MEDIA_URL}}img/facebookshift.png"></a>
+		            <a href='https://www.facebook.com/ShiftIT.br' target='_blank'><p>Curta nossa página no facebook!</p></a>
+		        </div>
+		        <div class="marcarodape">
+		            <img src="{{MEDIA_URL}}img/shiftitmarcarodape.png">
+		            <p>Todos os direitos reservados © 2013</p>
+		        </div>
+		    </div>
+		    
         </div>
 
 		<!-- JS
@@ -75,6 +111,16 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
         <script src="{{MEDIA_URL}}js/plugins.js"></script>
         <script src="{{MEDIA_URL}}js/main.js"></script>
+        
+        <!-- JS - Slider
+		================================================== -->
+        <script type="text/javascript" src="{{MEDIA_URL}}slider/js/jquery-1.9.0.min.js"></script>
+	    <script type="text/javascript" src="{{MEDIA_URL}}slider/js/jquery.nivo.slider.js"></script>
+	    <script type="text/javascript">
+		    $(window).load(function() {
+		        $('#slider').nivoSlider();
+		    });
+	    </script>
         
         <!-- Google Analytics
 		================================================== -->
@@ -89,5 +135,6 @@
 		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  })();
 		</script>
+		
     </body>
 </html>

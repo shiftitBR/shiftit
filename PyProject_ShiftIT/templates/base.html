@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="{{MEDIA_URL}}css/normalize.css">
         <link rel="stylesheet" href="{{MEDIA_URL}}css/main.css">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 
 		<!-- JS
 		================================================== -->
@@ -50,7 +50,17 @@
 		    {% block conteudo %}
 		    {% endblock conteudo %}
 		    
-		    {% include "rodape.html" %}
-	    </div>
+			<div class="rodape">
+		        <div class ="facebookrodape">
+		            <a href='https://www.facebook.com/ShiftIT.br' target='_blank'><img src="{{MEDIA_URL}}img/facebookshift.png"></a>
+		            <a href='https://www.facebook.com/ShiftIT.br' target='_blank'><p>Curta nossa página no facebook!</p></a>
+		        </div>
+		        <div class="marcarodape">
+		            <img src="{{MEDIA_URL}}img/shiftitmarcarodape.png">
+		            <p>Todos os direitos reservados © 2013</p>
+		        </div>
+		    </div>
+		
+		</div>
   </body>
 </html>
