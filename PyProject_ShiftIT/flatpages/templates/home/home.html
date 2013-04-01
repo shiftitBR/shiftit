@@ -31,7 +31,7 @@
 		<!-- FAVICON
 		================================================== -->
 		<link rel="shortcut icon" href="{{ MEDIA_URL }}img/icones/favicon.ico">
-
+		
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -43,28 +43,33 @@
             <div id="wrapper">
 		        <div class="slider-wrapper theme-default cabecalho shift">
 		            <div id="slider" class="nivoSlider">
-		                <img src="{{MEDIA_URL}}img/bg_shiftit.png" alt=""  />
-		                <img src="http://images2.layoutsparks.com/1/184460/rudolf-should-been-girl.gif" alt="" />
+		                <img src="http://houseoflowers.com/wp-content/uploads/2013/03/Green-bubbles-awesome-background-wallpaper.jpg" alt="" />
+		                <img src="http://pascocountyflattorney.com/wp-content/uploads/2012/07/tokyo-blue-background-4547.jpg" alt="" />
+		                <img src="http://coolwallpaperz.info/user-content/uploads/wall/o/51/rainbow-abstract-background-free-2384131.jpg" alt="" />
 		            </div>
 		        </div>
 		    </div>
-            
-            <div class="cabecalho menulanding">
-                <nav id="menuprincipal">
-                    <ul>
-                        <li><a href='/o_que_fazemos/'>O que fazemos</a></li>
-                        <li><a href='/como_fazemos/'>Como fazemos</a></li>
-                        <li><a href='/time/'>Conheça o time</a></li>
-                        <li><a href='/contato/'>Contato</a></li>
-                    </ul>
-                </nav>
-                <a href='/'><img id="logomenu" src="{{MEDIA_URL}}img/shiftitmarcamenu.png"></a>
+		    
+            <div id="sticky_navigation_wrapper">
+            	<div id="sticky_navigation">
+		            <div class="cabecalho menulanding">
+		                <nav id="menuprincipal">
+		                    <ul>
+		                        <li><a href='/o_que_fazemos/'>O que fazemos</a></li>
+		                        <li><a href='/como_fazemos/'>Como fazemos</a></li>
+		                        <li><a href='/time/'>Conheça o time</a></li>
+		                        <li><a href='/contato/'>Contato</a></li>
+		                    </ul>
+		                </nav>
+		                <a href='/'><img id="logomenu" src="{{MEDIA_URL}}img/shiftitmarcamenu.png"></a>
+		            </div>
+            	</div>
             </div>
             
-            <div class="cabecalho introducao" style="background:url('{{MEDIA_URL}}img/bg_intro_landing.png'); background-size:cover;">
+            <div class="cabecalho introducaolanding" style="background:url('{{MEDIA_URL}}img/bg_intro_landing.png'); background-size:cover;">
                 <div class="centratexto">
-                    <p>Somos uma empresa de <em>desenvolvimento para web</em> sediada em Florianópolis, Santa catarina.<br>
-                    Trabalhamos com metodologias ágeis e buscamos desenvolver <em>soluções simples</em> e <em>escaláveis</em><br>
+                    <p>Somos uma empresa de <em>desenvolvimento para web</em> sediada em Florianópolis, Santa catarina.</p>
+                    <p>Trabalhamos com metodologias ágeis e buscamos desenvolver <em>soluções simples</em> e <em>escaláveis</em><br>
                     para produtos em fase inicial de desenvolvimento.</p>
                 </div>
             </div>
@@ -93,27 +98,54 @@
             </div>
             
             <div class="rodape">
-		        <div class ="facebookrodape">
-		            <a href='https://www.facebook.com/ShiftIT.br' target='_blank'><img src="{{MEDIA_URL}}img/facebookshift.png"></a>
-		            <a href='https://www.facebook.com/ShiftIT.br' target='_blank'><p>Curta nossa página no facebook!</p></a>
-		        </div>
-		        <div class="marcarodape">
-		            <img src="{{MEDIA_URL}}img/shiftitmarcarodape.png">
-		            <p>Todos os direitos reservados © 2013</p>
-		        </div>
-		    </div>
-		    
+                <div class ="facebookrodape">
+                    <img src="{{MEDIA_URL}}img/facebookshift.png">
+                    <p><a href="https://www.facebook.com/ShiftIT.br">Curta nossa página no facebook!</a></p>
+                </div>
+                <div class="marcarodape">
+                    <img src="{{MEDIA_URL}}img/shiftitmarcarodape.png">
+                    <p>Todos os direitos reservados © 2013</p>
+                </div>
+            </div>
+            
         </div>
 
 		<!-- JS
-		================================================== -->
+		==================================================-->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
         <script src="{{MEDIA_URL}}js/plugins.js"></script>
         <script src="{{MEDIA_URL}}js/main.js"></script>
         
+        <!-- Stick Navigation
+		==================================================-->
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	    <script>
+			$(function() {
+				// grab the initial top offset of the navigation 
+				var sticky_navigation_offset_top = $('#sticky_navigation').offset().top;
+				// our function that decides weather the navigation bar should have "fixed" css position or not.
+				var sticky_navigation = function(){
+					var scroll_top = $(window).scrollTop(); // our current vertical position from the top
+					
+					// if we've scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
+					if (scroll_top > sticky_navigation_offset_top) { 
+						$('#sticky_navigation').css({ 'position': 'fixed', 'top':0, 'left':0 });
+					} else {
+						$('#sticky_navigation').css({ 'position': 'relative' }); 
+					}   
+				};
+				// run our function on load
+				sticky_navigation();
+				// and run it again every time you scroll
+				$(window).scroll(function() {
+					 sticky_navigation();
+				});
+			});
+		</script>
+        
         <!-- JS - Slider
-		================================================== -->
+		==================================================-->
         <script type="text/javascript" src="{{MEDIA_URL}}slider/js/jquery-1.9.0.min.js"></script>
 	    <script type="text/javascript" src="{{MEDIA_URL}}slider/js/jquery.nivo.slider.js"></script>
 	    <script type="text/javascript">
@@ -121,9 +153,9 @@
 		        $('#slider').nivoSlider();
 		    });
 	    </script>
-        
+	    
         <!-- Google Analytics
-		================================================== -->
+		==================================================-->
 		<script type="text/javascript">
 		  var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-26439740-1']);

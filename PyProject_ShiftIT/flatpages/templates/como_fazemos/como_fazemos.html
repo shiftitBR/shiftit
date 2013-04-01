@@ -4,12 +4,23 @@
 
     <div class="cabecalho introducao" style="background:url('{{ MEDIA_URL }}img/bg_intro_comofazemos.png'); background-size:cover;">
         <div class="centratexto">
-            <p>Utilizamos primordialmente tecnologias <em>open source</em><br> e <em>metodologias ágeis</em> a fim de alcançar uma entrega rápida e personalizada.</p>
+            <p>Utilizamos primordialmente tecnologias <em>open source</em><br>
+e <em>metodologias ágeis</em> a fim de alcançar uma entrega rápida e personalizada.</p>
         </div>
     </div>
+    
     <div class="conteudoprincipal">
-    	<p>teste</p>
-    	<br><br><br><br><br><br>
+        <ul id="comotecnologias">
+            <li><img src="{{MEDIA_URL}}img/python-pb.png"></li>
+            <li><img src="{{MEDIA_URL}}img/django-pb.png"></li>
+            <li><img src="{{MEDIA_URL}}img/postgres-pb.png"></li>
+            <li><img src="{{MEDIA_URL}}img/html5-pb.png"></li>
+            <li><img src="{{MEDIA_URL}}img/css3-pb.png"></li>
+        </ul>
+
+        <p class="destaque">Somos uma equipe autogerenciada e utilizamos uma metodologia de trabalho<br> baseada no SCRUM para nortear a execução dos nossos projetos<br> e manter o foco nos objetivos do cliente.</p>
+
+        <figure><img src="{{MEDIA_URL}}img/processodev.png" id="processodev"></figure>
     </div>
 
 {% endblock conteudo %}
