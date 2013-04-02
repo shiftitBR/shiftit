@@ -191,8 +191,18 @@ body {
         line-height: 23px;
 
         display: inline-block;
-        margin:10px 30px auto auto;
+        margin:5px 30px auto auto;
+        padding: 5px 15px;
+        border-radius: 5px;
     }
+        #menuprincipal ul li:hover {
+            box-shadow: inset 1px 1px 10px #3A4D21;
+        }
+    #menuprincipal ul li a {
+        text-decoration: none;
+        color: #fff;
+    }
+
 
 .conteudoprincipal {
     background-color: #E6E6E6;
@@ -202,6 +212,16 @@ body {
     float:left;
     position: relative;
 }
+
+.conteudoprincipal a {
+    text-decoration: none;
+    display: inline-block;
+    color: #333;
+    border-bottom: 1px solid #E02634;
+}
+    .conteudoprincipal a:hover {
+            border-bottom: 1px solid #E0A131;
+    }
 
 .blocodetexto {
     position:relative;
@@ -634,6 +654,5 @@ body {
         page-break-after: avoid;
     }
 }
-
 #sticky_navigation_wrapper { width:100%; height:50px; z-index: 999;}
 #sticky_navigation { width:100%; height:50px; z-index: 999;}
