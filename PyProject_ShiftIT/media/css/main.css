@@ -196,7 +196,8 @@ body {
         border-radius: 5px;
     }
         #menuprincipal ul li:hover {
-            box-shadow: inset 1px 1px 10px #3A4D21;
+            box-shadow: inset 0px 0px 10px #000;
+            background-color: #233210;
         }
     #menuprincipal ul li a {
         text-decoration: none;
@@ -223,6 +224,10 @@ body {
             border-bottom: 1px solid #E0A131;
     }
 
+.conteudoprincipal img {
+    width:100%;
+}
+
 .blocodetexto {
     position:relative;
     width: 560px;
@@ -238,15 +243,82 @@ body {
     margin: 0 auto;
 }
 
+#comotecnologias li {
+    display: inline-block;
+    margin: 0 4%;
+}
+
+#comotecnologias li:nth-child(1) {
+    width:207px;
+    height:60px;
+    background-image:url(../img/python-pb.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+    #comotecnologias li:nth-child(1):hover {
+        width:207px;
+        height:60px;
+        background-image:url(../img/python-cor.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+#comotecnologias li:nth-child(2) {
+    width:114px;
+    height:60px;
+    background-image:url(../img/django-pb.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+    #comotecnologias li:nth-child(2):hover {
+        background-image:url(../img/django-cor.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+#comotecnologias li:nth-child(3) {
+    width:186px;
+    height:60px;
+    background-image:url(../img/postgres-pb.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+    #comotecnologias li:nth-child(3):hover {
+        background-image:url(../img/postgres-cor.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+#comotecnologias li:nth-child(4) {
+    width:43px;
+    height:60px;
+    background-image:url(../img/html5-pb.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+    #comotecnologias li:nth-child(4):hover {
+        background-image:url(../img/html5-cor.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+#comotecnologias li:nth-child(5) {
+    width:43px;
+    height:60px;
+    background-image:url(../img/css3-pb.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+    #comotecnologias li:nth-child(5):hover {
+        background-image:url(../img/css3-cor.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
 #processodev {
     width:850px;
     display:block;
     margin: 0 auto;
-}
-
-#comotecnologias li {
-    display: inline-block;
-    margin: 0 4%;
 }
 
 #shiftitbrasao {
@@ -399,13 +471,17 @@ body {
 
 #contato button {
   margin-left: 25.5%;
-  padding: 1% 5%;
+  padding: 5px 15px;
   background-color: #8CC63F;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 14pt;
+  font-weight: bold;
   border: 0;
   border-radius: 5px;
 }
+    #contato button:hover {
+        box-shadow: inset 0px 0px 10px #69952F;
+    }
 
 /* CSS Flip Cards */
 /* entire container, keeps perspective */
@@ -654,5 +730,6 @@ body {
         page-break-after: avoid;
     }
 }
+
 #sticky_navigation_wrapper { width:100%; height:50px; z-index: 999;}
 #sticky_navigation { width:100%; height:50px; z-index: 999;}
