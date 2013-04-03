@@ -163,6 +163,7 @@ body {
     background-color: #333333;
     color: #E0A131;
     text-align: center;
+    text-shadow: 1px 1px 0px #000;
 }
 
 .centratexto {
@@ -743,5 +744,5 @@ a.imglink {
     }
 }
 
-#sticky_navigation_wrapper { width:100%; height:50px; z-index: 999;}
-#sticky_navigation { width:100%; height:50px; z-index: 999;}
+#sticky_navigation_wrapper { width:100%; height:75px; z-index: 999;}
+#sticky_navigation { width:100%; height:75px; z-index: 999;}
