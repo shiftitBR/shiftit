@@ -154,6 +154,7 @@ body {
     background-color: #333333;
     color: #E0A131;
     text-align: center;
+    text-shadow: 1px 1px 0px #000;
     padding-top:75px;
 }
 
@@ -172,7 +173,8 @@ body {
 
 .introducao p, .introducaolanding p {
     margin: 0 0 0 0;
-    font-size: 14pt;
+    font-size: 24pt;
+    font-weight: bold;
 }
 
 .introducao em, .introducaolanding em {
@@ -223,6 +225,16 @@ body {
     .conteudoprincipal a:hover {
             border-bottom: 1px solid #E0A131;
     }
+
+a.imglink {
+    text-decoration: none;
+    border: none;
+}
+    a.imglink:hover {
+    text-decoration: none;
+    border: none;
+}
+
 
 .conteudoprincipal img {
     width:100%;
