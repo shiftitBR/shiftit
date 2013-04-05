@@ -112,19 +112,25 @@ body {
 .shift {
     height:400px;
     top: 0;
-    background-color: #efefef;
+}
+
+.circulo {
+    height:400px;
+    width:400px;
+    margin: 0 auto;
+    background-image: url(../img/shift-circulo.png);
 }
 
 #logo {
     margin: 0 auto;
-    padding-top: 110px;
+    padding-top: 140px;
     display: block;
     width: 250px;
     height:56px;
 }
 
 #textologo {
-    margin: 80px auto;
+    margin: 30px auto;
     text-align: center;
     font-size: 18pt;
 }
@@ -163,7 +169,6 @@ body {
     background-color: #333333;
     color: #E0A131;
     text-align: center;
-    text-shadow: 1px 1px 0px #000;
 }
 
 .centratexto {
@@ -174,7 +179,7 @@ body {
 
 .introducao p, .introducaolanding p {
     margin: 0 0 0 0;
-    font-size: 24pt;
+    font-size: 21pt;
     font-weight: bold;
 }
 
@@ -239,6 +244,12 @@ a.imglink {
 
 .conteudoprincipal img {
     width:100%;
+}
+
+.cases {
+	font-size: 28pt;
+	font-weight: bold;
+	text-align: center;
 }
 
 .blocodetexto {
@@ -327,6 +338,10 @@ a.imglink {
         background-position: center center;
         background-repeat: no-repeat;
     }
+.textocomofazemos {
+    font-family:'Open Sans';
+    font-weight:300;
+}
 
 #processodev {
     width:850px;
@@ -367,6 +382,12 @@ a.imglink {
     margin: 0 auto;
     top: 135px;
     position: relative;
+}
+
+.div960 {
+    width:960px;
+    margin: 0 auto;
+    clear: both;
 }
 
 .div33 {
