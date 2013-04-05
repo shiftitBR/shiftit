@@ -16,7 +16,7 @@ class Email(models.Model):
     nome                = models.CharField(max_length=500, verbose_name='Nome') 
     email               = models.CharField(max_length=500, verbose_name='E-mail') 
     telefone            = models.CharField(max_length=500, verbose_name='Telefone') 
-    mensagem            = models.CharField(max_length=10000, verbose_name='Mensagem') 
+    mensagem            = models.TextField(max_length=10000, verbose_name='Mensagem') 
     data                = models.DateTimeField(null= True, verbose_name='Data')
         
     class Meta:
