@@ -66,7 +66,7 @@ class Contato(models.Model):
         
 class Pergunta_Contato(models.Model):
     id_pergunta_contato = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
-    pergunta            = models.CharField(max_length=500, verbose_name='Pergunta') 
+    pergunta            = models.TextField(max_length=500, verbose_name='Pergunta') 
         
     class Meta:
         db_table= 'tb_pergunta_contato'
@@ -99,7 +99,7 @@ class Resposta_Contato(models.Model):
     id_resposta_contato = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     pergunta            = models.ForeignKey(Pergunta_Contato, null= False, verbose_name='Pergunta')
     contato             = models.ForeignKey(Contato, null= False, verbose_name='Contato')
-    resposta            = models.CharField(max_length=500, verbose_name='Resposta') 
+    resposta            = models.TextField(max_length=500, verbose_name='Resposta') 
         
     class Meta:
         db_table= 'tb_resposta_contato'

@@ -123,10 +123,10 @@ body {
 
 #logo {
     margin: 0 auto;
-    padding-top: 160px;
+    padding-top: 140px;
     display: block;
-    width: 310px;
-    height:86px;
+    width: 250px;
+    height:56px;
 }
 
 #textologo {
@@ -246,12 +246,6 @@ a.imglink {
     width:100%;
 }
 
-.cases {
-	font-size: 28pt;
-	font-weight: bold;
-	text-align: center;
-}
-
 .blocodetexto {
     position:relative;
     width: 560px;
@@ -260,84 +254,24 @@ a.imglink {
     font-weight: 300;
 }
 
-#comotecnologias {
-    list-style: none;
-    display: block;
-    width:80%;
-    margin: 0 auto;
+.iconesalinhados {
+    text-align: center;
 }
 
-#comotecnologias li {
-    display: inline-block;
-    margin: 0 4%;
+.iconesalinhados a {
+    width:auto;
+    margin: auto 1%;
+    border:none;
 }
-
-#comotecnologias li:nth-child(1) {
-    width:207px;
-    height:60px;
-    background-image:url(../img/python-pb.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-    #comotecnologias li:nth-child(1):hover {
-        width:207px;
-        height:60px;
-        background-image:url(../img/python-cor.png);
-        background-position: center center;
-        background-repeat: no-repeat;
+    .iconesalinhados a:hover {
+        border:none;
     }
 
-#comotecnologias li:nth-child(2) {
-    width:114px;
-    height:60px;
-    background-image:url(../img/django-pb.png);
-    background-position: center center;
-    background-repeat: no-repeat;
+.iconesalinhados img {
+    width:auto;
+    margin: auto 1%;
 }
-    #comotecnologias li:nth-child(2):hover {
-        background-image:url(../img/django-cor.png);
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
 
-#comotecnologias li:nth-child(3) {
-    width:186px;
-    height:60px;
-    background-image:url(../img/postgres-pb.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-    #comotecnologias li:nth-child(3):hover {
-        background-image:url(../img/postgres-cor.png);
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-
-#comotecnologias li:nth-child(4) {
-    width:43px;
-    height:60px;
-    background-image:url(../img/html5-pb.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-    #comotecnologias li:nth-child(4):hover {
-        background-image:url(../img/html5-cor.png);
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-
-#comotecnologias li:nth-child(5) {
-    width:43px;
-    height:60px;
-    background-image:url(../img/css3-pb.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-    #comotecnologias li:nth-child(5):hover {
-        background-image:url(../img/css3-cor.png);
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
 .textocomofazemos {
     font-family:'Open Sans';
     font-weight:300;
@@ -383,6 +317,15 @@ a.imglink {
     top: 135px;
     position: relative;
 }
+
+.redessociaistime {
+    width:100%;
+    text-align: center;
+    margin-top:1em;
+}
+    .redessociaistime a {
+        border: none;
+    }
 
 .div960 {
     width:960px;

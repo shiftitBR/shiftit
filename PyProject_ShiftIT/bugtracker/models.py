@@ -106,7 +106,7 @@ class Bug(models.Model):
     id_bug              = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     usuario             = models.ForeignKey(Usuario, null= False, blank=True, verbose_name='Usuário')
     tipo_prioridade     = models.ForeignKey(Tipo_Prioridade, null= False, blank=True, verbose_name='Tipo Prioridade')
-    descricao           = models.CharField(max_length=500, blank=True, verbose_name='Descrição') 
+    descricao           = models.TextField(max_length=500, blank=True, verbose_name='Descrição') 
     nome_contato        = models.CharField(max_length=200, blank=True, verbose_name='Nome de Contato')
     email_contato       = models.CharField(max_length=200, blank=True, verbose_name='Email')
     telefone_contato    = models.CharField(max_length=100, blank=True, verbose_name='Telefone')
@@ -171,7 +171,7 @@ class Estado_Bug(models.Model):
     id_estado_bug       = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     bug                 = models.ForeignKey(Bug, null= False, verbose_name='Bug')
     tipo_estado         = models.ForeignKey(Tipo_Estado, null= False, verbose_name='Tipo Estado')
-    comentario          = models.CharField(max_length=500) 
+    comentario          = models.TextField(max_length=500) 
     data                = models.DateTimeField(null= True, verbose_name='Data')
             
     class Meta:
@@ -196,7 +196,7 @@ class Estado_Bug(models.Model):
         
 class Pergunta_Bug(models.Model):
     id_pergunta_bug     = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
-    pergunta            = models.CharField(max_length=500, verbose_name='Pergunta') 
+    pergunta            = models.TextField(max_length=500, verbose_name='Pergunta') 
         
     class Meta:
         db_table= 'tb_pergunta_bug'
@@ -229,7 +229,7 @@ class Resposta_Bug(models.Model):
     id_resposta_bug     = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     pergunta            = models.ForeignKey(Pergunta_Bug, null= False, verbose_name='Pergunta')
     bug                 = models.ForeignKey(Bug, null= False, verbose_name='Bug')
-    resposta            = models.CharField(max_length=500, verbose_name='Resposta') 
+    resposta            = models.TextField(max_length=500, verbose_name='Resposta') 
         
     class Meta:
         db_table= 'tb_resposta_bug'
