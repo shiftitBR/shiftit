@@ -62,3 +62,11 @@ def o_que_fazemos(vRequest, vTitulo):
         locals(),
         context_instance=RequestContext(vRequest),
         )
+    
+def google(vRequest, vTitulo):
+        
+    return render_to_response(
+        'google/google6196345173a7df0a.html',
+        locals(),
+        context_instance=RequestContext(vRequest),
+        )
