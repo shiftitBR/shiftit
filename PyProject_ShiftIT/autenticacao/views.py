@@ -21,7 +21,7 @@ def login(vRequest, vTitulo):
             if user is not None:
                 auth_login(vRequest, user)
                 vRequest.session.set_expiry(6000)
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect('/painel_de_controle/')
             else:
                 messages.warning(vRequest, 'E-mail e/ou Senha incorreto(s). Digite novamente seu E-mail e Senha para efetuar o login.')
                 return HttpResponseRedirect('/login/')

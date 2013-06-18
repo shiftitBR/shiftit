@@ -4,27 +4,37 @@
 
 	<!-- Login
 	================================================== -->
-	<div >
-		
-		<p>Login</p>
-		
-		<p><a href="/">Home</a></p>
-		
-		<form method="post" action="/login/">{% csrf_token %}			
-			<label for="regularInput">Login</label>
-			<input type="text" id="logindude" name="login"/>
-			
-			<label for="regularInput">Senha</label>
-			<input type="password" id="senhadude" name="senha"/>
+    <div class="cabecalho introducao" style="background:url('{{ MEDIA_URL }}img/bg_intro_contato.png'); background-size:cover;">
+        <div class="centratexto">
+        	<p>Empresa: <em>{{iUsuario.nome_fantasia}}</em></p>
+        </div>
+    </div>
+    <div class="conteudoprincipal">
+		<div style="width:960px;margin: 0 auto;clear:both;">
+            <div class="div44">
+                <!-- Listas Bugs e Estados  -->
+                <br><br><br><br><br><br><br><br>
+                {% for message in messages %}
+				<p><strong>{{ message }}</strong></p>
+				{% endfor %}
+            </div>
 
-			<div style="float:right; bottom:0; width:100px;">
-			<button type="submit" class="full-width">Entrar</button>
-			</div>
-		</form>
+            <div class="div44 margin44">
+            	<p>Login</p>
+            	<form method="post" action="/login/">{% csrf_token %}			
+					<label for="regularInput">Login</label>
+					<input type="text" id="logindude" name="login"/>
+					
+					<label for="regularInput">Senha</label>
+					<input type="password" id="senhadude" name="senha"/>
 		
-		{% for message in messages %}
-		<p><strong>{{ message }}</strong></p>
-		{% endfor %}
+					<div style="float:right; bottom:0; width:100px;">
+					<button type="submit" class="full-width">Entrar</button>
+					</div>
+				</form>
+            </div>
+        </div>
+		
 	<!-- Fecha container
 	================================================== -->
 	</div>

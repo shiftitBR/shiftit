@@ -7,7 +7,7 @@ from django.contrib                             import messages
 
 from PyProject_ShiftIT.bugtracker.forms         import FormBug
 from PyProject_ShiftIT.bugtracker.models        import Pergunta_Bug,\
-    Tipo_Prioridade, Resposta_Bug
+    Tipo_Prioridade, Resposta_Bug, Estado_Bug
 
 import datetime
 from PyProject_ShiftIT.autenticacao.models import Usuario
@@ -18,11 +18,6 @@ def adicionar_bug(vRequest, vTitulo):
     iUsuario        = Usuario().obtemUsuario(vRequest.user.id)
     iListaPerguntas = Pergunta_Bug.objects.all()
     
-    print '>>>>>>>>>>>>>>'
-    print vRequest.FILES
-    print '>>>>>>>>>>>>>>'
-    print vRequest.POST
-    
     if vRequest.method == 'POST':
         form = FormBug(vRequest.POST, vRequest.FILES)
         
@@ -31,16 +26,15 @@ def adicionar_bug(vRequest, vTitulo):
             iBug.usuario            = iUsuario
             iBug.data               = str(datetime.datetime.today())[:19]
             iBug.tipo_prioridade    = Tipo_Prioridade().obtemTipoPrioridade(vRequest.POST.get('tipo_prioridade'))
-            #iBug.imagem             = vRequest.FILES['imagem']
             iBug.save()
             for pergunta in iListaPerguntas:
-                if 'resposta_' + str(pergunta.id_pergunta_bug) in vRequest.POST:
+                if 'resposta_' + str(pergunta.id) in vRequest.POST:
                     iResposta           = Resposta_Bug()
-                    iResposta.pergunta  = Pergunta_Bug().obtemPerguntaBug(pergunta.id_pergunta_bug)
+                    iResposta.pergunta  = Pergunta_Bug().obtemPerguntaBug(pergunta.id)
                     iResposta.bug       = iBug
-                    iResposta.resposta  = vRequest.POST.get('resposta_' + str(pergunta.id_pergunta_bug))
+                    iResposta.resposta  = vRequest.POST.get('resposta_' + str(pergunta.id))
                     iResposta.save()
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/painel_de_controle/')
         else:
             messages.warning(vRequest, 'Erro ao responder')
     else:
@@ -64,7 +58,8 @@ def documentos(vRequest, vTitulo):
     
 @login_required   
 def painel_controle(vRequest, vTitulo):
-    
+    iUsuario        = Usuario().obtemUsuario(vRequest.user.id)
+    iListaBug       = Estado_Bug().obtemListaBugsAux(iUsuario)
 
     return render_to_response(
         'painel_controle/painel_controle.html',

@@ -54,7 +54,7 @@ class FormBug(forms.ModelForm):
         iListaTipoPrioridade = Tipo_Prioridade().obtemListaTipoPrioridade()
         iLista = []
         for tipoprioridade in iListaTipoPrioridade:
-            iLista.append((str(tipoprioridade.id_tipo_prioridade), str(tipoprioridade.descricao)))
+            iLista.append((str(tipoprioridade.id), tipoprioridade.descricao.encode('utf-8')))
         
         super(FormBug, self).__init__(*args, **kwargs)
         self.fields['tipo_prioridade'].error_messages['required']   = u'O campo Tipo de Prioridade é obrigatório'

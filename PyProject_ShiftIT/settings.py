@@ -20,6 +20,8 @@ MANAGERS = ADMINS
 TIME_ZONE = 'America/Sao_Paulo'
 
 LANGUAGES = (('pt-br', u'Português'),)
+
+ADMIN_LANGUAGE_CODE= 'pt-br'
              
 SITE_ID = 1
 
@@ -65,6 +67,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'autenticacao.admin_locale.AdminLocaleURLMiddleware',
 )
 
 ROOT_URLCONF = 'PyProject_ShiftIT.urls'

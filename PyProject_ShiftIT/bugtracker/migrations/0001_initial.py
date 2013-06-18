@@ -10,7 +10,7 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
         # Adding model 'Documento'
         db.create_table('tb_documento', (
-            ('id_documento', self.gf('django.db.models.fields.IntegerField')(max_length=3, primary_key=True)),
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('usuario', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['autenticacao.Usuario'], blank=True)),
             ('assunto', self.gf('django.db.models.fields.CharField')(max_length=200, blank=True)),
             ('arquivo', self.gf('django.db.models.fields.files.FileField')(max_length=100)),
@@ -19,24 +19,24 @@ class Migration(SchemaMigration):
 
         # Adding model 'Tipo_Prioridade'
         db.create_table('tb_tipo_prioridade', (
-            ('id_tipo_prioridade', self.gf('django.db.models.fields.IntegerField')(max_length=3, primary_key=True)),
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('descricao', self.gf('django.db.models.fields.CharField')(max_length=200, blank=True)),
         ))
         db.send_create_signal('bugtracker', ['Tipo_Prioridade'])
 
         # Adding model 'Tipo_Estado'
         db.create_table('tb_tipo_estado', (
-            ('id_tipo_estado', self.gf('django.db.models.fields.IntegerField')(max_length=3, primary_key=True)),
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('descricao', self.gf('django.db.models.fields.CharField')(max_length=200)),
         ))
         db.send_create_signal('bugtracker', ['Tipo_Estado'])
 
         # Adding model 'Bug'
         db.create_table('tb_bug', (
-            ('id_bug', self.gf('django.db.models.fields.IntegerField')(max_length=3, primary_key=True)),
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('usuario', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['autenticacao.Usuario'], blank=True)),
             ('tipo_prioridade', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['bugtracker.Tipo_Prioridade'], blank=True)),
-            ('descricao', self.gf('django.db.models.fields.CharField')(max_length=500, blank=True)),
+            ('descricao', self.gf('django.db.models.fields.TextField')(max_length=500, blank=True)),
             ('nome_contato', self.gf('django.db.models.fields.CharField')(max_length=200, blank=True)),
             ('email_contato', self.gf('django.db.models.fields.CharField')(max_length=200, blank=True)),
             ('telefone_contato', self.gf('django.db.models.fields.CharField')(max_length=100, blank=True)),
@@ -47,27 +47,27 @@ class Migration(SchemaMigration):
 
         # Adding model 'Estado_Bug'
         db.create_table('tb_estado_bug', (
-            ('id_estado_bug', self.gf('django.db.models.fields.IntegerField')(max_length=3, primary_key=True)),
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('bug', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['bugtracker.Bug'])),
             ('tipo_estado', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['bugtracker.Tipo_Estado'])),
-            ('comentario', self.gf('django.db.models.fields.CharField')(max_length=500)),
+            ('comentario', self.gf('django.db.models.fields.TextField')(max_length=500)),
             ('data', self.gf('django.db.models.fields.DateTimeField')(null=True)),
         ))
         db.send_create_signal('bugtracker', ['Estado_Bug'])
 
         # Adding model 'Pergunta_Bug'
         db.create_table('tb_pergunta_bug', (
-            ('id_pergunta_bug', self.gf('django.db.models.fields.IntegerField')(max_length=3, primary_key=True)),
-            ('pergunta', self.gf('django.db.models.fields.CharField')(max_length=500)),
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('pergunta', self.gf('django.db.models.fields.TextField')(max_length=500)),
         ))
         db.send_create_signal('bugtracker', ['Pergunta_Bug'])
 
         # Adding model 'Resposta_Bug'
         db.create_table('tb_resposta_bug', (
-            ('id_resposta_bug', self.gf('django.db.models.fields.IntegerField')(max_length=3, primary_key=True)),
+            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('pergunta', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['bugtracker.Pergunta_Bug'])),
             ('bug', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['bugtracker.Bug'])),
-            ('resposta', self.gf('django.db.models.fields.CharField')(max_length=500)),
+            ('resposta', self.gf('django.db.models.fields.TextField')(max_length=500)),
         ))
         db.send_create_signal('bugtracker', ['Resposta_Bug'])
 
@@ -141,9 +141,9 @@ class Migration(SchemaMigration):
         'bugtracker.bug': {
             'Meta': {'object_name': 'Bug', 'db_table': "'tb_bug'"},
             'data': ('django.db.models.fields.DateTimeField', [], {'null': 'True', 'blank': 'True'}),
-            'descricao': ('django.db.models.fields.CharField', [], {'max_length': '500', 'blank': 'True'}),
+            'descricao': ('django.db.models.fields.TextField', [], {'max_length': '500', 'blank': 'True'}),
             'email_contato': ('django.db.models.fields.CharField', [], {'max_length': '200', 'blank': 'True'}),
-            'id_bug': ('django.db.models.fields.IntegerField', [], {'max_length': '3', 'primary_key': 'True'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'imagem': ('django.db.models.fields.files.FileField', [], {'max_length': '100', 'blank': 'True'}),
             'nome_contato': ('django.db.models.fields.CharField', [], {'max_length': '200', 'blank': 'True'}),
             'telefone_contato': ('django.db.models.fields.CharField', [], {'max_length': '100', 'blank': 'True'}),
@@ -154,38 +154,38 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'Documento', 'db_table': "'tb_documento'"},
             'arquivo': ('django.db.models.fields.files.FileField', [], {'max_length': '100'}),
             'assunto': ('django.db.models.fields.CharField', [], {'max_length': '200', 'blank': 'True'}),
-            'id_documento': ('django.db.models.fields.IntegerField', [], {'max_length': '3', 'primary_key': 'True'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'usuario': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['autenticacao.Usuario']", 'blank': 'True'})
         },
         'bugtracker.estado_bug': {
             'Meta': {'object_name': 'Estado_Bug', 'db_table': "'tb_estado_bug'"},
             'bug': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['bugtracker.Bug']"}),
-            'comentario': ('django.db.models.fields.CharField', [], {'max_length': '500'}),
+            'comentario': ('django.db.models.fields.TextField', [], {'max_length': '500'}),
             'data': ('django.db.models.fields.DateTimeField', [], {'null': 'True'}),
-            'id_estado_bug': ('django.db.models.fields.IntegerField', [], {'max_length': '3', 'primary_key': 'True'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'tipo_estado': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['bugtracker.Tipo_Estado']"})
         },
         'bugtracker.pergunta_bug': {
             'Meta': {'object_name': 'Pergunta_Bug', 'db_table': "'tb_pergunta_bug'"},
-            'id_pergunta_bug': ('django.db.models.fields.IntegerField', [], {'max_length': '3', 'primary_key': 'True'}),
-            'pergunta': ('django.db.models.fields.CharField', [], {'max_length': '500'})
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'pergunta': ('django.db.models.fields.TextField', [], {'max_length': '500'})
         },
         'bugtracker.resposta_bug': {
             'Meta': {'object_name': 'Resposta_Bug', 'db_table': "'tb_resposta_bug'"},
             'bug': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['bugtracker.Bug']"}),
-            'id_resposta_bug': ('django.db.models.fields.IntegerField', [], {'max_length': '3', 'primary_key': 'True'}),
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'pergunta': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['bugtracker.Pergunta_Bug']"}),
-            'resposta': ('django.db.models.fields.CharField', [], {'max_length': '500'})
+            'resposta': ('django.db.models.fields.TextField', [], {'max_length': '500'})
         },
         'bugtracker.tipo_estado': {
             'Meta': {'object_name': 'Tipo_Estado', 'db_table': "'tb_tipo_estado'"},
             'descricao': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
-            'id_tipo_estado': ('django.db.models.fields.IntegerField', [], {'max_length': '3', 'primary_key': 'True'})
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'})
         },
         'bugtracker.tipo_prioridade': {
             'Meta': {'object_name': 'Tipo_Prioridade', 'db_table': "'tb_tipo_prioridade'"},
             'descricao': ('django.db.models.fields.CharField', [], {'max_length': '200', 'blank': 'True'}),
-            'id_tipo_prioridade': ('django.db.models.fields.IntegerField', [], {'max_length': '3', 'primary_key': 'True'})
+            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'})
         },
         'contenttypes.contenttype': {
             'Meta': {'ordering': "('name',)", 'unique_together': "(('app_label', 'model'),)", 'object_name': 'ContentType', 'db_table': "'django_content_type'"},

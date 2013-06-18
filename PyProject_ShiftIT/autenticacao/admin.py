@@ -22,7 +22,6 @@ class DocumentoInLine(admin.StackedInline):
     model           = Documento
     list_display    = ('usuario', 'assunto', 'arquivo' )
     search_fields   = ('assunto', 'usuario.first_name', 'usuario.last_name')
-    exclude         = ('id_documento',) 
     verbose_name    = 'Documento'
     verbose_name_plural = 'Documentos'
     extra           = 0
@@ -31,7 +30,7 @@ class AdminUsuario(admin.ModelAdmin):
     inlines         = (DocumentoInLine,)
     fieldsets       = (
         (None, {
-            'fields': ('username', 'first_name', 'last_name', 'cnpj', 'razao_social', 'nome_fantasia', 
+            'fields': ('username', 'first_name', 'last_name', 'password', 'cnpj', 'razao_social', 'nome_fantasia', 
                        'telefone', 'endereco', 'cidade', 'uf', 'nome_responsavel')
         }),
         ('Opções Avançadas', {
@@ -48,39 +47,27 @@ class RepostaContatoInline(admin.StackedInline):
     list_display    = ('pergunta', 'contato', 'resposta', )
     search_fields   = ('resposta', 'pergunta.pergunta', 'contato.first_name', 'contato.last_name')
     extra           = 0
-#    readonly_fields = ('id_resposta_contato',)
-#    exclude         = ('id_resposta_contato',) 
-#    verbose_name    = 'Resposta de Contato'
-#    verbose_name_plural = 'Respostas de Contato'
     
 class AdminContato(admin.ModelAdmin): 
     inlines         = (RepostaContatoInline,)
     list_display    = ('nome', 'email', 'telefone', 'data', )
     search_fields   = ('nome', 'email', 'telefone', 'data', )
-    exclude         = ('id_contato',) 
         
 class AdminPerguntaContato(admin.ModelAdmin): 
     list_display    = ('pergunta',  )
     search_fields   = ('pergunta', )
-    exclude         = ('id_pergunta_contato',) 
     
 class RespostaBugInLIne(admin.StackedInline): 
     model           = Resposta_Bug
     list_display    = ('pergunta', 'bug', 'resposta', )
     search_fields   = ('resposta', 'pergunta.pergunta', 'bug.descricao')
     extra           = 0
-#    exclude         = ('id_resposta_bug',) 
-#    verbose_name    = 'Resposta de Bug'
-#    verbose_name_plural = 'Respostas de Bug'
     
 class EstadoBugInLine(admin.StackedInline): 
     model           = Estado_Bug
     list_display    = ('bug', 'tipo_estado', 'comentario', 'data' )
     search_fields   = ('bug.descricao', 'bug.nome_contato', 'comentario', 'tipo_estado.descricao')
     extra           = 0
-#    exclude         = ('id_estado_bug',) 
-#    verbose_name    = 'Estado de Bug'
-#    verbose_name_plural = 'Estados de Bug'
     
 class AdminBug(admin.ModelAdmin): 
     inlines         = (RespostaBugInLIne, EstadoBugInLine, )
@@ -88,17 +75,14 @@ class AdminBug(admin.ModelAdmin):
                        'telefone_contato', 'imagem', 'data' )
     search_fields   = ('descricao', 'usuario.first_name', 'usuario.last_name', 'nome_contato', 
                        'email_contato', 'telefone_contato', 'tipo_prioridade.descricao')
-    exclude         = ('id_bug',) 
     
 class AdminPerguntaBug(admin.ModelAdmin): 
     list_display    = ('pergunta',  )
     search_fields   = ('pergunta', )
-    exclude         = ('id_pergunta_bug',) 
     
 class AdminEmail(admin.ModelAdmin): 
     list_display    = ('nome', 'email', 'telefone', 'mensagem', 'data')
     search_fields   = ('nome', 'email', 'telefone', 'mensagem', 'data')
-    exclude         = ('id_email',)
     
 admin.site.unregister(User)
 admin.site.unregister(Site)
@@ -109,7 +93,3 @@ admin.site.register(Pergunta_Contato, AdminPerguntaContato)
 admin.site.register(Bug, AdminBug)
 admin.site.register(Pergunta_Bug, AdminPerguntaBug)
 admin.site.register(Email, AdminEmail)
-#admin.site.register(Resposta_Contato, AdminRespostaContato)
-#admin.site.register(Documento, AdminDocumento)
-#admin.site.register(Estado_Bug, AdminEstadoBug)
-#admin.site.register(Resposta_Bug, AdminRespostaBug)

@@ -38,13 +38,24 @@ class Usuario(User):
         return reverse('autenticacao.views.perfil', kwargs={'slug': self.slug})
     
     def save(self):  
-        if self.username == '':
-            if len(User.objects.order_by('-id')) > 0:   
-                iUltimoRegistro = User.objects.order_by('-id')[0] 
-                self.id= iUltimoRegistro.pk + 1
-            else:
-                self.id= 1
+        if not self.comaparaSenha(self.pk, self.password):
+            self.set_password(self.password)
         super(Usuario, self).save()  
+        
+    def comaparaSenha(self, vIDUsuario, vSenha):
+        try:
+            try:
+                iUsuario= Usuario.objects.filter(pk= vIDUsuario)[0]
+            except:
+                return False
+            if iUsuario.password == vSenha:
+                return True
+            else:
+                return False
+            return iUsuario
+        except Exception, e:
+            logging.getLogger('PyProject_Ibitu.controle').error('Nao foi possivel comparar a senha do usuario ' + str(e))
+            return False 
         
     def possuiUsuario(self, vIDUser):
         try:

@@ -8,15 +8,14 @@ Created on Jul 11, 2012
 from django.db                                          import models
 
 from PyProject_ShiftIT.autenticacao.models              import Usuario
+from PyProject_ShiftIT.bugtracker.objetos_auxiliares    import Bug as BugAux
+
 import logging
 import datetime
 
-       
-        
 #---------------------------DOCUMENTO -----------------------------------    
     
 class Documento(models.Model):
-    id_documento        = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     usuario             = models.ForeignKey(Usuario, null= False, blank=True, verbose_name='Usuário')
     assunto             = models.CharField(max_length=200, blank=True, verbose_name='Assunto') 
     arquivo             = models.FileField(upload_to='multimidia/fotos/', max_length=100)
@@ -27,21 +26,11 @@ class Documento(models.Model):
         verbose_name_plural = 'Documentos'
     
     def __unicode__(self):
-        return self.id_documento
-    
-    def save(self):  
-        if self.id_documento == '' or self.id_documento== None:
-            if len(Documento.objects.order_by('-id_documento')) > 0:   
-                iUltimoRegistro = Documento.objects.order_by('-id_documento')[0] 
-                self.id_documento= iUltimoRegistro.pk + 1
-            else:
-                self.id_documento= 1
-        super(Documento, self).save()
+        return self.id
         
 #---------------------------TIPO PRIORIDADE -----------------------------------   
         
 class Tipo_Prioridade(models.Model):
-    id_tipo_prioridade  = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     descricao           = models.CharField(max_length=200, blank=True) 
             
     class Meta:
@@ -52,15 +41,6 @@ class Tipo_Prioridade(models.Model):
     def __unicode__(self):
         return self.descricao
     
-    def save(self):  
-        if self.id_tipo_prioridade == '' or self.id_tipo_prioridade== None:
-            if len(Tipo_Prioridade.objects.order_by('-id_tipo_prioridade')) > 0:   
-                iUltimoRegistro = Tipo_Prioridade.objects.order_by('-id_tipo_prioridade')[0] 
-                self.id_tipo_prioridade= iUltimoRegistro.pk + 1
-            else:
-                self.id_tipo_prioridade= 1
-        super(Tipo_Prioridade, self).save()
-        
     def obtemListaTipoPrioridade(self,):
         try:
             iLista= Tipo_Prioridade.objects.all()
@@ -71,7 +51,7 @@ class Tipo_Prioridade(models.Model):
         
     def obtemTipoPrioridade(self, iIDTipoPrioridade):
         try:
-            iTipoPrioridade= Tipo_Prioridade.objects.filter(id_tipo_prioridade = iIDTipoPrioridade)[0]
+            iTipoPrioridade= Tipo_Prioridade.objects.filter(id = iIDTipoPrioridade)[0]
             return iTipoPrioridade
         except Exception, e:
             logging.getLogger('PyProject_ShiftIT.controle').error('Nao foi possivel obtem Tipo Prioridade: ' + str(e))
@@ -80,7 +60,6 @@ class Tipo_Prioridade(models.Model):
 #---------------------------TIPO ESTADO -----------------------------------   
         
 class Tipo_Estado(models.Model):
-    id_tipo_estado      = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     descricao           = models.CharField(max_length=200) 
             
     class Meta:
@@ -89,28 +68,18 @@ class Tipo_Estado(models.Model):
         verbose_name_plural = 'Tipos de Estado'
     
     def __unicode__(self):
-        return '(%s - %s)' % (str(self.id_tipo_estado), self.descricao)
-    
-    def save(self):  
-        if self.id_tipo_estado == '' or self.id_tipo_estado== None:
-            if len(Tipo_Estado.objects.order_by('-id_tipo_estado')) > 0:   
-                iUltimoRegistro = Tipo_Estado.objects.order_by('-id_tipo_estado')[0] 
-                self.id_tipo_estado= iUltimoRegistro.pk + 1
-            else:
-                self.id_tipo_estado= 1
-        super(Tipo_Estado, self).save()
+        return '(%s - %s)' % (str(self.id), self.descricao)
         
 #---------------------------BUG -----------------------------------    
     
 class Bug(models.Model):
-    id_bug              = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     usuario             = models.ForeignKey(Usuario, null= False, blank=True, verbose_name='Usuário')
     tipo_prioridade     = models.ForeignKey(Tipo_Prioridade, null= False, blank=True, verbose_name='Tipo Prioridade')
     descricao           = models.TextField(max_length=500, blank=True, verbose_name='Descrição') 
     nome_contato        = models.CharField(max_length=200, blank=True, verbose_name='Nome de Contato')
     email_contato       = models.CharField(max_length=200, blank=True, verbose_name='Email')
     telefone_contato    = models.CharField(max_length=100, blank=True, verbose_name='Telefone')
-    imagem              = models.FileField(upload_to='/multimidia/fotos/', blank=True, max_length=100)
+    imagem              = models.FileField(upload_to='multimidia/fotos/', blank=True, max_length=100)
     data                = models.DateTimeField(null= True, blank=True, verbose_name='Data')
     
     class Meta:
@@ -120,21 +89,12 @@ class Bug(models.Model):
     
     def __unicode__(self):
         return self.descricao
-    
-    def save(self):  
-        if self.id_bug == '' or self.id_bug== None:
-            if len(Bug.objects.order_by('-id_bug')) > 0:   
-                iUltimoRegistro = Bug.objects.order_by('-id_bug')[0] 
-                self.id_bug= iUltimoRegistro.pk + 1
-            else:
-                self.id_bug= 1
-        super(Bug, self).save()
         
     def criaBug(self, vIDUsuario, vIDTipoPrioridade, vDescricao, vNomeContato, vEmailContato, vTelefoneContato, vImagem):
         try:
             iBug                        = Bug()
             iBug.usuario                = Usuario.objects.filter(id= vIDUsuario)[0]
-            iBug.tipo_prioridade        = Tipo_Prioridade.objects.filter(id_tipo_prioridade= vIDTipoPrioridade)[0]
+            iBug.tipo_prioridade        = Tipo_Prioridade.objects.filter(id= vIDTipoPrioridade)[0]
             iBug.descricao              = vDescricao
             iBug.nome_contato           = vNomeContato
             iBug.email_contato          = vEmailContato
@@ -150,7 +110,7 @@ class Bug(models.Model):
         try:
             iEstadoBug              = Estado_Bug()
             iEstadoBug.bug          = vBug 
-            iEstadoBug.tipo_estado  = Tipo_Estado.objects.filter(id_tipo_estado= vIDTipoEstado)[0]
+            iEstadoBug.tipo_estado  = Tipo_Estado.objects.filter(id= vIDTipoEstado)[0]
             iEstadoBug.comentario   = vComentario
             iEstadoBug.data         = datetime.datetime.now()
             iEstadoBug.save()
@@ -160,15 +120,15 @@ class Bug(models.Model):
     
     def obtemEstadoAtual(self, vIDBug):
         try:
-            iEstadoAtual= Estado_Bug.objects.filter(bug__id_bug= vIDBug).order_by('-data')[0]
+            iEstadoAtual= Estado_Bug.objects.filter(bug__id= vIDBug).order_by('-data')[0]
             return iEstadoAtual
         except Exception, e:
             logging.getLogger('PyProject_ShiftIT.controle').error('Nao foi possivel obter o estado atual do bug: ' + str(e))
             return False
+        
 #---------------------------ESTADO BUG -----------------------------------   
         
 class Estado_Bug(models.Model):
-    id_estado_bug       = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     bug                 = models.ForeignKey(Bug, null= False, verbose_name='Bug')
     tipo_estado         = models.ForeignKey(Tipo_Estado, null= False, verbose_name='Tipo Estado')
     comentario          = models.TextField(max_length=500) 
@@ -181,21 +141,25 @@ class Estado_Bug(models.Model):
     
     def __unicode__(self):
         return self.comentario
-    
-    def save(self):  
-        if self.id_estado_bug == '' or self.id_estado_bug== None:
-            if len(Estado_Bug.objects.order_by('-id_estado_bug')) > 0:   
-                iUltimoRegistro = Estado_Bug.objects.order_by('-id_estado_bug')[0] 
-                self.id_estado_bug= iUltimoRegistro.pk + 1
-            else:
-                self.id_estado_bug= 1
-        super(Estado_Bug, self).save()
         
-        
+    def obtemListaBugsAux(self, vUsuario):
+        try:
+            iListaBug   = Bug.objects.filter(usuario= vUsuario).order_by('-id')
+            iListaAux   = []
+            for bug in iListaBug:
+                iBug                = BugAux()
+                iBug.bug            = bug
+                iBug.estados        = Estado_Bug.objects.filter(bug= bug)
+                iBug.possuiestado   = (len(iBug.estados) > 0)
+                iListaAux.append(iBug)
+            return iListaAux
+        except Exception, e:
+            logging.getLogger('PyProject_ShiftIT.controle').error('Nao foi possivel obtem Lista Bugs Aux: ' + str(e))
+            return False
+
 #-----------------------------PERGUNTA BUG---------------------------------------
         
 class Pergunta_Bug(models.Model):
-    id_pergunta_bug     = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     pergunta            = models.TextField(max_length=500, verbose_name='Pergunta') 
         
     class Meta:
@@ -205,19 +169,10 @@ class Pergunta_Bug(models.Model):
     
     def __unicode__(self):
         return self.pergunta
-    
-    def save(self):  
-        if self.id_pergunta_bug == '' or self.id_pergunta_bug== None:
-            if len(Pergunta_Bug.objects.order_by('-id_pergunta_bug')) > 0:   
-                iUltimoRegistro = Pergunta_Bug.objects.order_by('-id_pergunta_bug')[0] 
-                self.id_pergunta_bug= iUltimoRegistro.pk + 1
-            else:
-                self.id_pergunta_bug= 1
-        super(Pergunta_Bug, self).save()
         
     def obtemPerguntaBug(self, vIDPerguntaBug):
         try:
-            iPerguntaBug= Pergunta_Bug.objects.filter(id_pergunta_bug= vIDPerguntaBug)[0]
+            iPerguntaBug= Pergunta_Bug.objects.filter(id= vIDPerguntaBug)[0]
             return iPerguntaBug
         except Exception, e:
             logging.getLogger('PyProject_ShiftIT.controle').error('Nao foi possivel obtem Pergunta Bug: ' + str(e))
@@ -226,7 +181,6 @@ class Pergunta_Bug(models.Model):
 #-----------------------------RESPOSTA CONTATO---------------------------------------
         
 class Resposta_Bug(models.Model):
-    id_resposta_bug     = models.IntegerField(max_length=3, primary_key=True, null= False, blank=True, verbose_name='ID')
     pergunta            = models.ForeignKey(Pergunta_Bug, null= False, verbose_name='Pergunta')
     bug                 = models.ForeignKey(Bug, null= False, verbose_name='Bug')
     resposta            = models.TextField(max_length=500, verbose_name='Resposta') 
@@ -238,13 +192,3 @@ class Resposta_Bug(models.Model):
     
     def __unicode__(self):
         return self.resposta
-    
-    def save(self):  
-        if self.id_resposta_bug == '' or self.id_resposta_bug== None:
-            if len(Resposta_Bug.objects.order_by('-id_resposta_bug')) > 0:   
-                iUltimoRegistro = Resposta_Bug.objects.order_by('-id_resposta_bug')[0] 
-                self.id_resposta_bug= iUltimoRegistro.pk + 1
-            else:
-                self.id_resposta_bug= 1
-        super(Resposta_Bug, self).save()
-
