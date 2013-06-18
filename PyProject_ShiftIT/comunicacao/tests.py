@@ -27,7 +27,7 @@ class Test(TestCase):
 
     def testsobtemPerguntaContato(self):
         iPerguntaContato= Pergunta_Contato().obtemPerguntaContato(1)
-        self.assertEquals(1, iPerguntaContato.id_pergunta_contato)
+        self.assertEquals(1, iPerguntaContato.id)
     
     #-----------------------------------------------------MOKS---------------------------------------------------
 

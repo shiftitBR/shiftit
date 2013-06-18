@@ -52,7 +52,7 @@ class Test(TestCase):
     def testCriarBug_Metodo(self):
         iBug                        = Bug()
         iUsuario                    = Usuario.objects.all()[0].id
-        iTipoPrioridade             = Tipo_Prioridade.objects.all()[0].id_tipo_prioridade
+        iTipoPrioridade             = Tipo_Prioridade.objects.all()[0].id
         iDescricao                  = 'descricao_teste'
         iNomeContato                = 'nome_teste'
         iEmailContato               = 'emai_teste'
@@ -63,15 +63,15 @@ class Test(TestCase):
         
     
     def testAlteraEstadoBug(self):
-        iBug        = Bug.objects.filter(id_bug= 2)[0]
+        iBug        = Bug.objects.filter(id= 2)[0]
         iComentario = 'Comentario teste'
         iBug.alteraEstado(iBug, constantes.cntEstadoBug_EmAnalise, iComentario)
-        self.assertEquals(Estado_Bug.objects.filter(bug__id_bug= 2)[0].tipo_estado.id_tipo_estado, constantes.cntEstadoBug_EmAnalise)
+        self.assertEquals(Estado_Bug.objects.filter(bug__id= 2)[0].tipo_estado.id, constantes.cntEstadoBug_EmAnalise)
     
     def testObtemEstadoAtualDoBug(self):
-        iBug        = Bug.objects.filter(id_bug= 1)[0]
-        iEstadoAtual= iBug.obtemEstadoAtual(iBug.id_bug)
-        self.assertEquals(iEstadoAtual.tipo_estado.id_tipo_estado, constantes.cntEstadoBug_EmAnalise)
+        iBug        = Bug.objects.filter(id= 1)[0]
+        iEstadoAtual= iBug.obtemEstadoAtual(iBug.id)
+        self.assertEquals(iEstadoAtual.tipo_estado.id, constantes.cntEstadoBug_EmAnalise)
         
 #----------------------------------------------MOKS-------------------------------------
     
@@ -101,31 +101,31 @@ class Test(TestCase):
         
     def mokarTipoEstado(self):
         iTipoEstado                 = Tipo_Estado()
-        iTipoEstado.id_tipo_estado  = constantes.cntEstadoBug_Novo
+        iTipoEstado.id              = constantes.cntEstadoBug_Novo
         iTipoEstado.descricao       = 'novo'
         iTipoEstado.save()
         
-        iTipoEstado.id_tipo_estado  = constantes.cntEstadoBug_EmAnalise
+        iTipoEstado.id              = constantes.cntEstadoBug_EmAnalise
         iTipoEstado.descricao       = 'em analise'
         iTipoEstado.save()
         
-        iTipoEstado.id_tipo_estado  = constantes.cntEstadoBug_EmEspera
+        iTipoEstado.id              = constantes.cntEstadoBug_EmEspera
         iTipoEstado.descricao       = 'em espera'
         iTipoEstado.save()
         
-        iTipoEstado.id_tipo_estado  = constantes.cntEstadoBug_EmDesenvolvimento
+        iTipoEstado.id              = constantes.cntEstadoBug_EmDesenvolvimento
         iTipoEstado.descricao       = 'em desenvolvimento'
         iTipoEstado.save()
         
-        iTipoEstado.id_tipo_estado  = constantes.cntEstadoBug_AguardandoAprovacao
+        iTipoEstado.id              = constantes.cntEstadoBug_AguardandoAprovacao
         iTipoEstado.descricao       = 'aguardando aprovacao'
         iTipoEstado.save()
         
-        iTipoEstado.id_tipo_estado  = constantes.cntEstadoBug_Finalizado
+        iTipoEstado.id              = constantes.cntEstadoBug_Finalizado
         iTipoEstado.descricao       = 'finalizado'
         iTipoEstado.save()
         
-        iTipoEstado.id_tipo_estado  = constantes.cntEstadoBug_EmProducao
+        iTipoEstado.id              = constantes.cntEstadoBug_EmProducao
         iTipoEstado.descricao       = 'em producao'
         iTipoEstado.save()
     
@@ -161,7 +161,7 @@ class Test(TestCase):
         iEstadoBug.save()
     
     def mokarAlteraEstadoBug(self):
-        iBug        = Bug.objects.filter(id_bug= 1)[0]
+        iBug        = Bug.objects.filter(id= 1)[0]
         iComentario = 'Comentario teste'
         iBug.alteraEstado(iBug, constantes.cntEstadoBug_EmAnalise, iComentario)
         
