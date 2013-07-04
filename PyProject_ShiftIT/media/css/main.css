@@ -110,15 +110,8 @@ body {
 }
 
 .shift {
-    height:2px;
+    height:1px;
     top: 0;
-}
-
-.circulo {
-    height:400px;
-    width:400px;
-    margin: 0 auto;
-    background-image: url(../img/shift-circulo.png);
 }
 
 #logo {
@@ -207,7 +200,7 @@ body {
             box-shadow: inset 0px 0px 10px #000;
             background-color: #233210;
         }
-    #menuprincipal ul li a {
+    #menuprincipal ul a li {
         text-decoration: none;
         color: #fff;
     }
