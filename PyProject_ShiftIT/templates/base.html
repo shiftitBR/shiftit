@@ -38,16 +38,16 @@
             <div class="cabecalho menu">
                 <nav id="menuprincipal">
                     <ul>
-                        <li><a href='/o_que_fazemos/'>O que fazemos</a></li>
-                        <li><a href='/como_fazemos/'>Como fazemos</a></li>
-                        <li><a href='/time/'>Conheça o time</a></li>
-                        <li><a href='/contato/'>Contato</a></li>
+                        <a href='/o_que_fazemos/'><li>O que fazemos</li></a>
+                        <a href='/como_fazemos/'><li>Como fazemos</li></a>
+                        <a href='/time/'><li>Conheça o time</li></a>
+                        <a href='/contato/'><li>Contato</li></a>
                         {% if user.is_authenticated %}
-                        <li><a href='/painel_de_controle/'>Área do Cliente</a></li>
+                        <a href='/painel_de_controle/'><li>Área do Cliente</li></a>
                         {% else %}
-                        <li><a href='/login/'>Área do Cliente</a></li>
+                        <a href='/login/'><li>Área do Cliente</li></a>
                         {% endif %}
-                        <!-- <li><a href='http://blog.shiftit.com.br' target="_blank">Blog</a></li> -->
+                        <!--<li><a href='http://blog.shiftit.com.br' target="_blank">Blog</a></li>-->
                     </ul>
                 </nav>
                 <a href='/'><img id="logomenu" src="{{MEDIA_URL}}img/shiftitmarcamenu.png"></a>
