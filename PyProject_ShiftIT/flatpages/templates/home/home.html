@@ -1,183 +1,58 @@
-<!DOCTYPE html>
+{% extends "base.html"%}
 {% load i18n %}
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Shift it - Desenvolvemos softwares web que buscam facilitar a vida das pessoas</title>
-        <meta name="description" content="Somos uma empresa de desenvolvimento para web que trabalha com metodologias ágeis e busca desenvolver soluções simples e escaláveis para produtos em fase inicial de desenvolvimento.">
-        <meta name="viewport" content="width=device-width">
-        
-        <!-- CSS
-		================================================== -->
-        <link rel="stylesheet" href="{{MEDIA_URL}}css/normalize.css">
-        <link rel="stylesheet" href="{{MEDIA_URL}}css/main.css">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+{% block conteudo %}
 
- 		<!-- CSS - Slider
-		================================================== -->
-		<link rel="stylesheet" href="{{MEDIA_URL}}slider/css/default.css" type="text/css" media="screen" />
-	    <link rel="stylesheet" href="{{MEDIA_URL}}slider/css/nivo-slider.css" type="text/css" media="screen" />
-	    <link rel="stylesheet" href="{{MEDIA_URL}}slider/css/style.css" type="text/css" media="screen" />
+		<div class="bg bg-call bg-call-home">
+			<section class="container">
+				<div class="row">
+					<div class="grid-two-thirds">
+						<h2 class="text-big">Desenvolvemos softwares que vivem na web</h2>
 
-		<!-- JS
-		================================================== -->
-		<script src="{{MEDIA_URL}}js/vendor/modernizr-2.6.2.min.js"></script>
-		
-		<!-- FAVICON
-		================================================== -->
-		<link rel="shortcut icon" href="{{ MEDIA_URL }}img/icones/favicon.ico">
-		
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+						<p>Sejam soluções corporativas, sejam novos negócios digitais desenvolvemos sua solução utilizando design, tecnologia e metodologias ágeis de gestão de projetos.</p>
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="bg">
+			<section class="container">
+				<div class="row">
+					<div class="grid-third">
+						<h3>Projetos realizados</h3>
+						<p><a href="/o_que_fazemos/">Conheça são alguns dos projetos que já ajudamos a tirar do papel.</a> Apresentamos nossos principais desafios e como os solucionamos.</p>
+					</div>
 
-        <div class="container">
-        	
-        	 <div class="cabecalho shift" style="background:url('{{MEDIA_URL}}img/bg_shiftit.png'); background-size:cover;">
-        		<div class="cabecalho shift">
-        		</div>
-		    </div>
-		    
-            <div id="sticky_navigation_wrapper">
-            	<div id="sticky_navigation">
-		            <div class="cabecalho menulanding">
-		                <nav id="menuprincipal">
-		                    <ul>
-		                        <a href='/o_que_fazemos/'><li>O que fazemos</li></a>
-		                        <a href='/como_fazemos/'><li>Como fazemos</li></a>
-		                        <a href='/time/'><li>Conheça o time</li></a>
-		                        <a href='/contato/'><li>Contato</li></a>
-		                        <!--{% if user.is_authenticated %}
-		                        <a href='/painel_de_controle/'><li>Área do Cliente</li></a>
-		                        {% else %}
-		                        <a href='/login/'><li>Área do Cliente</li></a>
-		                        {% endif %}
-		                        <li><a href='http://blog.shiftit.com.br' target="_blank">Blog</a></li>-->
-		                    </ul>
-		                </nav>
-		                <a href='/'><img id="logomenu" src="{{MEDIA_URL}}img/shiftitmarcamenu.png"></a>
-		            </div>
-            	</div>
-            </div>
-            
-            <div class="cabecalho introducaolanding" style="background:url('{{MEDIA_URL}}img/bg_intro_landing.png'); background-size:cover;">
-                <div class="centratexto">
-                	<p>Tire sua <em>ideia</em> do mundo imaginário e traga para o mundo real</p>
-                	<p>Conte com a Shift it para <em>transformar</em> seu sonho em <em>realidade</em></p>
-                </div>
-            </div>
-            <div class="conteudoprincipal">
-                <div class="div960">
-                    <div class="div44">
-                        <h2>Quem Somos</h2>
-                        <p>
-                        	A <strong>Shift it</strong> é uma empresa de desenvolvimento web sediada em Florianópolis, Santa Catarina. 
-                        	Trabalhamos com metodologias ágeis e buscamos desenvolver soluções simples e escaláveis para produtos em fase inicial de desenvolvimento. 
-                        </p>
-                        <p>
-							Nosso objetivo é fazer com que sua ideia saia do mundo imaginário para revolucionar o mundo real. 
-							Temos como norte a simplicidade, somos defensores de que em software menos é mais e que para uma solução ser completa ela não precisa necessariamente ser complexa. 
-						</p>
-						<p>
-							Buscamos incansavelmente a qualidade, agilidade e transparência em tudo o que fazemos. 	
-							<a href="/o_que_fazemos/"> Saiba mais</a>
-						</p>
-                    </div>
+					<div class="grid-third">
+						<h3>Nosso processo</h3>
+						<p><a href="/como_fazemos/">Nós investigamos o seu problema e colocamos a mão na massa!</a> Confira como fazemos e entenda melhor que tipo de serviço estamos oferecendo.</p>
+					</div>
 
-                    <div class="div44 margin44">
-                        <h2>Entre em Contato</h2>
-                        <p>
-                        	Buscamos desenvolver ideias desafiadoras, inovadoras e com potencial para revolucionar o mercado. 
-                        	Nossos clientes são empreendedores e visionários, pessoas que acreditam que podem mudar o que para muitos parece imutável. 
-                        	Queremos auxiliá-lo a concretizar este sonho, <a href="/contato/"> entre em contato com a gente</a>.
-                        </p>
-                    </div>
+					<div class="grid-third">
+						<h3>Quem somos nós</h3>
+						<p><a href="/time/">Uma empresa jovem consciente das novas tecnologias e seu impacto nos negócios</a>. Somos artesãos da web, transformamos códigos em produtos digitais.
+					</div>
+				</div>
+			</section>
+		</div>
 
-                    <div class="div44 margin44">
-                        <h2>O Blog da Shift it</h2>
-                        <p>Quer saber mais sobre as tecnologias que utilizamos, nossos produtos e tudo que envolve o mundo das Startups? Acesse o <a href="http://blog.shiftit.com.br"> Blog da Shift it</a> e fique por dentro de tudo que há de novo quando o assunto é inovação.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="rodape">
-                <div class ="facebookrodape">
-                    <img src="{{MEDIA_URL}}img/facebookshift.png">
-                    <p><a href="https://www.facebook.com/ShiftIT.br" target="_blank">Curta nossa página no facebook!</a></p>
-                </div>
-                <div class="marcarodape">
-                    <img src="{{MEDIA_URL}}img/shiftitmarcarodape.png">
-                    <p>Todos os direitos reservados © 2013</p>
-                </div>
-            </div>
-            
-        </div>
+		<div class="bg bg-ideia">
+			<section class="container">
+				<div class="row">	
+					<div class="grid-2 offset-2">
+						<h2 class="text-center">Tem uma idéia?</h2>
 
-		<!-- JS
-		==================================================-->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
-        <script src="{{MEDIA_URL}}js/plugins.js"></script>
-        <script src="{{MEDIA_URL}}js/main.js"></script>
-        
-        <!-- Stick Navigation
-		==================================================-->
-	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-	    <script>
-			$(function() {
-				// grab the initial top offset of the navigation 
-				var sticky_navigation_offset_top = $('#sticky_navigation').offset().top;
-				// our function that decides weather the navigation bar should have "fixed" css position or not.
-				var sticky_navigation = function(){
-					var scroll_top = $(window).scrollTop(); // our current vertical position from the top
-					
-					// if we've scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
-					if (scroll_top > sticky_navigation_offset_top) { 
-						$('#sticky_navigation').css({ 'position': 'fixed', 'top':0, 'left':0 });
-					} else {
-						$('#sticky_navigation').css({ 'position': 'relative' }); 
-					}   
-				};
-				// run our function on load
-				sticky_navigation();
-				// and run it again every time you scroll
-				$(window).scroll(function() {
-					 sticky_navigation();
-				});
-			});
-		</script>
-        
-        <!-- JS - Slider
-		==================================================-->
-        <script type="text/javascript" src="{{MEDIA_URL}}slider/js/jquery-1.9.0.min.js"></script>
-	    <script type="text/javascript" src="{{MEDIA_URL}}slider/js/jquery.nivo.slider.js"></script>
-	    <script type="text/javascript">
-		    $(window).load(function() {
-		        $('#slider').nivoSlider();
-		    });
-	    </script>
-	    
-        <!-- Google Analytics
-		==================================================-->
-		<script type="text/javascript">
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-26439740-1']);
-		  _gaq.push(['_setDomainName', 'shiftit.com.br']);
-		  _gaq.push(['_trackPageview']);
-		
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-		</script>
-		
-    </body>
-</html>
+						<p class="text-center">Não hesite em <a href="/contato/">entrar em contato</a>!</p>
+						<form id="contato" method="post">{% csrf_token %}
+                            <fieldset>
+                                <label for="contatoNome">Nome<input id="contatoNome" name="nome" type="text"></label>
+                                <label for="contatoEmail">Email<input id="contatoEmail" name="email" type="email" required></label>
+                                <label for="contatoTel">Telefone<input id="contatoTel" name="telefone" type="text"></label>
+                                <label for="contatoMsg">Mensagem<textarea id="contatoMsg" name="mensagem" rows="5"> </textarea></label>
+                                <button class="btn btn-verde btn-large btn-block" type="submit">Enviar</button>
+                            </fieldset>
+                        </form>
+					</div>
+				</div>
+			</section>
+		</div>
+
+{% endblock conteudo %}

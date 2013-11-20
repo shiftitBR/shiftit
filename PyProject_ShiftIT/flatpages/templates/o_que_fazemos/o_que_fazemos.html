@@ -1,75 +1,88 @@
 {% extends "base.html"%}
 {% load i18n %}
 {% block conteudo %}
+        <div class="bg bg-call bg-call-projetosrealizados">
+            <section class="container">
+                <div class="row">
+                    <div class="grid-two-thirds">
+                        <h2 class="">Projetos que já realizamos!</h2>
 
-    <div class="cabecalho introducao" style="background:url('{{MEDIA_URL}}img/bg_intro_oquefazemos.png'); background-size:cover;">
-        <div class="centratexto">
-            <p>Criamos <em>softwares</em> incríveis e ajudamos os nossos<br> clientes a terem <em>sucesso</em> nos seus negócios</p>
+                        <p>Ideias próprias ou de clientes que já tiramos do papel e trouxemos para a realidade. Tem alguma ideia que poderia entrar na lista abaixo? <a href="/contato/">Entre em contato agora mesmo!</a></p>
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
+        <div class="bg">
+            <section class="container">
+                <div class="row">
+                    <div class="grid-third">
+                        <h2>Berbigon</h2>
 
-    <div class="conteudoprincipal">
-        <div style="width:960px;margin: 0 auto;clear:both;">
-        	<p class="textocomofazemos">
-        		Acreditamos em nossas ideias e também na visão de nossos parceiros, que em nossas mãos, viram produtos reais! 
-        		A maioria desses produtos são criados em um modelo de Startup, como o FreelaTI.com e o BerbigOn, além de projetos como o Startuplay.
-        		De toda forma, nossos produtos são reflexos da nossa identidade, prezamos pela simplicidade e pela eficiência. 
-        		Acima de tudo, baseado em metodologias como a Lean Startup, fazemos uma série de testes e validações afim de criar a melhor solução para o mercado. 
-        	</p>
-        	<p class="textocomofazemos">	
-        		Nossa equipe tem uma vasta experiência na criação de aplicativos web e na criação de negócios virtuais. 
-        		Dessa forma oferecemos aos nossos clientes a possibilidade de ter as suas ideias postas em prática por uma equipe comprometida e experiente. Além disso, pelo nosso DNA startupeiro, temos totais condições de auxliar não só na parte técnica do projeto, mas também na validação da ideia e na criação do modelo de negócio. 
-        		Assim temos a certeza que, a quatro mãos, podemos criar produtos espetaculares.
-        	</p>
-        	
-        	<h2 class="cases">
-        		Confira nossos Cases
-        	</h2>
-            
-            <div class="div44">
-                <figure><a class="imglink" href="http://www.dudexp.com" target="_blank"><img src="{{MEDIA_URL}}img/oque-dudexp.png"></a></figure>
-            </div>
+                        <p>O <a href="http://www.berbigon.com.br" target="_blank">BerbigOn</a> é um site que pretende disponibilizar uma maneira prática para compra de alimentos via delivery, onde tudo é feito on-line, desde a escolha do prato até o pagamento.</p>
+                    </div>
 
-            <div class="div44 margin44">
-                <h2>:Dudexp</h2>
-                <p>O <a href="http://www.dudexp.com" target="_blank">:Dudexp</a> é uma plataforma que oferece atividades autênticas, tours alternativos e experiências únicas nas principais cidades do Brasil.</p>
-            </div>
+                    <div class="grid-two-thirds">
+                        <div class="bg bg-greenborder">
+                            <img class="" src="{{MEDIA_URL}}img/screenshots/screenshot-berbigon-1.png">
+                        </div>  
+                    </div>
+                </div>
 
-            <div class="div44" style="clear:left;">
-                <h2>FreelaTI.com</h2>
-                <p>O <a href="http://www.freelati.com" target="_blank">FreelaTI.com</a> é um serviço que busca, de uma maneira fácil e segura, fazer uma ponte entre profissionais de tecnologia e empresas que necessitem de serviços nesta área.</p>
-            </div>
+                <div class="row">
+                    <div class="grid-third">
+                        <h2>FreelaTI</h2>
 
-            <div class="div44 margin44">
-                <figure><a class="imglink" href="http://www.freelati.com" target="_blank"><img src="{{MEDIA_URL}}img/oque-freelati.png"></a></figure>
-            </div>
+                        <p>O <a href="http://www.freelati.com" target="_blank">FreelaTI.com</a> é um serviço que busca, de uma maneira fácil e segura, fazer uma ponte entre profissionais de tecnologia e empresas que necessitem de serviços nesta área.</p>
+                    </div>
 
-            <div class="div44" style="clear:left;">
-                <figure><a class="imglink" href="http://www.berbigon.com.br" target="_blank"><img src="{{MEDIA_URL}}img/oque-berbigon.png"></a></figure>
-            </div>
+                    <div class="grid-two-thirds">
+                        <div class="bg bg-greenborder">
+                            <img class="" src="{{MEDIA_URL}}img/screenshots/screenshot-freelati-1.png">
+                        </div>  
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="grid-third">
+                        <h2>DClima</h2>
 
-            <div class="div44 margin44">
-                <h2>BerbigOn</h2>
-                <p>O <a href="http://www.berbigon.com.br" target="_blank">BerbigOn</a> é um site que pretende disponibilizar uma maneira prática para compra de alimentos via delivery, onde tudo é feito on-line, desde a escolha do prato até o pagamento.</p>
-            </div>
+                        <p>Descrição do DClima</p>
+                    </div>
 
-            <div class="div44" style="clear:left;">
-                <h2>Startuplay</h2>
-                <p>O <a href="http://www.startuplay.com.br" target="_blank">Startuplay</a> é uma parceria entre a Shift it e a Valor da Inovação para oferecer, em pacotes fechados, a validação da ideias através da criação de um MVP e de consultoria especializada.</p>
-            </div>
+                    <div class="grid-two-thirds">
+                        <div class="bg bg-greenborder">
+                            <img class="" src="{{MEDIA_URL}}img/screenshots/screenshot-dclima-1.png">
+                        </div>
+                    </div>
+                </div>
 
-            <div class="div44 margin44">
-                <figure><a class="imglink" href="http://www.startuplay.com.br" target="_blank"><img src="{{MEDIA_URL}}img/oque-startuplay.png"></a></figure>
-            </div>
+                <div class="row">
+                    <div class="grid-third">
+                        <h2>Dudexp</h2>
 
-            <div class="div44" style="clear:left;">
-                <figure><a class="imglink" href="http://www.track-doc.com.br" target="_blank"><img src="{{MEDIA_URL}}img/oque-trackdoc.png"></a></figure>
-            </div>
+                        <p>O <a href="http://www.dudexp.com" target="_blank">:Dudexp</a> é uma plataforma que oferece atividades autênticas, tours alternativos e experiências únicas nas principais cidades do Brasil.</p>
+                    </div>
 
-            <div class="div44 margin44">
-                <h2>Track-Doc</h2>
-                <p>O <a href="http://www.track-doc.com.br" target="_blank">Track-Doc</a> é uma plataforma de Gerenciamento Eletrônico de Documentos (GED) com o objetivo de facilitar a organização, armazenamento, compartilhamento e recuperação de documentos</p>
-            </div>
+                    <div class="grid-two-thirds">
+                        <div class="bg bg-greenborder">
+                            <img class="" src="{{MEDIA_URL}}img/screenshots/screenshot-dudexp-1.png">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="grid-third">
+                        <h2>Trackdoc</h2>
+
+                        <p>O <a href="http://www.track-doc.com.br" target="_blank">Track-Doc</a> é uma plataforma de Gerenciamento Eletrônico de Documentos (GED) com o objetivo de facilitar a organização, armazenamento, compartilhamento e recuperação de documentos</p>
+                    </div>
+
+                    <div class="grid-two-thirds">
+                        <div class="bg bg-greenborder">
+                            <img class="" src="{{MEDIA_URL}}img/screenshots/screenshot-trackdoc-1.png">
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
 {% endblock conteudo %}

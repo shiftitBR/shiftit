@@ -2,48 +2,46 @@
 {% load i18n %}
 {% block conteudo %}
 
-    <div class="cabecalho introducao" style="background:url('{{MEDIA_URL}}img/bg_intro_comofazemos.png'); background-size:cover;">
-        <div class="centratexto">
-        	<p>Utilizamos tecnologias e metodologias como um meio para criar<br> aplicações <em>eficientes</em> e atingir os objetivos de <em>negócio</em></p>
-        </div>
-    </div>
-	<div class="conteudoprincipal">
-		<div class="div960">
-            <figure class="iconesalinhados">
-                <img src="{{MEDIA_URL}}img/python-cor.png">
-                <img src="{{MEDIA_URL}}img/django-cor.png">
-                <img src="{{MEDIA_URL}}img/postgres-cor.png">
-                <img src="{{MEDIA_URL}}img/html5-cor.png">
-                <img src="{{MEDIA_URL}}img/css3-cor.png">
-                <img src="{{MEDIA_URL}}img/jquery-cor.png">
-            </figure>
-        </div>
-		<div class="div960">
-        <p class="textocomofazemos">
-			Na Shift it buscamos construir aplicações realmente incríveis, que superem as expectativas de nossos clientes e satisfaçam as necessidades de negócio. 
-			Para isso procuramos soluções inovadoras e criativas e prezamos pela simplicidade. 
-			Somos defensores da ideia de que em software menos é mais e que para uma solução ser completa ela não precisa necessariamente ser complexa. 
-			Buscamos incansavelmente a qualidade, agilidade e transparência em tudo o que fazemos. 
-			Utilizamos tecnologias modernas, aderentes com as necessidades do negócio e com o grau de inovação que o mercado de tecnologia necessita. 
-			Desenvolvemos nossas aplicações utilizando a linguagem Python e o framework Django, uma combinação poderosa e perfeitamente adaptada à web. 
-			Nossos dados são armazenados em um banco de dados PostgreSQL, o que nos oferece a robustez e eficiência necessária para acompanhar a agilidade das nossas aplicações. 
-			Nossas interfaces são construídas utilizando HTML5, CSS3 e jQuery o que nos possibilita fazer interfaces surpeendentes. 
-		</p>
+        <div class="bg bg-call bg-call-comofazemos">
+            <section class="container">
+                <div class="row">
+                    <div class="grid-two-thirds">
+                        <h2 class="">Como fazemos</h2>
 
-		<p align="center">
-			<strong>Processo de Desenvolvimento</strong>	
-		</p>
-        <figure><img src="{{MEDIA_URL}}img/processodev.png" id="processodev"></figure>
-        
-        <p class="textocomofazemos">
-        	Independente das tecnologias que utilizamos temos um processo produtivo que tem como objetivo a agilidade e a colaboração. 
-        	Nós acreditamos que toda ideia de um produto inovador precisa ser constantemente lapidada e discutida, por isso procuramos meios de estarmos sempre próximos do cliente durante a construção da aplicação, discutindo e aprimorando o projeto. 
-        	Fazemos uso de metodologias ágeis, baseadas em metodologias existentes como Scrum, Kanban e XP. 
-        	Todo o processo de desenvolvimento é dividido em interações bem definidadas, chamadas de Sprints. 
-        	No intervalo entre essas intereções sempre fazemos reuniões, onde revisamos tudo o que foi feito e confirmamos os próximos passos, baseados no aprendizado da interação anterior. 
-        	Nossa intenção é a cada interação entregar o maior valor de negócio, sempre com código funcional e, se possível, já em ambiente de produção.	
-        </p>
-       </div>
-    </div>
+                        <p>Utilizamos tecnologias modernas e metodologias ágeis de gestão de projetos como um meio para criar aplicações eficientes e atingir os objetivos de negócio do cliente.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="bg">
+            <section class="container">
+                <div class="row">
+                    <div class="grid-third text-center">
+                        <img class="" src="{{ MEDIA_URL }}img/ilustracoes/ilustracaoduvida.svg">
+                        <h3>Qual o seu problema?</h3>
+                        <p>O que você quer? Ou melhor: o que você precisa? Primeiro entendemos o problema do nosso cliente.</p>
+                    </div>
+
+                    <div class="grid-third text-center">
+                        <img class="" src="{{ MEDIA_URL }}img/ilustracoes/ilustracaochecklist.svg">
+                        <h3>Levantamos hipóteses.</h3>
+                        <p>Então levantamos uma série de informações e criamos uma visão de como seria um produto para solucionar o problema definido!</p>
+                    </div>
+                    <div class="grid-third text-center">
+                        <img class="" src="{{ MEDIA_URL }}img/ilustracoes/ilustracaodocumentacao.svg">
+                        <h3>Documentamos!</h3>
+                        <p>Com estas informações documentadas nós estamos prontos para desenvolver a primeira versão da aplicação.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="grid-6 text-center">
+                        <hr>
+                        <h2>A execução.</h2>
+                        <p>Nós somos um <strong>time enxuto e alocado que trabalha de forma ágil</strong>. Nosso processo é baseado no SCRUM, o que basicamente significa que nós vamos entregar o projeto em pequenas doses até que ele esteja completo, sem surpresas para o cliente ao final do processo. <a href="contato.html">Quer saber mais sobre este processo? Entre em contato conosco</a>!</p>
+                        <img class="" src="{{ MEDIA_URL }}img/ilustracoes/processodev.png">
+                    </div>
+                </div>
+            </section>
+        </div>
 
 {% endblock conteudo %}

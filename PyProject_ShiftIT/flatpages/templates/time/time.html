@@ -1,81 +1,69 @@
 {% extends "base.html"%}
 {% load i18n %}
 {% block conteudo %}
+		<div class="bg bg-call bg-call-sobrenos">
+			<section class="container">
+				<div class="row">
+					<div class="grid-two-thirds">
+						<h2 class="">Olá! Nós Somos a Shift it!</h2>
 
-	<div class="cabecalho introducao" style="background:url('{{ MEDIA_URL }}img/bg_intro_otime.png'); background-size:cover;">
-	    <div class="centratexto">
-	        <p>
-	        	O time está escalado, <em>pronto</em> para entrar em campo e atuar da melhor maneira<br> para que seu projeto seja <em>bem sucedido</em>
-			</p>
-	    </div>
-	</div>
-    <div class="conteudoprincipal">
-	    <div style="width:960px;height:525px;margin: 0 auto;clear:both;">
-	    <div class="div33">
-	        <div id="timealexandre">
-	            <div class="flip-container">
-	              <div class="flipper">
-	                <div class="front" style="background-image: url('{{MEDIA_URL}}img/time_alexandre.png'); background-size: cover;">
-	                </div>
-	                <div class="back" style="background-image: url('{{MEDIA_URL}}img/time_alexandre_back.png'); background-size: cover;">
-	                </div>
-	              </div>
-	            </div>
-	        <div class="redessociaistime">
-	            <a href="http://www.linkedin.com/in/alexandrespengler" target="_blank"><img src="{{MEDIA_URL}}img/icone-linkedin.png"></a>
-	        </div>
-	        </div>
-	    </div>
-	
-	    <div class="div33">
-	        <img id="shiftitbrasao" src="{{MEDIA_URL}}img/shiftitbrasao.png">
-	        <div id="timediego">
-	            <div class="flip-container">
-	              <div class="flipper">
-	                <div class="front" style="background-image: url('{{MEDIA_URL}}img/time_diego.png'); background-size: cover;">
-	                </div>
-	                <div class="back" style="background-image: url('{{MEDIA_URL}}img/time_diego_back.png'); background-size: cover;">
-	                </div>
-	              </div>
-	            </div>
-	        <div class="redessociaistime">
-	            <a href="http://www.linkedin.com/in/diegosouzacosta" target="_blank"><img src="{{MEDIA_URL}}img/icone-linkedin.png"></a>
-	        </div>
-	
-	        </div>
-	    </div>
-	
-	    <div class="div33">
-	        <div id="timeglauco">
-	             <div class="flip-container">
-	              <div class="flipper">
-	                <div class="front" style="background-image: url('{{MEDIA_URL}}img/time_glauco.png'); background-size: cover;">
-	                </div>
-	                <div class="back" style="background-image: url('{{MEDIA_URL}}img/time_glauco_back.png'); background-size: cover;">
-	                </div>
-	              </div>
-	            </div>
-	        <div class="redessociaistime">
-	            <a href="http://br.linkedin.com/pub/glauco-cardoso-de-oliveira/22/700/64/" target="_blank"><img src="{{MEDIA_URL}}img/icone-linkedin.png"></a>
-	        </div>
-	
-	        </div>
-	    </div>
-	</div>
-	<div style="clear:both;">
-		<p class="destaque">
-        	Prezamos pela simplicidade em todos os momentos. 
-        	Buscamos manter nossa equipe enxuta e equilibrada,<br> contando com profissionais que podem desempenhar suas funções de forma <strong>integrada</strong>.<br> 
-        	Possuímos uma equipe <strong>multidisciplinar</strong> tendo em mente que mais que talentos individuais, formamos uma equipe <strong>eficiente</strong>.
-		</p>
-	    <p class="destaque">Para nos auxiliar contamos com a ajuda<br>de <strong>parceiros estratégicos</strong> que complementam nossos serviços.</p> 
-		<figure class="iconesalinhados">
-            <a href="http://www.catarinasdesign.com.br" target="_blank"><img src="{{MEDIA_URL}}img/parceiros-catarinas.png"></a>
-            <a href="http://www.dataspace.com.br" target="_blank"><img src="{{MEDIA_URL}}img/parceiros-dataspace.png"></a>
-            <a href="https://www.facebook.com/FuseeIdeas" target="_blank"><img src="{{MEDIA_URL}}img/parceiros-fusee.png"></a>
-            <a href="http://www.upspace.com.br" target="_blank"><img src="{{MEDIA_URL}}img/parceiros-upspace.png"></a>
-            <a href="http://www.viconsultoria.com.br" target="_blank"><img src="{{MEDIA_URL}}img/parceiros-valorinovacao.png"></a>
-        </figure>
-	</div>
-	</div>
+						<p>Somos uma empresa de desenvolvimento de softwares sediada em Florianópolis - Santa Catarina.</p>
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="bg">
+			<section class="container">
+				<div class="row">
+					<div class="grid-third">
+						<img class="" style="padding-top:1em;" src="{{ MEDIA_URL }}img/ilustracoes/ilustracaoshiftbadge.svg">
+					</div>
+
+					<div class="grid-two-thirds">
+						<h2>A equipe</h2>
+						<div class="row">
+							<div class="grid-2">
+								<div class="bg bg-greenborder">
+									<img class="" src="{{ MEDIA_URL }}img/fotografias/equipe-alexandre.png">
+									<p>Alexandre Spengler<br>
+									<span class="text-small">Desenvolvedor</span></p>
+								</div>
+							</div>
+							<div class="grid-2">
+								<div class="bg bg-greenborder">
+									<img class="" src="{{ MEDIA_URL }}img/fotografias/equipe-diego.png">
+									<p>Diego Costa<br>
+									<span class="text-small">Desenvolvedor</span></p>
+								</div>
+							</div>
+							<div class="grid-2">
+								<div class="bg bg-greenborder">
+									<img class="" src="{{ MEDIA_URL }}img/fotografias/equipe-glauco.png">
+									<p>Glauco Cardoso<br>
+									<span class="text-small">Designer</span></p>
+								</div>
+							</div>
+						</div>
+						<h2>Parceiros</h2>
+						<div class="row">
+							<div class="grid-img">
+								<a href="http://www.catarinasdesign.com.br" target="_blank"><img src="{{MEDIA_URL}}img/icones/parceiros-catarinas.png"></a>
+							</div>
+				            <div class="grid-img">
+				            	<a href="http://www.dataspace.com.br" target="_blank"><img src="{{MEDIA_URL}}img/icones/parceiros-dataspace.png"></a>
+				            </div>
+				            <div class="grid-img">
+				            	<a href="https://www.facebook.com/FuseeIdeas" target="_blank"><img src="{{MEDIA_URL}}img/icones/parceiros-fusee.png"></a>
+				            </div>
+				            <div class="grid-img">
+				            	<a href="http://www.upspace.com.br" target="_blank"><img src="{{MEDIA_URL}}img/icones/parceiros-upspace.png"></a>
+				            </div>
+				            <div class="grid-img">
+				            	<a href="http://www.viconsultoria.com.br" target="_blank"><img src="{{MEDIA_URL}}img/icones/parceiros-valorinovacao.png"></a>
+				            </div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
 {% endblock conteudo %}

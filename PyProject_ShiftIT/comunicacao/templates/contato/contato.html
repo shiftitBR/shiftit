@@ -1,35 +1,42 @@
 {% extends "base.html"%}
 {% load i18n %}
 {% block conteudo %}
+        <div class="bg bg-call bg-call-contato">
+            <section class="container">
+                <div class="row">
+                    <div class="grid-two-thirds">
+                        <h2 class="text-big">Fale com a gente!</h2>
 
-	<!-- Contato
-	================================================== -->
-    <div class="cabecalho introducao" style="background:url('{{ MEDIA_URL }}img/bg_intro_contato.png'); background-size:cover;">
-        <div class="centratexto">
-            <p>Nós queremos tirar sua <em>ideia</em> do papel!<br>Entre em <em>contato</em> conosco</p>
+                        <p>Não hesite em trazer seu problema para a Shift, nosso negócio é solucionar este problema!</p>
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
-    <div class="conteudoprincipal">
-        <div style="width:960px;margin: 0 auto;clear:both;">
-            <div class="div44">
-                <form id="contato" method="post">{% csrf_token %}
-                    <fieldset>
-                    <p><label for="contatoNome">Nome</label><input id="contatoNome" name="nome" type="text"></p>
-                    <p><label for="contatoEmail">Email</label><input id="contatoEmail" name="email" type="email" required></p>
-                    <p><label for="contatoTel">Telefone</label><input id="contatoTel" name="telefone" type="text"></p>
-                    <p><label for="contatoMsg">Mensagem</label><textarea id="contatoMsg" name="mensagem" rows="5"> </textarea></p>
-                    </fieldset>
-                    <p><button type="submit">Enviar!</button></p>
-                </form>
-            </div>
+        <div class="bg">
+            <section class="container">
+                <div class="row">
+                    <div class="grid-third">
+                        
+                            <h2>Nossos contatos</h2>
 
-            <div class="div44 margin44">
-                <p>
-                	Estamos sediados na <a href="http://www.upspace.com.br" target="_blank">UPspace!</a>, espaço de coworking localizado em Florianópolis, SC.
-                	<br>Você pode nos encontrar através do e-mail: contato@shiftit.com.br ou pelo telefone <br><strong>(48) 4009-3749</strong>.
-                </p>
-                <p><img src="http://maps.googleapis.com/maps/api/staticmap?center=UPspace! Coworking - Rua Professora Maria Júlia Franco, Florianópolis - Santa Catarina&zoom=13&size=400x180&maptype=roadmap&markers=color:orange%7Clabel:S%7C-27.608067,-48.547683&sensor=false"></p>
-            </div>
+                            <p>Além do prático formulário desta página estamos disponíveis através do telefone <strong>(48) 4000 0004</strong> e do email <strong>contato@shiftit.com.br</strong></p>
+                            
+                            <img class="" src="{{ MEDIA_URL }}img/ilustracoes/ilustracaotelefone.svg">
+                    </div>
+
+                    <div class="grid-two-thirds">
+                        <h2>Envie sua mensagem já!</h2>
+                        <form id="contato" method="post">{% csrf_token %}
+                            <fieldset>
+                                <label for="contatoNome">Nome<input id="contatoNome" name="nome" type="text"></label>
+                                <label for="contatoEmail">Email<input id="contatoEmail" name="email" type="email" required></label>
+                                <label for="contatoTel">Telefone<input id="contatoTel" name="telefone" type="text"></label>
+                                <label for="contatoMsg">Mensagem<textarea id="contatoMsg" name="mensagem" rows="5"> </textarea></label>
+                                <button class="btn btn-verde btn-large btn-block" type="submit">Enviar</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
 {% endblock conteudo %}
