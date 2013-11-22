@@ -339,6 +339,12 @@ a img {
 	text-decoration:none;
 }
 
+/* Icons */
+
+img.img-socialicon {
+	width:1em;
+}
+
 /*  Prevents border/background on linked image hover.
  *  Adds slight opacity. */
 a:hover img {
