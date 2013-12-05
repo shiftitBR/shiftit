@@ -862,24 +862,6 @@ select:focus {
     background-position: right center;
 }
 
-.bg-inicial {
-	background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-}
-
-.bg-inicial-web {
-	background-image: url(../img/ilustracoes/inicial-web.svg);
-}
-
-.bg-inicial-mobile {
-	background-image: url(../img/ilustracoes/inicial-mobile.svg);
-}
-
-.bg-inicial-diferenciais {
-	background-image: url(../img/ilustracoes/inicial-diferenciais.svg);
-}
-
 .bg-404 {
 	color: #555555;
     background: #f2f2f2;
