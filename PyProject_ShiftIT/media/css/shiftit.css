@@ -329,6 +329,13 @@ a img {
 	background: none;
 }
 
+/* Alinha links do rodapé à direita em telas grandes */
+@media (min-width: 40em) {
+	.links-footer {
+		text-align: right;
+	}
+}
+
 .bg-call a {
 	color: #caf26a;
 	font-weight: normal;
@@ -837,7 +844,14 @@ select:focus {
 }
 
 .bg-call-comofazemos {
-    background-image: url(../img/ilustracoes/ilustracaofluxogramachamada.svg);
+    background-image: url(../img/ilustracoes/ilustracaoscrum.svg);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+
+.bg-call-projetosrealizados {
+    background-image: url(../img/ilustracoes/ilustracaotecnologias.svg);
     background-repeat: no-repeat;
     background-position: right center;
 }
@@ -846,6 +860,24 @@ select:focus {
     background-image: url(../img/ilustracoes/ilustracaofone.svg);
     background-repeat: no-repeat;
     background-position: right center;
+}
+
+.bg-inicial {
+	background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.bg-inicial-web {
+	background-image: url(../img/ilustracoes/inicial-web.svg);
+}
+
+.bg-inicial-mobile {
+	background-image: url(../img/ilustracoes/inicial-mobile.svg);
+}
+
+.bg-inicial-diferenciais {
+	background-image: url(../img/ilustracoes/inicial-diferenciais.svg);
 }
 
 .bg-404 {
