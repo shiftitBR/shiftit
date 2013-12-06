@@ -2,19 +2,10 @@
 	Folha de estilos baseada no projeto Kraken de Chris Ferdinandi. 
 	http://cferdinandi.github.io/kraken/
 
-	# Cores
-	Primary (Blue): #0088cc
-	Secondary (Dark Blue): #005580
-	Black: #272727
-	White: #ffffff
-	Gray: #808080
-	Light Gray: #e5e5e5
-
 
 	# Font Stack
 	Sans-Serif (default): "Helvetica Neue", Arial, sans-serif
 	Serif (suggested): Georgia, Times, serif
-	Add your own here...
  * ============================================================= */
 
 
@@ -315,13 +306,13 @@ p {
 
 a {
 	color: #555555;
-	text-decoration: none;
+	text-decoration: underline;
 	word-wrap: break-word;
 }
 
 a:hover {
 	color: #6ebf67;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 a img {
@@ -334,6 +325,11 @@ a img {
 	.links-footer {
 		text-align: right;
 	}
+}
+
+/* Diminui imagens na página como fazemos */
+.ilustrasprint0 {
+	width:60%;
 }
 
 .bg-call a {
