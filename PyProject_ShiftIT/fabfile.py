@@ -106,7 +106,7 @@ def reiniciaApache_remoto(vDiretorio):
 
 def instalaDependencias_remoto(vDiretorio):
     with cd(vDiretorio):
-        run('pip-2.7 install --quiet -r requirements.txt')
+        run('pip-2.7 install --quiet -r requirements_producao.txt')
 
 def cria_pastaLog(vDiretorio):
     with cd(vDiretorio):
