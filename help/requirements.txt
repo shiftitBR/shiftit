@@ -1,4 +1,5 @@
-django>=1.4.3
+django
+#django==1.4.3
 psycopg2
 fabric
 south
