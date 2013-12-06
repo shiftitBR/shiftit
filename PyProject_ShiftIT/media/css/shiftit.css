@@ -310,6 +310,10 @@ a {
 	word-wrap: break-word;
 }
 
+.nav-wrap a {
+	text-decoration: none;
+}
+
 a:hover {
 	color: #6ebf67;
 	text-decoration: none;
