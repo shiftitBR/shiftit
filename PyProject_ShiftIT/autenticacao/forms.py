@@ -10,7 +10,7 @@ from django.contrib.auth.forms  import AuthenticationForm
 from django.contrib.auth.models import User
 from django                     import forms
 
-from PyProject_ShiftIT.autenticacao.models import Usuario
+from autenticacao.models        import Usuario
 
 
 class SignUpForm(AuthenticationForm):

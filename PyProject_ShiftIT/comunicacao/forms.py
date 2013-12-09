@@ -6,7 +6,7 @@ Created on Mar 5, 2012
 '''
 
 from django                                     import forms
-from PyProject_ShiftIT.comunicacao.models       import Email, Contato
+from comunicacao.models                         import Email, Contato
 
 
 class FormEmail(forms.ModelForm):

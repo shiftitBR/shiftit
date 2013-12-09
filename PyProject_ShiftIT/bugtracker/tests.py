@@ -2,12 +2,12 @@
 from django.test                                import TestCase
 from django.conf                                import settings
 
-from PyProject_ShiftIT.autenticacao.models      import Usuario
-from PyProject_ShiftIT.bugtracker.models        import Documento, Tipo_Prioridade, Tipo_Estado, Bug,\
+from autenticacao.models                        import Usuario
+from bugtracker.models                          import Documento, Tipo_Prioridade, Tipo_Estado, Bug,\
     Estado_Bug, Pergunta_Bug, Resposta_Bug
     
 import datetime
-from PyProject_ShiftIT import constantes
+import constantes
 
 class Test(TestCase):
     

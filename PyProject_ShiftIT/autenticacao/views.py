@@ -8,7 +8,7 @@ from django.http                            import HttpResponseRedirect
 from django.contrib                         import messages
 from django.contrib.auth.decorators         import login_required
 
-from PyProject_ShiftIT                      import oControle
+import oControle
 
 def login(vRequest, vTitulo):
     

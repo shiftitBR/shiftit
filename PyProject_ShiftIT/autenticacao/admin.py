@@ -11,12 +11,11 @@ from django.contrib.auth.models                 import User
 from django.contrib.auth.models                 import Group
 from django.contrib.sites.models                import Site
 
-from PyProject_ShiftIT.autenticacao.models      import Usuario
-from PyProject_ShiftIT.comunicacao.models       import Contato, Email
-from PyProject_ShiftIT.comunicacao.models       import Pergunta_Contato
-from PyProject_ShiftIT.comunicacao.models       import Resposta_Contato
-from PyProject_ShiftIT.bugtracker.models        import Documento, Bug,\
-    Estado_Bug, Pergunta_Bug, Resposta_Bug
+from autenticacao.models                        import Usuario
+from comunicacao.models                         import Contato, Email
+from comunicacao.models                         import Pergunta_Contato
+from comunicacao.models                         import Resposta_Contato
+from bugtracker.models                          import Documento, Bug, Estado_Bug, Pergunta_Bug, Resposta_Bug
 
 class DocumentoInLine(admin.StackedInline): 
     model           = Documento

@@ -5,12 +5,11 @@ from django.contrib.auth.decorators             import login_required
 from django.http                                import HttpResponseRedirect
 from django.contrib                             import messages
 
-from PyProject_ShiftIT.bugtracker.forms         import FormBug
-from PyProject_ShiftIT.bugtracker.models        import Pergunta_Bug,\
-    Tipo_Prioridade, Resposta_Bug, Estado_Bug
+from bugtracker.forms                           import FormBug
+from bugtracker.models                          import Pergunta_Bug, Tipo_Prioridade, Resposta_Bug, Estado_Bug
+from autenticacao.models                        import Usuario
 
 import datetime
-from PyProject_ShiftIT.autenticacao.models import Usuario
 
 @login_required   
 def adicionar_bug(vRequest, vTitulo):

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.test                                import TestCase
 
-from PyProject_ShiftIT.autenticacao.models      import Usuario
+from autenticacao.models                        import Usuario
 
 class Test(TestCase):
     

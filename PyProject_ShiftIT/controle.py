@@ -10,7 +10,6 @@ import logging
 import os
 import locale
 
-   
 class Controle(object):
     
     oLogger = logging.getLogger(__name__)

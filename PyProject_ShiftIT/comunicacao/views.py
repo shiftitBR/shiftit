@@ -4,9 +4,9 @@ from django.template                            import RequestContext
 from django.http                                import HttpResponseRedirect
 from django.contrib                             import messages
 
-from PyProject_ShiftIT.comunicacao.forms        import FormEmail, FormContato
-from PyProject_ShiftIT.comunicacao.controle     import Controle as ComunicacaoControle
-from PyProject_ShiftIT.comunicacao.models       import Pergunta_Contato, Resposta_Contato
+from comunicacao.forms        import FormEmail, FormContato
+from comunicacao.controle     import Controle as ComunicacaoControle
+from comunicacao.models       import Pergunta_Contato, Resposta_Contato
 
 import datetime
 

@@ -7,8 +7,8 @@ Created on Jul 11, 2012
 
 from django.db                                          import models
 
-from PyProject_ShiftIT.autenticacao.models              import Usuario
-from PyProject_ShiftIT.bugtracker.objetos_auxiliares    import Bug as BugAux
+from autenticacao.models                                import Usuario
+from bugtracker.objetos_auxiliares                      import Bug as BugAux
 
 import logging
 import datetime

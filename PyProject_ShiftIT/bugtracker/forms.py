@@ -6,7 +6,7 @@ Created on Mar 5, 2012
 '''
 
 from django                                     import forms
-from PyProject_ShiftIT.bugtracker.models        import Bug, Tipo_Prioridade
+from bugtracker.models        import Bug, Tipo_Prioridade
 
 
 class FormBug(forms.ModelForm):

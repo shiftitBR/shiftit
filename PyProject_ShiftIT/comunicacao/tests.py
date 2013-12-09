@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.test                                import TestCase
 
-from PyProject_ShiftIT.comunicacao.models       import Email
-from PyProject_ShiftIT.comunicacao.models       import Contato
-from PyProject_ShiftIT.comunicacao.models       import Pergunta_Contato
-from PyProject_ShiftIT.comunicacao.models       import Resposta_Contato
+from comunicacao.models                         import Email
+from comunicacao.models                         import Contato
+from comunicacao.models                         import Pergunta_Contato
+from comunicacao.models                         import Resposta_Contato
     
 import datetime
 

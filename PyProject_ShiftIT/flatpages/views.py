@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts                       import render_to_response
 from django.template                        import RequestContext
-
-from PyProject_ShiftIT.autenticacao.models  import Usuario
-from PyProject_ShiftIT.comunicacao.forms    import FormEmail
 from django.contrib                         import messages
 from django.http                            import HttpResponseRedirect
-from PyProject_ShiftIT.comunicacao.controle import Controle as ComunicacaoControle
+
+from autenticacao.models                    import Usuario
+from comunicacao.forms                      import FormEmail
+from comunicacao.controle                   import Controle as ComunicacaoControle
 
 import datetime
 
@@ -15,13 +15,12 @@ def home(vRequest, vTitulo):
     
     if vRequest.method == 'POST':
         form = FormEmail(vRequest.POST)
-
         if form.is_valid() :
             iEmail              = form.save(commit=False)
             iEmail.data         = str(datetime.datetime.today())[:19]
             iEmail.save()
             
-            ComunicacaoControle().enviarEmail('[Contato Shift it]', iEmail.mensagem, 'diego.costa@shiftit.com.br', 'diego.costa@shiftit.com.br') 
+            ComunicacaoControle().enviarEmail('[Contato Shift it]', iEmail.mensagem, 'contato@shiftit.com.br', iEmail.email) 
             messages.info(vRequest, 'Sua mensagem foi enviada com sucesso!')
             return HttpResponseRedirect('/')
         else:
