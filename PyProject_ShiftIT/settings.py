@@ -12,7 +12,7 @@ EMAIL = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+     ('Shift it', 'suporte@shiftit.com.br'),
 )
 
 MANAGERS = ADMINS

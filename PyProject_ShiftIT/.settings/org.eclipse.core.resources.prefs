@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
 encoding//autenticacao/admin.py=utf-8
 encoding//autenticacao/forms.py=utf-8
+encoding//autenticacao/migrations/0001_initial.py=utf-8
 encoding//autenticacao/models.py=utf-8
 encoding//autenticacao/tests.py=utf-8
 encoding//autenticacao/views.py=utf-8
@@ -9,6 +10,7 @@ encoding//bugtracker/models.py=utf-8
 encoding//bugtracker/tests.py=utf-8
 encoding//bugtracker/views.py=utf-8
 encoding//comunicacao/forms.py=utf-8
+encoding//comunicacao/migrations/0001_initial.py=utf-8
 encoding//comunicacao/models.py=utf-8
 encoding//comunicacao/tests.py=utf-8
 encoding//comunicacao/views.py=utf-8
