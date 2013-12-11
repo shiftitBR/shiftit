@@ -3,48 +3,35 @@
 
 	<head>
 		<meta charset="utf-8">
-
-		<!-- Força o navegador a abrir em sua última versão (IE) ou utilizando o Chrome Frame caso disponível -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-		<!-- Título da página e descrição -->
 		<title>Opa!</title>
 		<meta name="description" content="Ooops! Isto parece ser um erro.">
-
-		<!-- Mobile Screen Resizing -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<!-- Folhas de estilo -->
 		<link rel="stylesheet" href="{{MEDIA_URL}}css/shiftit.css" type="text/css">
-
-		<!- Chamada para o Slider ->
-		<script>
-		if ( 'querySelector' in document && 'addEventListener' in window ) {
-			document.documentElement.className += 'js';
+		<style>
+		body.error {
+			background-image: url({{ MEDIA_URL }}img/ilustracoes/bernunca404.svg);
+			background-position: right top;
+			background-repeat: no-repeat;
 		}
-		</script>
+		</style>
 		<!-- HTML5 Shim para IE 6-8 -->
 		<!--[if lt IE 9]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-
 	</head>
-
-	<body>
-
-
+	<body class="error">
 		<div class="bg bg-404">
 			<section class="container">
 				<div class="row">
 					<div class="grid-two-thirds">
 						<h2 class="text-big"><strong>Ooops!</strong><br>
-							Isso parece ser um erro.</h2>
-						<p>Aguarde um minutinho e tente novamente. Caso o erro persista entre em contato com o administrador do sistema através do email: <a href="#">admin@sistema.com</a>.</p>
+							Esta página não existe.</h2>
+						<p>Volte para a <a href="http://www.shiftit.com.br">nossa página inicial</a>. Caso você acredite que deveria existir alguma coisa aqui entre em contato com a gente através do email: <a href="#">contato@shiftit.com.br</a>.</p>
+						<p class="text-small"><strong>Erro 404</strong> • A página que você está procurando não existe.</p>
 					</div>
 				</div>
 			</section>
 		</div>
-
-
 	</body>
 </html>
