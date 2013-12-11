@@ -2,3 +2,4 @@ django
 psycopg2
 fabric
 south
+django-skwissh
