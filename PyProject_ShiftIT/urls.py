@@ -14,4 +14,5 @@ urlpatterns = patterns('',
     (r'^', include('comunicacao.urls')),
     (r'^', include('autenticacao.urls')),
     (r'^', include('bugtracker.urls')),
+    url(r'^cpanel/', include('skwissh.urls')),
 )

@@ -54,7 +54,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
-SECRET_KEY = ''
+SECRET_KEY = '8lu*6g0lg)9z!ba+a$ehk)xt)x%rxgb$i1&amp'
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -98,6 +98,8 @@ INSTALLED_APPS = (
     'comunicacao',
     'autenticacao',
     'bugtracker',
+    'kronos',
+    'skwissh',
     'south',
 )
 

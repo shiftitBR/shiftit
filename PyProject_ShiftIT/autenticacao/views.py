@@ -8,7 +8,7 @@ from django.http                            import HttpResponseRedirect
 from django.contrib                         import messages
 from django.contrib.auth.decorators         import login_required
 
-import oControle
+import logging
 
 def login(vRequest, vTitulo):
     
@@ -26,7 +26,7 @@ def login(vRequest, vTitulo):
                 messages.warning(vRequest, 'E-mail e/ou Senha incorreto(s). Digite novamente seu E-mail e Senha para efetuar o login.')
                 return HttpResponseRedirect('/login/')
         except Exception, e:
-            oControle.getLogger().error('Nao foi possivel get login: ' + str(e))
+            logging.getLogger('PyProject_ShiftIT.controle').error('Nao foi possivel get login: ' + str(e))
             return False
     return render_to_response(
         'login/login.html',
