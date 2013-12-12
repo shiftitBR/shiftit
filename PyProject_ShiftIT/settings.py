@@ -68,6 +68,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'autenticacao.admin_locale.AdminLocaleURLMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 )
 
 ROOT_URLCONF = 'PyProject_ShiftIT.urls'
@@ -101,6 +102,11 @@ INSTALLED_APPS = (
     'kronos',
     'skwissh',
     'south',
+)
+
+LANGUAGES = (
+   ('fr', 'Français'),
+   ('en', 'English'),
 )
 
 LOGGING = {
