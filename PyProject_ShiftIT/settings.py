@@ -19,9 +19,21 @@ MANAGERS = ADMINS
 
 TIME_ZONE = 'America/Sao_Paulo'
 
-LANGUAGES = (('pt-br', u'Português'),)
+LANGUAGE_CODE = 'pt-br'
 
-ADMIN_LANGUAGE_CODE= 'pt-br'
+LANGUAGES = (('pt-br', u'Português'),
+             ('en', u'Inglês'))
+
+SITE_ID = 1
+
+LOCALE_DIR = '/tmp/'
+
+FALLBACK_LANGUAGES = {
+    'pt-br':[],
+    'en':['pt-br'],
+}
+
+MSGID_LANGUAGE = 'pt-br'
              
 SITE_ID = 1
 
@@ -102,11 +114,6 @@ INSTALLED_APPS = (
     'kronos',
     'skwissh',
     'south',
-)
-
-LANGUAGES = (
-   ('fr', 'Français'),
-   ('en', 'English'),
 )
 
 LOGGING = {

@@ -14,5 +14,11 @@ urlpatterns = patterns('',
     (r'^', include('comunicacao.urls')),
     (r'^', include('autenticacao.urls')),
     (r'^', include('bugtracker.urls')),
+    (r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^skwissh/', include('skwissh.urls')),
 )
+
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += patterns('',
+        url(r'^traducao/', include('rosetta.urls')),
+    )

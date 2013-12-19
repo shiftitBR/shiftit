@@ -15,4 +15,5 @@ encoding//comunicacao/models.py=utf-8
 encoding//comunicacao/tests.py=utf-8
 encoding//comunicacao/views.py=utf-8
 encoding//flatpages/views.py=utf-8
+encoding/local_settings.py=utf-8
 encoding/settings.py=utf-8

@@ -6,7 +6,7 @@
 			<section class="container">
 				<div class="row">
 					<div class="grid-two-thirds">
-						<h2 class="text-big">Simplicidade que transforma</h2>
+						<h2 class="text-big">{% trans "Simplicidade que transforma" %}</h2>
 
 						<p>Seja uma ideia inovadora ou uma solução corporativa nós projetamos e desenvolvemos o seu software aliando tecnologia, agilidade e competência. Nosso objetivo é transformar o seu negócio através de uma solução simples, objetiva e eficiente.</p>
 					</div>
@@ -56,6 +56,21 @@
 					</div>
 				</div>
 			</section>
+		</div>
+		
+		{% get_available_languages as LANGUAGES %}
+
+		<div class="idiomas">
+		  <form action="/i18n/setlang/" method="post">{% csrf_token %}
+		
+		    <select name="language">
+		      {% for lang in LANGUAGES %}
+		      <option value="{{ lang.0 }}">{{ lang.1 }}</option>
+		      {% endfor %}
+		    </select>
+		
+		    <input type="submit" value="{% trans "Mudar idioma" %}" />
+		  </form>
 		</div>
 
 {% endblock conteudo %}
