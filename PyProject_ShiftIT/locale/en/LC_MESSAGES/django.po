@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-19 13:44-0600\n"
+"POT-Creation-Date: 2013-12-19 14:16-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,364 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: comunicacao/templates/contato/contato.html:8
+#: flatpages/templates/home/home.html:44
+msgid "Fale com a gente!"
+msgstr ""
+
+#: comunicacao/templates/contato/contato.html:10
+msgid ""
+"Se você tem um problema fale com a gente! O nosso negócio é simplificar "
+"problemas e solucionar desafios através da mais alta tecnologia."
+msgstr ""
+
+#: comunicacao/templates/contato/contato.html:20
+msgid "Nossos contatos"
+msgstr ""
+
+#: comunicacao/templates/contato/contato.html:22
+msgid ""
+"Além do prático formulário desta página estamos disponíveis através do "
+"telefone "
+msgstr ""
+
+#: comunicacao/templates/contato/contato.html:22
+msgid "(48) 3206-6033"
+msgstr ""
+
+#: comunicacao/templates/contato/contato.html:22
+msgid "e do email contato@shiftit.com.br"
+msgstr ""
+
+#: comunicacao/templates/contato/contato.html:28
+msgid "Envie sua mensagem agora mesmo!"
+msgstr ""
+
+#: comunicacao/templates/contato/contato.html:31
+#: flatpages/templates/home/home.html:49
+msgid "Nome"
+msgstr ""
+
+#: comunicacao/templates/contato/contato.html:32
+#: flatpages/templates/home/home.html:50
+msgid "Email"
+msgstr ""
+
+#: comunicacao/templates/contato/contato.html:33
+#: flatpages/templates/home/home.html:51
+msgid "Telefone"
+msgstr ""
+
+#: comunicacao/templates/contato/contato.html:34
+#: flatpages/templates/home/home.html:52
+msgid "Mensagem"
+msgstr ""
+
+#: comunicacao/templates/contato/contato.html:35
+#: flatpages/templates/home/home.html:53
+msgid "Enviar"
+msgstr ""
+
+#: flatpages/templates/como_fazemos/como_fazemos.html:9
+msgid "Você entende do seu negócio, nós entendemos de tecnologia"
+msgstr ""
+
+#: flatpages/templates/como_fazemos/como_fazemos.html:11
+msgid ""
+"Utilizamos tecnologias modernas e metodologias ágeis de gestão de projetos "
+"como um meio para criar aplicações eficientes e atingir os seus objetivos de "
+"negócio."
+msgstr ""
+
+#: flatpages/templates/como_fazemos/como_fazemos.html:21
+msgid "Qual o seu problema?"
+msgstr ""
+
+#: flatpages/templates/como_fazemos/como_fazemos.html:22
+msgid ""
+"O que você deseja? Ou melhor: o que você precisa? O nosso primeiro passo é "
+"entendermos qual é o seu verdadeiro problema."
+msgstr ""
+
+#: flatpages/templates/como_fazemos/como_fazemos.html:27
+msgid "Levantamento de requisitos."
+msgstr ""
+
+#: flatpages/templates/como_fazemos/como_fazemos.html:28
+msgid ""
+"Então levantamos uma série de informações e criamos uma visão de como seria "
+"um produto para solucionar o problema definido."
+msgstr ""
+
+#: flatpages/templates/como_fazemos/como_fazemos.html:32
+msgid "Documentamos!"
+msgstr ""
+
+#: flatpages/templates/como_fazemos/como_fazemos.html:33
+msgid ""
+"Com o seu projeto definido e documentando nós estamos prontos para "
+"desenvolver a primeira versão do seu sistema."
+msgstr ""
+
+#: flatpages/templates/como_fazemos/como_fazemos.html:39
+msgid "A execução."
+msgstr ""
+
+#: flatpages/templates/como_fazemos/como_fazemos.html:40
+msgid "Nós "
+msgstr ""
+
+#: flatpages/templates/como_fazemos/como_fazemos.html:40
+msgid "somos um time enxuto e dedicado"
+msgstr ""
+
+#: flatpages/templates/como_fazemos/como_fazemos.html:40
+msgid ""
+"que trabalha de forma ágil. Nosso processo é baseado no SCRUM, o que "
+"basicamente significa que nós vamos entregar o seu projeto em pequenas doses "
+"até que ele esteja completo, sem surpresas ao final do projeto."
+msgstr ""
+
+#: flatpages/templates/como_fazemos/como_fazemos.html:40
+msgid "Quer saber mais sobre este processo? Entre em contato conosco"
+msgstr ""
+
 #: flatpages/templates/home/home.html:9
 msgid "Simplicidade que transforma"
 msgstr "isso é um teste"
+
+#: flatpages/templates/home/home.html:11
+msgid ""
+"Seja uma ideia inovadora ou uma solução corporativa nós projetamos e "
+"desenvolvemos o seu software aliando tecnologia, agilidade e competência. "
+"Nosso objetivo é transformar o seu negócio através de uma solução simples, "
+"objetiva e eficiente."
+msgstr ""
+
+#: flatpages/templates/home/home.html:21
+msgid "Desenvolvimento Web"
+msgstr ""
+
+#: flatpages/templates/home/home.html:22
+msgid ""
+"Não fique para trás! Seu negócio pode ser mais ágil, eficiente e menos "
+"oneroso. Um sistema Web pode provocar uma verdadeira revolução na sua "
+"empresa, e nós da Shift it estamos dispostos a auxiliá-lo nesta tarefa."
+msgstr ""
+
+#: flatpages/templates/home/home.html:27
+msgid "Desenvolvimento Mobile"
+msgstr ""
+
+#: flatpages/templates/home/home.html:28
+msgid ""
+"O mundo é cada vez mais Mobile, ter a tecnologia ao seu alcance em qualquer "
+"lugar é algo que pode revolucionar o seu negócio. Nós desenvolvemos "
+"aplicações mobile centradas nas suas necessidades, não importando o "
+"dispositivo ou sistema operacional!"
+msgstr ""
+
+#: flatpages/templates/home/home.html:33
+msgid "Diferenciais"
+msgstr ""
+
+#: flatpages/templates/home/home.html:34
+msgid ""
+"Para nós, cada projeto é um novo desafio. Seja a construção de uma ideia "
+"inovadora ou automação de um processo existente, a nossa equipe está "
+"preparada para escutar as suas necessidades e transforma-las em um software "
+"surpreendente."
+msgstr ""
+
+#: flatpages/templates/home/home.html:46
+msgid "Ligue para (48) 3206-6033 ou deixe o seu recado!"
+msgstr ""
+
+#: flatpages/templates/home/home.html:72
+msgid "Mudar idioma"
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:8
+msgid "Conheça nosso Portfolio"
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:10
+msgid ""
+"Sejam projetos próprios ou ideias dos nossos clientes já criamos muitas "
+"soluções inovadoras e de alto impacto. Nunca esquecendo de manter a "
+"simplicidade, para que a experiência de utilizar os nossos sistemas seja a "
+"melhor possível!"
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:19
+msgid "Berbigon"
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:21
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:49
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:63
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:77
+msgid "O"
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:21
+msgid "BerbigOn"
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:21
+msgid ""
+"é uma aplicação mobile, disponível para iOS e Android que tem o objetivo de "
+"facilitar a busca por serviços de tele-entrega de restaurantes próximos à "
+"você."
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:33
+msgid "DClima"
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:35
+msgid ""
+"O DClima é um sistema web para gestão e automação de pesquisas de clima "
+"organizacional. Seu objetivo é fazer com o processo de criação, captação e "
+"análise de pesquisas seja o mais simples e eficiente possível."
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:47
+msgid "Dudexp"
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:49
+msgid ":Dudexp"
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:49
+msgid ""
+"é uma plataforma que oferece atividades autênticas, tours alternativos e "
+"experiências únicas nas principais cidades do Brasil."
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:61
+msgid "Trackdoc"
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:63
+msgid "Track-Doc"
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:63
+msgid ""
+"é uma plataforma de Gerenciamento Eletrônico de Documentos (GED) com o "
+"objetivo de facilitar a organização, armazenamento, compartilhamento e "
+"recuperação de documentos"
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:75
+msgid "FreelaTI"
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:77
+msgid "FreelaTI.com"
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:77
+msgid ""
+"é um serviço que busca, de uma maneira fácil e segura, fazer uma ponte entre "
+"profissionais de tecnologia e empresas que necessitem de serviços nesta área."
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:89
+msgid "O seu projeto!"
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:91
+msgid "Entre em contato conosco!"
+msgstr ""
+
+#: flatpages/templates/o_que_fazemos/o_que_fazemos.html:91
+msgid "Queremos construir algo incrível com você!"
+msgstr ""
+
+#: flatpages/templates/time/time.html:8
+msgid "Olá! Nós Somos a Shift it!"
+msgstr ""
+
+#: flatpages/templates/time/time.html:10
+msgid ""
+"Prezamos pela simplicidade em todos os momentos. Buscamos manter nossa "
+"equipe enxuta e equilibrada, contando com profissionais que podem "
+"desempenhar suas funções de forma integrada. Possuímos uma equipe "
+"multidisciplinar tendo em mente que mais que talentos individuais, formamos "
+"uma equipe eficiente."
+msgstr ""
+
+#: flatpages/templates/time/time.html:23
+msgid "A equipe"
+msgstr ""
+
+#: flatpages/templates/time/time.html:29 flatpages/templates/time/time.html:37
+msgid "Desenvolvedor"
+msgstr ""
+
+#: flatpages/templates/time/time.html:45
+msgid "Designer"
+msgstr ""
+
+#: templates/base.html:40
+msgid "Nosso trabalho"
+msgstr ""
+
+#: templates/base.html:40
+msgid "Projetos realizados"
+msgstr ""
+
+#: templates/base.html:41
+msgid "Como fazemos"
+msgstr ""
+
+#: templates/base.html:41
+msgid "Tecnologias e processos"
+msgstr ""
+
+#: templates/base.html:42
+msgid "Sobre nós"
+msgstr ""
+
+#: templates/base.html:42
+msgid "A empresa e a equipe"
+msgstr ""
+
+#: templates/base.html:43
+msgid "Nosso blog"
+msgstr ""
+
+#: templates/base.html:43
+msgid "Práticas e tecnologias"
+msgstr ""
+
+#: templates/base.html:44
+msgid "Contato"
+msgstr ""
+
+#: templates/base.html:44
+msgid "Fale conosco"
+msgstr ""
+
+#: templates/base.html:60
+msgid "Shift it © 2013 Todos os direitos reservados"
+msgstr ""
+
+#: templates/base.html:64
+msgid "Telefone:"
+msgstr ""
+
+#: templates/base.html:64
+msgid "(48) 3206 6033"
+msgstr ""
+
+#: templates/rodape.html:7
+msgid "Curta nossa página no facebook!"
+msgstr ""
+
+#: templates/rodape.html:11
+msgid "Todos os direitos reservados © 2013"
+msgstr ""

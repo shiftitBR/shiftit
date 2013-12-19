@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+{% load i18n %}
+<html lang="pt-br">
 
     <head>
         <title>Shift it - Desenvolvimento web</title>
@@ -36,11 +37,11 @@
                         <nav class="nav-wrap">
                         <a class="logo" href="/"><img class="" alt="Shift it - Logo da empresa" src="{{MEDIA_URL}}img/branding/shiftitlogo.svg" onerror="this.src={{MEDIA_URL}}img/branding/shiftitlogo.png"></a>
                             <ul class="nav">
-                                <li><a href="/o_que_fazemos/"><span>Nosso trabalho</span><br><span class="text-small nav-legenda">Projetos realizados</span></a></li>
-                                <li><a href="/como_fazemos/"><span>Como fazemos</span><br><span class="text-small nav-legenda">Tecnologias e processos</span></a></li>
-                                <li><a href="/time/"><span>Sobre nós</span><br><span class="text-small nav-legenda">A empresa e a equipe</span></a></li>
-                                 <li><a href="http://blog.shiftit.com.br/" target="_blank"><span>Nosso blog</span><br><span class="text-small nav-legenda">Práticas e tecnologias</span></a></li>
-                                <li><a href="/contato/"><span>Contato</span><br><span class="text-small nav-legenda">Fale conosco</span></a></li>
+                                <li><a href="/o_que_fazemos/"><span>{% trans "Nosso trabalho" %}</span><br><span class="text-small nav-legenda">{% trans "Projetos realizados" %}</span></a></li>
+                                <li><a href="/como_fazemos/"><span>{% trans "Como fazemos" %}</span><br><span class="text-small nav-legenda">{% trans "Tecnologias e processos" %}</span></a></li>
+                                <li><a href="/time/"><span>{% trans "Sobre nós" %}</span><br><span class="text-small nav-legenda">{% trans "A empresa e a equipe" %}</span></a></li>
+                                 <li><a href="http://blog.shiftit.com.br/" target="_blank"><span>{% trans "Nosso blog" %}</span><br><span class="text-small nav-legenda">{% trans "Práticas e tecnologias" %}</span></a></li>
+                                <li><a href="/contato/"><span>{% trans "Contato" %}</span><br><span class="text-small nav-legenda">{% trans "Fale conosco" %}</span></a></li>
                             </ul>
                         </nav>
                     </div>
@@ -56,11 +57,11 @@
                 <div class="row">
                     <hr>
                     <div class="grid-3">
-                        <p class="text-small">Shift it © 2013 Todos os direitos reservados</p>
+                        <p class="text-small">{% trans "Shift it © 2013 Todos os direitos reservados" %}</p>
                     </div>
                     <div class="grid-3 links-footer">
                         <p class="text-small"><a href="http://blog.shiftit.com.br">Blog</a> • <a href="https://www.facebook.com/ShiftIT.br">Facebook</a></p>
-                        <p class="text-small"><strong>Telefone:</strong> (48) 3206 6033 • <strong>Email:</strong> <a class="" href="mailto:contato@shiftit.com.br">contato@shiftit.com.br</a></p>
+                        <p class="text-small"><strong>{% trans "Telefone:" %}</strong> {% trans "(48) 3206 6033" %} • <strong>Email:</strong> <a class="" href="mailto:contato@shiftit.com.br">contato@shiftit.com.br</a></p>
                     </div>
                 </div>
             </footer>

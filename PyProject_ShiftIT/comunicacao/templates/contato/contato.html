@@ -5,9 +5,9 @@
             <section class="container">
                 <div class="row">
                     <div class="grid-two-thirds">
-                        <h2 class="text-big">Fale com a gente!</h2>
+                        <h2 class="text-big">{% trans "Fale com a gente!" %}</h2>
 
-                        <p>Se você tem um problema fale com a gente! O nosso negócio é simplificar problemas e solucionar desafios através da mais alta tecnologia.</p>
+                        <p>{% trans "Se você tem um problema fale com a gente! O nosso negócio é simplificar problemas e solucionar desafios através da mais alta tecnologia." %}</p>
                     </div>
                 </div>
             </section>
@@ -17,22 +17,22 @@
                 <div class="row">
                     <div class="grid-third vcard">
                         
-                            <h2>Nossos contatos</h2>
+                            <h2>{% trans "Nossos contatos" %}</h2>
 
-                            <p>Além do prático formulário desta página estamos disponíveis através do telefone <div class="tel" style="display:inline;">(48) 3206-6033</div> e do email contato@shiftit.com.br</p>
+                            <p>{% trans "Além do prático formulário desta página estamos disponíveis através do telefone " %}<div class="tel" style="display:inline;">{% trans "(48) 3206-6033" %}</div> {% trans "e do email contato@shiftit.com.br" %}</p>
                             
                             <img class="" alt="" src="{{ MEDIA_URL }}img/ilustracoes/ilustracaotelefone.svg">
                     </div>
 
                     <div class="grid-two-thirds">
-                        <h2>Envie sua mensagem agora mesmo!</h2>
+                        <h2>{% trans "Envie sua mensagem agora mesmo!" %}</h2>
                         <form id="contato" method="post">{% csrf_token %}
                             <fieldset>
-                                <label for="contatoNome">Nome<input id="contatoNome" name="nome" type="text"></label>
-                                <label for="contatoEmail">Email<input id="contatoEmail" name="email" type="email" required></label>
-                                <label for="contatoTel">Telefone<input id="contatoTel" name="telefone" type="text"></label>
-                                <label for="contatoMsg">Mensagem<textarea id="contatoMsg" name="mensagem" rows="5"> </textarea></label>
-                                <button class="btn btn-verde btn-large btn-block" type="submit">Enviar</button>
+                                <label for="contatoNome">{% trans "Nome" %}<input id="contatoNome" name="nome" type="text"></label>
+                                <label for="contatoEmail">{% trans "Email" %}<input id="contatoEmail" name="email" type="email" required></label>
+                                <label for="contatoTel">{% trans "Telefone" %}<input id="contatoTel" name="telefone" type="text"></label>
+                                <label for="contatoMsg">{% trans "Mensagem" %}<textarea id="contatoMsg" name="mensagem" rows="5"> </textarea></label>
+                                <button class="btn btn-verde btn-large btn-block" type="submit">{% trans "Enviar" %}</button>
                             </fieldset>
                         </form>
                     </div>
