@@ -694,6 +694,10 @@ fieldset {
 	margin-bottom: 1.529411765em;
 }
 
+form.display-inline {
+	display: inline-block;
+}
+
 legend,
 label {
 	display: block;

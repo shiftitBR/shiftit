@@ -36,12 +36,12 @@
             <div class="container">
                 <div class="row">
                     <div class="grid-6">
-                        <form class="no-space" id="idiomas"  action="/i18n/setlang/" method="post">{% csrf_token %}
-				            <span>English speaker? Change our website language:
-				            	<button class="btn btn-warning no-margin-bottom" type="submit" name="language" value="pt-br"><img class="icon-flag" src="{{MEDIA_URL}}img/icones/flag-br.png"> Portuguese</button>
-				            	<button class="btn btn-warning no-margin-bottom" type="submit" name="language" value="en"><img class="icon-flag" src="{{MEDIA_URL}}img/icones/flag-us.png"> English</button>
-                                Or <button class="btn btn-warning no-margin-bottom" id="closediv" name="language"><img class="icon-left" src="{{MEDIA_URL}}img/icones/icone-close.svg">Close this message</button></span>
+                        <form class="no-space display-inline" id="idiomas"  action="/i18n/setlang/" method="post">{% csrf_token %}
+				            English speaker? Change our website language:
+			            	<button class="btn btn-warning no-margin-bottom" type="submit" name="language" value="pt-br"><img class="icon-flag" src="{{MEDIA_URL}}img/icones/flag-br.png"> Portuguese</button>
+			            	<button class="btn btn-warning no-margin-bottom" type="submit" name="language" value="en"><img class="icon-flag" src="{{MEDIA_URL}}img/icones/flag-us.png"> English</button>
 				        </form>
+                        <span>Or <button class="btn btn-warning no-margin-bottom" id="closediv" name="language"><img class="icon-left" src="{{MEDIA_URL}}img/icones/icone-close.svg">Close this message</button></span>
                     </div>
                 </div>
             </div>
