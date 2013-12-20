@@ -29,9 +29,9 @@
                 Seu navegador não é atualizado a algum tempo, certo? As tecnologias evoluem constantemente, e para aproveitar ao máximo o que a web tem a oferecer é recomendável que você mantenha seu navegador sempre atualizado! <a href="http://www.updateyourbrowser.net/pt">Clique aqui para baixar a versão mais nova do seu navegador favorito</a> e tenha uma melhor experiência com a internet.
             </section>
         <![endif]-->
-                        
+        
         {% get_available_languages as LANGUAGES %}
-        {% if not LANGUAGE_CODE == 'pt-br'%}                
+        {% if not LANGUAGE_CODE == 'pt-br' and iHome%}                
         <div class="bg bg-warning bg-condensed" id="id_language">
             <div class="container">
                 <div class="row">

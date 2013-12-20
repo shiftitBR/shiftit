@@ -12,6 +12,7 @@ import datetime
 
 def home(vRequest, vTitulo):
     iUsuario            = Usuario().obtemUsuario(vRequest.user.id)
+    iHome               = True
 
     if vRequest.method == 'POST':
         form = FormEmail(vRequest.POST)
