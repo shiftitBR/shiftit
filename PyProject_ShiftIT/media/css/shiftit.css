@@ -348,8 +348,18 @@ a img {
 
 /* Icons */
 
+img.icon-left {
+	vertical-align: text-top;
+	padding-right:0.4em;
+	height:1em;
+}
+
 img.img-socialicon {
 	width:2em;
+}
+
+img.icon-flag {
+	vertical-align: middle;
 }
 
 /*  Prevents border/background on linked image hover.
@@ -581,6 +591,7 @@ pre code {
 .btn:hover,
 a .btn:hover {
 	color: #ffffff;
+	text-decoration: none;
 }
 
 .btn:hover,
@@ -610,6 +621,19 @@ a .btn-blue:hover {
 a .btn-verde:hover {
 	background-color: #538f4d;
 	border-color: #538f4d;
+}
+
+.btn-warning {
+	background-color: #EBE3AA;
+	border-color: #EBE3AA;
+	color: #504647;
+}
+
+.btn-warning:hover,
+a .btn-warning:hover {
+	background-color: #d4d4a5;
+	border-color: #d4d4a5;
+	color: #504647;
 }
 
 .btn:active {
@@ -818,6 +842,12 @@ select:focus {
 	border: 1px solid #6ebf67;
 	padding:.470588235em;
 	margin-bottom: 1em;
+}
+
+.bg-warning {
+	border-bottom: 1px solid #EBE3AA;
+	background-color: #F7F8B6;
+	color: #504647;
 }
 
 .bg-greenborder img {
