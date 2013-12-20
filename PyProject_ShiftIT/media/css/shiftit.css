@@ -601,24 +601,26 @@ a .btn:hover {
 	text-decoration: none;
 }
 
-.btn-blue {
-	background-color: #0088cc;
-	border-color: #0088cc;
+.btn-grey {
+	background-color: #f1f2f2;
+	border-color: #f1f2f2;
+	color: #555;
 }
 
-.btn-blue:hover,
-a .btn-blue:hover {
-	background-color: #005580;
-	border-color: #005580;
+.btn-grey:hover,
+a .btn-grey:hover {
+	background-color: #ccc;
+	border-color: #ccc;
+	color: #555;
 }
 
-.btn-verde {
+.btn-green {
 	background-color: #6ebf67;
 	border-color: #6ebf67;
 }
 
-.btn-verde:hover,
-a .btn-verde:hover {
+.btn-green:hover,
+a .btn-green:hover {
 	background-color: #538f4d;
 	border-color: #538f4d;
 }
@@ -1158,6 +1160,10 @@ select:focus {
 .no-space-bottom {
 	margin-bottom: 0;
 	padding-bottom: 0;
+}
+
+.no-margin-bottom {
+	margin-bottom: 0!important;
 }
 
 .no-space-top {

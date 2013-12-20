@@ -36,13 +36,11 @@
             <div class="container">
                 <div class="row">
                     <div class="grid-6">
-                        <span class="text-"><img class="icon-flag" alt="Bandeira dos Estados Unidos" src="{{MEDIA_URL}}img/icones/flag-us.png" > English speaker? Change our website language! Or <button id="closediv" name="language" ><img class="icon-flag" src="{{MEDIA_URL}}img/icones/icone-close.svg"></button></span><br />
-                        <form id="idiomas"  action="/i18n/setlang/" method="post">{% csrf_token %}
-				            <p class="text-small">
-				            	<strong>Select your preferred language:</strong> 
-				            	<button type="submit" name="language" value="pt-br" ><img class="icon-flag" src="{{MEDIA_URL}}img/icones/flag-br.png"></button>
-				            	<button type="submit" name="language" value="en" ><img class="icon-flag" src="{{MEDIA_URL}}img/icones/flag-us.png"></button>
-				            </p>
+                        <form class="no-space" id="idiomas"  action="/i18n/setlang/" method="post">{% csrf_token %}
+				            <span>English speaker? Change our website language:
+				            	<button class="btn btn-warning no-margin-bottom" type="submit" name="language" value="pt-br"><img class="icon-flag" src="{{MEDIA_URL}}img/icones/flag-br.png"> Portuguese</button>
+				            	<button class="btn btn-warning no-margin-bottom" type="submit" name="language" value="en"><img class="icon-flag" src="{{MEDIA_URL}}img/icones/flag-us.png"> English</button>
+                                Or <button class="btn btn-warning no-margin-bottom" id="closediv" name="language"><img class="icon-left" src="{{MEDIA_URL}}img/icones/icone-close.svg">Close this message</button></span>
 				        </form>
                     </div>
                 </div>
@@ -82,8 +80,8 @@
                         <form id="idiomas"  action="/i18n/setlang/" method="post">{% csrf_token %}
 	                        <p class="text-small">
 	                        	<strong>{% trans "Selecione seu idioma preferido:" %}</strong> 
-	                        	<button type="submit" name="language" value="pt-br" ><img class="icon-flag" src="{{MEDIA_URL}}img/icones/flag-br.png"></button>
-	                        	<button type="submit" name="language" value="en" ><img class="icon-flag" src="{{MEDIA_URL}}img/icones/flag-us.png"></button>
+	                        	<button class="btn btn-grey no-margin-bottom" type="submit" name="language" value="pt-br"><img class="icon-flag" src="{{MEDIA_URL}}img/icones/flag-br.png"> Portuguese</button>
+                                <button class="btn btn-grey no-margin-bottom" type="submit" name="language" value="en"><img class="icon-flag" src="{{MEDIA_URL}}img/icones/flag-us.png"> English</button>
 	                        </p>
                         </form>
                     </div>
