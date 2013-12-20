@@ -11,8 +11,8 @@ from comunicacao.controle                   import Controle as ComunicacaoContro
 import datetime
 
 def home(vRequest, vTitulo):
-    iUsuario           = Usuario().obtemUsuario(vRequest.user.id)
-    
+    iUsuario            = Usuario().obtemUsuario(vRequest.user.id)
+
     if vRequest.method == 'POST':
         form = FormEmail(vRequest.POST)
         if form.is_valid() :

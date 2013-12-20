@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-19 14:59-0600\n"
+"POT-Creation-Date: 2013-12-20 11:24-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,27 +54,27 @@ msgid "Envie sua mensagem agora mesmo!"
 msgstr "Send your message right now!"
 
 #: comunicacao/templates/contato/contato.html:31
-#: flatpages/templates/home/home.html:49
+#: flatpages/templates/home/home.html:48
 msgid "Nome"
 msgstr "Name"
 
 #: comunicacao/templates/contato/contato.html:32
-#: flatpages/templates/home/home.html:50
+#: flatpages/templates/home/home.html:49
 msgid "Email"
 msgstr "Email"
 
 #: comunicacao/templates/contato/contato.html:33
-#: flatpages/templates/home/home.html:51
+#: flatpages/templates/home/home.html:50
 msgid "Telefone"
 msgstr "Phone"
 
 #: comunicacao/templates/contato/contato.html:34
-#: flatpages/templates/home/home.html:52
+#: flatpages/templates/home/home.html:51
 msgid "Mensagem"
 msgstr "Message"
 
 #: comunicacao/templates/contato/contato.html:35
-#: flatpages/templates/home/home.html:53
+#: flatpages/templates/home/home.html:52
 msgid "Enviar"
 msgstr "Send"
 
@@ -210,13 +210,9 @@ msgstr ""
 "innovative idea or an existing process automation, our team is prepared to "
 "listen to your needs and transforms them into an amazing software."
 
-#: flatpages/templates/home/home.html:46
+#: flatpages/templates/home/home.html:45
 msgid "Ligue para (48) 3206-6033 ou deixe o seu recado!"
 msgstr "Call +55 (48) 3206-6033 or leave a message!"
-
-#: flatpages/templates/home/home.html:72
-msgid "Mudar idioma"
-msgstr "Change language"
 
 #: flatpages/templates/o_que_fazemos/o_que_fazemos.html:8
 msgid "Conheça nosso Portfolio"
@@ -361,55 +357,55 @@ msgstr "Developer"
 msgid "Designer"
 msgstr "Designer"
 
-#: templates/base.html:40
+#: templates/base.html:57
 msgid "Nosso trabalho"
 msgstr "Our work"
 
-#: templates/base.html:40
+#: templates/base.html:57
 msgid "Projetos realizados"
 msgstr "Projects carried out"
 
-#: templates/base.html:41
+#: templates/base.html:58
 msgid "Como fazemos"
 msgstr "How do"
 
-#: templates/base.html:41
+#: templates/base.html:58
 msgid "Tecnologias e processos"
 msgstr "Technologies and processes"
 
-#: templates/base.html:42
+#: templates/base.html:59
 msgid "Sobre nós"
 msgstr "About us"
 
-#: templates/base.html:42
+#: templates/base.html:59
 msgid "A empresa e a equipe"
 msgstr "The company and staff"
 
-#: templates/base.html:43
+#: templates/base.html:60
 msgid "Nosso blog"
 msgstr "our blog"
 
-#: templates/base.html:43
+#: templates/base.html:60
 msgid "Práticas e tecnologias"
 msgstr "Practices and technologies"
 
-#: templates/base.html:44
+#: templates/base.html:61
 msgid "Contato"
 msgstr "Contact"
 
-#: templates/base.html:44
+#: templates/base.html:61
 msgid "Fale conosco"
 msgstr "Contact Us"
 
-#: templates/base.html:60
+#: templates/base.html:77
 msgid "Shift it © 2013 Todos os direitos reservados"
 msgstr "Shift it © 2013 All rights reserved"
 
-#: templates/base.html:64
+#: templates/base.html:89
 msgid "Telefone:"
 msgstr "Phone"
 
-#: templates/base.html:64
+#: templates/base.html:89
 msgid "(48) 3206 6033"
 msgstr "+55 (48) 3206 6033"
 
@@ -420,3 +416,6 @@ msgstr "Like our facebook page!"
 #: templates/rodape.html:11
 msgid "Todos os direitos reservados © 2013"
 msgstr "All rights reserved © 2013"
+
+#~ msgid "Mudar idioma"
+#~ msgstr "Change language"

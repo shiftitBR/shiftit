@@ -21,7 +21,7 @@
 
     <body>
     <script type="text/javascript">
-    var WRInitTime=(new Date()).getTime();
+    	var WRInitTime=(new Date()).getTime();
     </script>
 
         <!--[if lt IE 8]>
@@ -29,15 +29,27 @@
                 Seu navegador não é atualizado a algum tempo, certo? As tecnologias evoluem constantemente, e para aproveitar ao máximo o que a web tem a oferecer é recomendável que você mantenha seu navegador sempre atualizado! <a href="http://www.updateyourbrowser.net/pt">Clique aqui para baixar a versão mais nova do seu navegador favorito</a> e tenha uma melhor experiência com a internet.
             </section>
         <![endif]-->
-        <div class="bg bg-warning bg-condensed">
+                        
+        {% get_available_languages as LANGUAGES %}
+        {% if not LANGUAGE_CODE == 'pt-br'%}                
+        <div class="bg bg-warning bg-condensed" id="id_language">
             <div class="container">
                 <div class="row">
                     <div class="grid-6">
-                        <span class="text-"><img class="icon-flag" alt="Bandeira dos Estados Unidos" src="{{MEDIA_URL}}img/icones/flag-us.png" > English speaker? Change our website language! Or <a class="btn btn-warning"><img class="icon-left" alt="Close" src="{{MEDIA_URL}}img/icones/icone-close.svg" >Close this message</a></span>
+                        <span class="text-"><img class="icon-flag" alt="Bandeira dos Estados Unidos" src="{{MEDIA_URL}}img/icones/flag-us.png" > English speaker? Change our website language! Or <button id="closediv" name="language" ><img class="icon-flag" src="{{MEDIA_URL}}img/icones/icone-close.svg"></button></span><br />
+                        <form id="idiomas"  action="/i18n/setlang/" method="post">{% csrf_token %}
+				            <p class="text-small">
+				            	<strong>Select your preferred language:</strong> 
+				            	<button type="submit" name="language" value="pt-br" ><img class="icon-flag" src="{{MEDIA_URL}}img/icones/flag-br.png"></button>
+				            	<button type="submit" name="language" value="en" ><img class="icon-flag" src="{{MEDIA_URL}}img/icones/flag-us.png"></button>
+				            </p>
+				        </form>
                     </div>
                 </div>
             </div>
         </div>
+        {% endif %}
+        
         <div class="bg bg-navegacao">
             <section class="container">
                 <div class="row">
@@ -66,7 +78,14 @@
                     <hr>
                     <div class="grid-3">
                         <p class="text-small">{% trans "Shift it © 2013 Todos os direitos reservados" %}</p>
-                        <p class="text-small"><strong>{% trans "Selecione seu idioma preferido:" %}</strong> <img class="icon-flag" alt="Bandeira do Brasil" src="{{MEDIA_URL}}img/icones/flag-br.png" > Português <img class="icon-flag" alt="Bandeira dos Estados Unidos" src="{{MEDIA_URL}}img/icones/flag-us.png" > English</p>
+                        
+                        <form id="idiomas"  action="/i18n/setlang/" method="post">{% csrf_token %}
+	                        <p class="text-small">
+	                        	<strong>{% trans "Selecione seu idioma preferido:" %}</strong> 
+	                        	<button type="submit" name="language" value="pt-br" ><img class="icon-flag" src="{{MEDIA_URL}}img/icones/flag-br.png"></button>
+	                        	<button type="submit" name="language" value="en" ><img class="icon-flag" src="{{MEDIA_URL}}img/icones/flag-us.png"></button>
+	                        </p>
+                        </form>
                     </div>
                     <div class="grid-3 links-footer">
                         <p class="text-small"><a href="http://blog.shiftit.com.br">Blog</a> • <a href="https://www.facebook.com/ShiftIT.br">Facebook</a></p>
@@ -99,11 +118,16 @@
           })();
         </script>
         <!-- Google Analytics end -->
-        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         <script src="{{ MEDIA_URL }}js/mascaras.js"></script>
         <script src="{{ MEDIA_URL }}js/alphanumeric.js"></script>
 		<script src="{{ MEDIA_URL }}js/funcoes.js"></script>
+		<script type="text/javascript">
+			$("#closediv").click(function() {
+				div = document.getElementById('id_language');
+				div.style.display="none";
+			});
+		</script>
 
     </body>
 </html>
