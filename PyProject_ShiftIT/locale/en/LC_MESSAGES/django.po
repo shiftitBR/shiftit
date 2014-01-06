@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-20 11:24-0600\n"
+"POT-Creation-Date: 2014-01-06 10:34-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -170,7 +170,7 @@ msgstr ""
 
 #: flatpages/templates/home/home.html:21
 msgid "Desenvolvimento Web"
-msgstr ""
+msgstr "Web development"
 
 #: flatpages/templates/home/home.html:22
 msgid ""
@@ -178,6 +178,9 @@ msgid ""
 "oneroso. Um sistema Web pode provocar uma verdadeira revolução na sua "
 "empresa, e nós da Shift it estamos dispostos a auxiliá-lo nesta tarefa."
 msgstr ""
+"Do not get left behind! Your business can be more agile, efficient and less "
+"costly. A Web system can cause a revolution in your business, and we Shift "
+"it we are willing to assist in this task."
 
 #: flatpages/templates/home/home.html:27
 msgid "Desenvolvimento Mobile"
@@ -357,55 +360,59 @@ msgstr "Developer"
 msgid "Designer"
 msgstr "Designer"
 
-#: templates/base.html:57
+#: templates/base.html:58
 msgid "Nosso trabalho"
 msgstr "Our work"
 
-#: templates/base.html:57
+#: templates/base.html:58
 msgid "Projetos realizados"
 msgstr "Projects carried out"
 
-#: templates/base.html:58
+#: templates/base.html:59
 msgid "Como fazemos"
 msgstr "How do"
 
-#: templates/base.html:58
+#: templates/base.html:59
 msgid "Tecnologias e processos"
 msgstr "Technologies and processes"
 
-#: templates/base.html:59
+#: templates/base.html:60
 msgid "Sobre nós"
 msgstr "About us"
 
-#: templates/base.html:59
+#: templates/base.html:60
 msgid "A empresa e a equipe"
 msgstr "The company and staff"
 
-#: templates/base.html:60
+#: templates/base.html:61
 msgid "Nosso blog"
 msgstr "our blog"
 
-#: templates/base.html:60
+#: templates/base.html:61
 msgid "Práticas e tecnologias"
 msgstr "Practices and technologies"
 
-#: templates/base.html:61
+#: templates/base.html:62
 msgid "Contato"
 msgstr "Contact"
 
-#: templates/base.html:61
+#: templates/base.html:62
 msgid "Fale conosco"
 msgstr "Contact Us"
 
-#: templates/base.html:77
+#: templates/base.html:78
 msgid "Shift it © 2013 Todos os direitos reservados"
 msgstr "Shift it © 2013 All rights reserved"
 
-#: templates/base.html:89
+#: templates/base.html:82
+msgid "Selecione seu idioma preferido:"
+msgstr "Select your preferred language:"
+
+#: templates/base.html:90
 msgid "Telefone:"
 msgstr "Phone"
 
-#: templates/base.html:89
+#: templates/base.html:90
 msgid "(48) 3206 6033"
 msgstr "+55 (48) 3206 6033"
 
