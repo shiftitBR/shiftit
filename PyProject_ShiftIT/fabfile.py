@@ -20,8 +20,9 @@ def roda_teste():
     if (result1.failed or result2.failed or result3.failed):
         abort("O teste FALHOU! Abortando...")
         
-def roda_traducao():
-    run('python2.7 ./manage.py compilemessages')
+def roda_traducao(vDiretorio):
+    with cd(vDiretorio):
+        run('python2.7 ./manage.py compilemessages')
 
 def roda_teste_remoto(vDiretorio):
     with settings(warn_only=True):
@@ -165,7 +166,7 @@ def deploy_teste():
     pull() #master
     roda_teste()    
     fetch_pull_remoto(iDiretorioApp, 'master')
-    roda_traducao()
+    roda_traducao(iDiretorioApp)
     instalaDependencias_remoto(iDiretorioHelp)
     aplicaSouthMigration(iDiretorioApp)
     reiniciaApache_remoto(iDiretorioApache)
@@ -179,7 +180,7 @@ def deploy_producao():
     pull() #producao
     roda_teste()    
     fetch_pull_remoto(iDiretorioApp, 'producao')
-    roda_traducao()
+    roda_traducao(iDiretorioApp)
     instalaDependencias_remoto(iDiretorioHelp)
     aplicaSouthMigration(iDiretorioApp)
     reiniciaApache_remoto(iDiretorioApache)
