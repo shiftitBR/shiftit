@@ -133,11 +133,11 @@ msgstr "The execution."
 
 #: flatpages/templates/como_fazemos/como_fazemos.html:40
 msgid "Nós "
-msgstr "We"
+msgstr "We "
 
 #: flatpages/templates/como_fazemos/como_fazemos.html:40
 msgid "somos um time enxuto e dedicado"
-msgstr "we are a lean and dedicated team"
+msgstr "are a lean and dedicated team"
 
 #: flatpages/templates/como_fazemos/como_fazemos.html:40
 msgid ""
@@ -253,7 +253,7 @@ msgid ""
 "facilitar a busca por serviços de tele-entrega de restaurantes próximos à "
 "você."
 msgstr ""
-"A mobile application available for iOS and Android that aims to "
+"is a mobile application available for iOS and Android that aims to "
 "facilitate the search for tele-delivery restaurants near you."
 
 #: flatpages/templates/o_que_fazemos/o_que_fazemos.html:33
@@ -283,7 +283,7 @@ msgid ""
 "é uma plataforma que oferece atividades autênticas, tours alternativos e "
 "experiências únicas nas principais cidades do Brasil."
 msgstr ""
-"It's a platform that offers authentic activities, alternative tours and "
+"it's a platform that offers authentic activities, alternative tours and "
 "unique experiences in the main cities of Brazil."
 
 #: flatpages/templates/o_que_fazemos/o_que_fazemos.html:61
@@ -316,7 +316,7 @@ msgid ""
 "é um serviço que busca, de uma maneira fácil e segura, fazer uma ponte entre "
 "profissionais de tecnologia e empresas que necessitem de serviços nesta área."
 msgstr ""
-"It's a service that seeks, in an easy and secure way to build a bridge between "
+"it's a service that seeks, in an easy and secure way to build a bridge between "
 "technology professionals and business who require services in this area."
 
 #: flatpages/templates/o_que_fazemos/o_que_fazemos.html:89
