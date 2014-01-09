@@ -27,7 +27,7 @@ msgid ""
 "Se você tem um problema fale com a gente! O nosso negócio é simplificar "
 "problemas e solucionar desafios através da mais alta tecnologia."
 msgstr ""
-"If you have a problem talk to us! Our business are simplify challenges and "
+"If you have a problem talk to us! Our business is to simplify challenges and "
 "solve problems through the latest technology."
 
 #: comunicacao/templates/contato/contato.html:20
@@ -80,7 +80,7 @@ msgstr "Send"
 
 #: flatpages/templates/como_fazemos/como_fazemos.html:9
 msgid "Você entende do seu negócio, nós entendemos de tecnologia"
-msgstr "You understand about your business, we understand about technology"
+msgstr "You understand your business, we know about technology"
 
 #: flatpages/templates/como_fazemos/como_fazemos.html:11
 msgid ""
@@ -89,7 +89,7 @@ msgid ""
 "negócio."
 msgstr ""
 "We use modern technologies and agile project management as a way to create "
-"efficient applications and achieve their business goals."
+"efficient applications and achieve your business goals."
 
 #: flatpages/templates/como_fazemos/como_fazemos.html:21
 msgid "Qual o seu problema?"
@@ -100,8 +100,8 @@ msgid ""
 "O que você deseja? Ou melhor: o que você precisa? O nosso primeiro passo é "
 "entendermos qual é o seu verdadeiro problema."
 msgstr ""
-"What you want? Or better: what do you need? Our first step is understand what "
-"is your real problem."
+"What do you wish? Or better: what do you need? Our first step is to understand what "
+"is your true problem."
 
 #: flatpages/templates/como_fazemos/como_fazemos.html:27
 msgid "Levantamento de requisitos."
@@ -112,12 +112,12 @@ msgid ""
 "Então levantamos uma série de informações e criamos uma visão de como seria "
 "um produto para solucionar o problema definido."
 msgstr ""
-"So we raised a lot of information and create a vision of how a product would "
+"So we raised a series of information and create a vision of how a product would "
 "be to solve the defined problem."
 
 #: flatpages/templates/como_fazemos/como_fazemos.html:32
 msgid "Documentamos!"
-msgstr "Documented!"
+msgstr "Your project documented!"
 
 #: flatpages/templates/como_fazemos/como_fazemos.html:33
 msgid ""
@@ -137,7 +137,7 @@ msgstr "We"
 
 #: flatpages/templates/como_fazemos/como_fazemos.html:40
 msgid "somos um time enxuto e dedicado"
-msgstr "are a lean and dedicated team"
+msgstr "we are a lean and dedicated team"
 
 #: flatpages/templates/como_fazemos/como_fazemos.html:40
 msgid ""
@@ -147,7 +147,7 @@ msgid ""
 msgstr ""
 "working in an agile way. Our process is based on SCRUM, which basically "
 "means that we will deliver your project in small doses until it is complete, "
-"no surprises at the end of the project."
+"whit no surprises at the end of the project."
 
 #: flatpages/templates/como_fazemos/como_fazemos.html:40
 msgid "Quer saber mais sobre este processo? Entre em contato conosco"
@@ -164,8 +164,8 @@ msgid ""
 "Nosso objetivo é transformar o seu negócio através de uma solução simples, "
 "objetiva e eficiente."
 msgstr ""
-"Be an innovative idea or a business solution we design and develop your "
-"software combining technology, agility and competence. Our goal is to "
+"An innovative idea or a business solution we design and develop your "
+"software, combining technology, agility and competence. Our goal is to "
 "transform your business through a simple, objective and efficient solution."
 
 #: flatpages/templates/home/home.html:21
@@ -178,9 +178,9 @@ msgid ""
 "oneroso. Um sistema Web pode provocar uma verdadeira revolução na sua "
 "empresa, e nós da Shift it estamos dispostos a auxiliá-lo nesta tarefa."
 msgstr ""
-"Do not get left behind! Your business can be more agile, efficient and less "
-"costly. A Web system can cause a revolution in your business, and we of Shift "
-"it are willing to assist in this task."
+"Do not get left behind! Your business can be agile, efficient and less "
+"costly. A Web system can cause a revolution in your business, and we at Shift "
+"it are willing to assist you in this task."
 
 #: flatpages/templates/home/home.html:27
 msgid "Desenvolvimento Mobile"
@@ -193,7 +193,7 @@ msgid ""
 "aplicações mobile centradas nas suas necessidades, não importando o "
 "dispositivo ou sistema operacional!"
 msgstr ""
-"The world is becoming more mobile, have the technology at your fingertips "
+"The world is becoming more and more mobile, to have technology at your fingertips "
 "anywhere is something that can revolutionize your business. We develop "
 "mobile applications focused on your needs, no matter what device or "
 "operating system!"
@@ -209,9 +209,9 @@ msgid ""
 "preparada para escutar as suas necessidades e transforma-las em um software "
 "surpreendente."
 msgstr ""
-"For us, each project is a new challenge. Be the construction of an "
+"For us, each project is a new challenge. The construction of an "
 "innovative idea or an existing process automation, our team is prepared to "
-"listen your needs and transforms them into an amazing software."
+"listen your needs and transform them into an amazing software."
 
 #: flatpages/templates/home/home.html:45
 msgid "Ligue para (48) 3206-6033 ou deixe o seu recado!"
@@ -228,9 +228,9 @@ msgid ""
 "simplicidade, para que a experiência de utilizar os nossos sistemas seja a "
 "melhor possível!"
 msgstr ""
-"Let our projects or ideas of our clients we have already created many innovative "
-"and high-impact solutions. Never forgetting to keep it simple, for the "
-"experience of using our systems are the best as possible!"
+"Our own projects or our clients ideas we have already created many innovative "
+"and high-impact solutions. Never forgetting to keep it simple, so the "
+"experience of using our systems is the best as possible!"
 
 #: flatpages/templates/o_que_fazemos/o_que_fazemos.html:19
 msgid "Berbigon"
@@ -253,7 +253,7 @@ msgid ""
 "facilitar a busca por serviços de tele-entrega de restaurantes próximos à "
 "você."
 msgstr ""
-"is a mobile application available for iOS and Android that aims to "
+"A mobile application available for iOS and Android that aims to "
 "facilitate the search for tele-delivery restaurants near you."
 
 #: flatpages/templates/o_que_fazemos/o_que_fazemos.html:33
@@ -266,8 +266,8 @@ msgid ""
 "organizacional. Seu objetivo é fazer com o processo de criação, captação e "
 "análise de pesquisas seja o mais simples e eficiente possível."
 msgstr ""
-"The DClima is a web system for management and automation organizational climate "
-"researchs. Their goal is to make the process of creation, capture and "
+"The DClima is a web system for management and automation of organizational climate "
+"researchs. Its goal is to make the process of creation, capture and "
 "analysis of research as simple and efficient as possible."
 
 #: flatpages/templates/o_que_fazemos/o_que_fazemos.html:47
@@ -300,7 +300,7 @@ msgid ""
 "objetivo de facilitar a organização, armazenamento, compartilhamento e "
 "recuperação de documentos"
 msgstr ""
-"is a platform for Electronic Document Management (EDM) with the aim to "
+"is a platform for Electronic Document Management (EDM) with the aim of "
 "facilitate the organization, storage, sharing and retrieval of documents"
 
 #: flatpages/templates/o_que_fazemos/o_que_fazemos.html:75
@@ -316,8 +316,8 @@ msgid ""
 "é um serviço que busca, de uma maneira fácil e segura, fazer uma ponte entre "
 "profissionais de tecnologia e empresas que necessitem de serviços nesta área."
 msgstr ""
-"is a service that seeks, in an easy and secure way to make a bridge between "
-"technology and business professionals who require services in this area."
+"It's a service that seeks, in an easy and secure way to build a bridge between "
+"technology professionals and business who require services in this area."
 
 #: flatpages/templates/o_que_fazemos/o_que_fazemos.html:89
 msgid "O seu projeto!"
@@ -325,7 +325,7 @@ msgstr "Your project!"
 
 #: flatpages/templates/o_que_fazemos/o_que_fazemos.html:91
 msgid "Entre em contato conosco!"
-msgstr "Please contact us!"
+msgstr "Get in touch with us!"
 
 #: flatpages/templates/o_que_fazemos/o_que_fazemos.html:91
 msgid "Queremos construir algo incrível com você!"
@@ -343,10 +343,10 @@ msgid ""
 "multidisciplinar tendo em mente que mais que talentos individuais, formamos "
 "uma equipe eficiente."
 msgstr ""
-"We value the simplicity at all times. Nicer maintain our lean and balanced "
+"We value the simplicity at all times. We seek to maintain our lean and balanced "
 "team, with professionals who can perform their functions in an integrated "
-"manner. Possess a multidisciplinary team keeping in mind that more than "
-"individual talents, form an effective team."
+"manner. We have a multidisciplinary team keeping in mind that more than "
+"individual talents, we form an effective team."
 
 #: flatpages/templates/time/time.html:23
 msgid "A equipe"
@@ -366,11 +366,11 @@ msgstr "Our work"
 
 #: templates/base.html:58
 msgid "Projetos realizados"
-msgstr "Projects carried out"
+msgstr "Projects"
 
 #: templates/base.html:59
 msgid "Como fazemos"
-msgstr "How do"
+msgstr "How do we do"
 
 #: templates/base.html:59
 msgid "Tecnologias e processos"
@@ -406,7 +406,7 @@ msgstr "Shift it © 2013 All rights reserved"
 
 #: templates/base.html:82
 msgid "Selecione seu idioma preferido:"
-msgstr "Select your preferred language:"
+msgstr "Select your favorite language:"
 
 #: templates/base.html:90
 msgid "Telefone:"
