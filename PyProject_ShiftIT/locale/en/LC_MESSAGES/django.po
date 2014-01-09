@@ -386,7 +386,7 @@ msgstr "The company and staff"
 
 #: templates/base.html:61
 msgid "Nosso blog"
-msgstr "our blog"
+msgstr "Our blog"
 
 #: templates/base.html:61
 msgid "Práticas e tecnologias"
