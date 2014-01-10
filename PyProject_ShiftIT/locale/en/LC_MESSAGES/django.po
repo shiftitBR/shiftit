@@ -121,7 +121,7 @@ msgstr "Your project documented!"
 
 #: flatpages/templates/como_fazemos/como_fazemos.html:33
 msgid ""
-"Com o seu projeto definido e documentando nós estamos prontos para "
+"Com o seu projeto definido e documentado nós estamos prontos para "
 "desenvolver a primeira versão do seu sistema."
 msgstr ""
 "With your project defined and documented we are ready to develop the first "
