@@ -1,49 +1,172 @@
 {% extends "base.html"%}
 {% load i18n %}
 {% block conteudo %}
+        <div class="bg bg-felipeschmidt">
+            <section class="container">
+                <div class="row">
+                    <div class="grid-6">
+                        <h2 class="text-big">{% trans "Ganhe tempo e dinheiro automatizando seu negócio com a Shift it" %}</h2>
 
-	<!-- Briefing
-	================================================== -->
-	<div >
-		
-		{% for field in form %}
-            {{ field.errors }}
-        {% endfor %}
-		
-		{% for message in messages %}
-			<p><strong>{{ message }}</strong></p>
-		{% endfor %}
-		
-		<form method="post" >{% csrf_token %}
-			<p>
-				<label>Nome</label>
-				{{form.nome}}
-			</p>
-			
-			<p>
-				<label>Email</label>
-				{{form.email}}
-			</p>
-			
-			<p>
-				<label>Telefone</label>
-				{{form.telefone}}
-			</p>
-			
-			{% for pergunta in iListaPerguntas %}
-			
-				<p>
-					<label>{{pergunta.pergunta}}</label>
-					<textarea id="id_perguntas" rows="10" cols="40" name="resposta_{{pergunta.id_pergunta_contato}}"></textarea>
-				</p>
-			
-			{% endfor %}
-			
-			<input id= "id_enviar_contato" type="submit" value='ENVIAR'/>
-		</form>
-		
-	<!-- Fecha container
-	================================================== -->
-	</div>
+                        <p>{% trans "Hoje a automação da informação é uma ferramenta crucial para o desempenho de um empreendimento. Melhore a performance do seu negócio e aumente o valor oferecido aos seus clientes através dos nossos serviços de desenvolvimento de software!" %}</p>
 
+                        <a href="#entreemcontato" class="scroll btn btn-large btn-green"><strong>Entre em contato</strong> conosco agora mesmo!</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="bg">
+            <section class="container">
+                <div class="row">
+                    <div class="grid-6">
+                        <h2 class="text-big">{% trans "O que a tecnologia da informação pode fazer por sua empresa" %}</h2>
+						<div class="row">
+							<div class="grid-3">
+                                <div class="row">
+                                    <div class="grid-1">
+                                        <img class="icon-vantagens" src="{{ MEDIA_URL }}/img/icones/seuprojeto/coin-icon.svg">
+                                    </div>
+                                    <div class="grid-5">
+                                        <h3>Redução de custos e desperdícios</h3>
+                                        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="grid-1">
+                                        <img class="icon-vantagens" src="{{ MEDIA_URL }}/img/icones/seuprojeto/thumb-icon.svg">
+                                    </div>
+                                    <div class="grid-5">
+                                        <h3>Aumento da eficiência e qualidade</h3>
+                                        <p>Nullam quis risus eget urna mollis ornare vel eu leo. uis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="grid-1">
+                                        <img class="icon-vantagens" src="{{ MEDIA_URL }}/img/icones/seuprojeto/eye-icon.svg"> 
+                                    </div>
+                                    <div class="grid-5">
+                                        <h3>Visão mais clara do seu negócio</h3>
+                                        <p>Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-3">
+                                <div class="row">
+                                    <div class="grid-1">
+                                        <img class="icon-vantagens" src="{{ MEDIA_URL }}/img/icones/seuprojeto/target-icon.svg">
+                                    </div>
+                                    <div class="grid-5">
+                                        <h3> Facilidade na tomada de decisões</h3>
+                                        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis.</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="grid-1">
+                                        <img class="icon-vantagens" src="{{ MEDIA_URL }}/img/icones/seuprojeto/chart-icon.svg">
+                                    </div>
+                                    <div class="grid-5">
+                                        <h3> Retorno sobre o investimento</h3>
+                                        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis.</p>
+                                    </div>
+                                </div>
+							</div>
+						</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="grid-6">
+                        <h2 class="text-big">{% trans "Queremos ser seus parceiros!" %}</h2>
+                        <div class="row">
+                            <div class="grid-3">
+                                <div class="row">
+                                    <div class="grid-1"><img class="icon-vantagens" src="{{ MEDIA_URL }}/img/icones/seuprojeto/rocket-icon.svg"></div>
+                                    <div class="grid-5">
+                                        <h3>Trabalhamos de maneira ágil</h3>
+                                        <p>{% trans "Somos objetivos. Trabalhamos de forma ágil, entregando valor desde o princípio para o nosso cliente. Traga seu problema de negócio e vamos juntos encontrar uma maneira de automatizar o seu processo." %}</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="grid-3">
+                                <div class="row">
+                                    <div class="grid-1"><img class="icon-vantagens" src="{{ MEDIA_URL }}/img/icones/seuprojeto/code-icon.svg"></div>
+                                    <div class="grid-5">
+                                        <h3>Utilizamos tecnologias sólidas</h3>
+                                        <p>{% trans "Trabalhamos com Python e Django, ferramentas poderosas utilizadas por grandes negócios como o" %} <a href="http://www.instagram.com">Instagram</a>, <a href="http://www.pinterest.com">Pinterest</a> {% trans "e o jornal" %} <a href="http://www.nytimes.com">The New York Times</a>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div class="bg">
+            <section class="container">
+                
+            </section>
+        </div>
+        <div class="bg bg-cloud">
+            <section class="container">
+                <div class="row">
+                    <div class="grid-4">
+                        <h3>Soluções na nuvem</h3>
+                        <p>{% trans "A sua solução vai estar disponível na web 24 horas por dia, permitindo o acesso a suas informações de forma segura em qualquer lugar do mundo bastando para isto um navegador de internet." %}</p>
+                    </div>
+                    <div class="grid-2">
+                        <div class="servidorgratis space-all-small">
+                            <div class="row">
+                                <div class="grid-6">
+                                    <h4>Servidores gratúitos por 3 meses!</h4>
+                                    <p>{% trans "Nossos clientes tem direito a <strong>3 meses de uso gratuito da infraestrutura de servidores</strong> do nosso parceiro WebFaction." %}</p>
+                                    <a class="text-right" href="http://www.webfaction.com" target="_blank"><img class="text-right" alt="Webfaction - Hosting for developers - Servidor de aplicação" src="{{MEDIA_URL}}img/icones/parceiros-webfaction.png"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="bg">
+            <section class="container">
+                <div class="row">
+                    <div class="grid-two-thirds">
+                        <h2 class="text-big"><span id="entreemcontato">{% trans "Nós queremos te ajudar, nos diga como!" %}</span></h2>
+
+                        <p>{% trans "Nos envie o escopo do seu problema de negócio que pode ser informatizado, nós entraremos em contato marcando uma reunião para lhe apresentar uma proposta de trabalho personalizada para a sua empresa!" %}</p>
+                        
+                        {% for field in form %}
+				            {{ field.errors }}
+				        {% endfor %}
+						
+						{% for message in messages %}
+							<p>{{ message }}</p>
+						{% endfor %}
+						
+						<form method="post" >{% csrf_token %}
+							<label>Nome</label>
+							{{form.nome}}
+
+							<label>Email</label>
+							{{form.email}}
+						
+							<label>Telefone</label>
+							{{form.telefone}}
+							
+							{% for pergunta in iListaPerguntas %}
+								<label>{{pergunta.pergunta}}</label>
+								<textarea id="id_perguntas" rows="10" cols="40" name="resposta_{{pergunta.id_pergunta_contato}}"></textarea>
+							{% endfor %}
+							
+							<input class="btn btn-green btn-large" id= "id_enviar_contato" type="submit" value='Enviar proposta'/>
+						</form>
+                    </div>
+                    <div class="grid-third">
+                        <img class="" alt="" src="{{ MEDIA_URL }}img/ilustracoes/ilustracaotelefone.svg">
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script src="{{ MEDIA_URL }}js/smooth-scroll.js"></script>
 {% endblock conteudo %}
