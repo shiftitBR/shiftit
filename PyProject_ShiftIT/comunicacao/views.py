@@ -49,6 +49,7 @@ def briefing (vRequest, vTitulo):
                     iResposta.contato   = iContato
                     iResposta.resposta  = vRequest.POST.get('resposta_' + str(pergunta.id_pergunta_contato))
                     iResposta.save()
+            ComunicacaoControle().enviarEmail('[Briefing Shift it]', 'Recebido Briefing! ;)', 'contato@shiftit.com.br','contato@shiftit.com.br' ) 
             return HttpResponseRedirect('/')
         else:
             messages.warning(vRequest, 'Erro ao responder')
