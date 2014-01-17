@@ -359,7 +359,8 @@ img.icon-left {
 }
 
 img.icon-vantagens {
-	max-height: 6em;
+	display: block;
+	margin: 0 auto;
 }
 
 img.icon-time {
@@ -924,39 +925,27 @@ select:focus {
 	background-position: center top;
 }
 
-.bg-felipeschmidt {
+.bg-call-landing-corporativa {
 	color: #fff;
-	background-image: url(../img/fotografias/consumers.jpg);
-	/*background-image: url(../img/fotografias/consumers.jpg);*/
-	background-size: auto;
-	background-repeat: no-repeat;
-	background-position: center bottom;
-	min-height: 40vh;
+	background: #4e3874;
+    background-repeat: no-repeat;
+    background-position: right center;
 	border-bottom: 1px solid #555;
 }
 
 .bg-cloud {
 	color: #fff;
 	background-image: url(../img/fotografias/bgcloud.png);
-	background-size: auto;
+	background-color: #fff;
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center top;
-}
-
-.bg-pitstop {
-	background-image: url(../img/fotografias/bgpitstop.png);
-	background-size: auto;
-	background-repeat: no-repeat;
-	background-position: center top;
-	height:100%;
-	width:100%;
 }
 
 .bg-condensed {
 	padding-top: .823529412em;
 	padding-bottom: .823529412em;
 }
-
 
 /* Oferta dentro do bg */
 
