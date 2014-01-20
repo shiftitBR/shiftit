@@ -169,7 +169,7 @@
 							
 							{% for pergunta in iListaPerguntas %}
 								<label>{{pergunta.pergunta}}</label>
-								<textarea id="id_perguntas" rows="10" cols="40" name="resposta_{{pergunta.id_pergunta_contato}}"></textarea>
+								<textarea id="id_perguntas" rows="10" cols="40" name="resposta_{{pergunta.id}}"></textarea>
 							{% endfor %}
 							
 							<input class="btn btn-green btn-large" id= "id_enviar_contato" type="submit" value='Enviar proposta'/>

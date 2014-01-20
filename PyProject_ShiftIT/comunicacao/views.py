@@ -9,6 +9,7 @@ from comunicacao.controle     import Controle as ComunicacaoControle
 from comunicacao.models       import Pergunta_Contato, Resposta_Contato
 
 import datetime
+import logging
 
 def contato (vRequest, vTitulo):
     
@@ -34,27 +35,29 @@ def contato (vRequest, vTitulo):
 def briefing (vRequest, vTitulo):
     
     iListaPerguntas = Pergunta_Contato.objects.all()
-    
-    if vRequest.method == 'POST':
-        form = FormContato(vRequest.POST)
-        
-        if form.is_valid() :
-            iContato                = form.save(commit=False)
-            iContato.data           = str(datetime.datetime.today())[:19]
-            iContato.save()
-            for pergunta in iListaPerguntas:
-                if 'resposta_' + str(pergunta.id_pergunta_contato) in vRequest.POST:
-                    iResposta           = Resposta_Contato()
-                    iResposta.pergunta  = Pergunta_Contato().obtemPerguntaContato(pergunta.id_pergunta_contato)
-                    iResposta.contato   = iContato
-                    iResposta.resposta  = vRequest.POST.get('resposta_' + str(pergunta.id_pergunta_contato))
-                    iResposta.save()
-            ComunicacaoControle().enviarEmail('[Briefing Shift it]', 'Recebido Briefing! ;)', 'contato@shiftit.com.br','contato@shiftit.com.br' ) 
-            return HttpResponseRedirect('/')
+    try:
+        if vRequest.method == 'POST':
+            form = FormContato(vRequest.POST)
+            if form.is_valid() :
+                iContato                = form.save(commit=False)
+                iContato.data           = str(datetime.datetime.today())[:19]
+                iContato.save()
+                for pergunta in iListaPerguntas:
+                    if 'resposta_' + str(pergunta.id) in vRequest.POST:
+                        iResposta           = Resposta_Contato()
+                        iResposta.pergunta  = Pergunta_Contato().obtemPerguntaContato(pergunta.id)
+                        iResposta.contato   = iContato
+                        iResposta.resposta  = vRequest.POST.get('resposta_' + str(pergunta.id))
+                        iResposta.save()
+                ComunicacaoControle().enviarEmail('[Briefing Shift it]', 'Recebido Briefing! ;)', 'contato@shiftit.com.br','contato@shiftit.com.br' ) 
+                return HttpResponseRedirect('/')
+            else:
+                messages.warning(vRequest, 'Erro ao responder')
         else:
-            messages.warning(vRequest, 'Erro ao responder')
-    else:
-        form= FormContato()
+            form= FormContato()
+    except Exception, e:
+        logging.getLogger('PyProject_ShiftIT.controle').error('Nao foi possivel view briefing: ' + str(e))
+        return HttpResponseRedirect('/')   
     
     return render_to_response(
         'briefing/briefing.html',
