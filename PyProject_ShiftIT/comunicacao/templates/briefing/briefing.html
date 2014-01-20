@@ -1,15 +1,18 @@
 {% extends "base.html"%}
 {% load i18n %}
 {% block conteudo %}
-        <div class="bg bg-felipeschmidt">
+        <div class="bg bg-call-landing-corporativa">
             <section class="container">
                 <div class="row">
-                    <div class="grid-6">
+                    <div class="grid-4">
                         <h2 class="text-big">{% trans "Ganhe tempo e dinheiro automatizando seu negócio com a Shift it" %}</h2>
 
-                        <p>{% trans "Hoje a automação da informação é uma ferramenta crucial para o desempenho de um empreendimento. Melhore a performance do seu negócio e aumente o valor oferecido aos seus clientes através dos nossos serviços de desenvolvimento de software!" %}</p>
+                        <p>{% trans "Melhore a performance do seu negócio e aumente o valor oferecido aos seus clientes através dos nossos serviços de desenvolvimento de software!" %}</p>
 
                         <a href="#entreemcontato" class="scroll btn btn-large btn-green"><strong>Entre em contato</strong> conosco agora mesmo!</a>
+                    </div>
+                    <div class="grid-2">
+                        <img class="no-space" src="{{ MEDIA_URL }}/img/ilustracoes/landingcorporativa.svg">
                     </div>
                 </div>
             </section>
@@ -27,7 +30,7 @@
                                     </div>
                                     <div class="grid-5">
                                         <h3>Redução de custos e desperdícios</h3>
-                                        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                        <p>Soluções de tecnologia trazem inúmeros benefícios a sua empresa, como a padronização de processos, redução de custos com mão de obra, redução de problemas ocasionados por rotatividade de profissionais e clareza nas informações organizacionais.</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -36,7 +39,7 @@
                                     </div>
                                     <div class="grid-5">
                                         <h3>Aumento da eficiência e qualidade</h3>
-                                        <p>Nullam quis risus eget urna mollis ornare vel eu leo. uis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+                                        <p>O uso da tecnologia da informação define melhor os processos informacionais, os tornando mais focados, reduzindo significativamente a chance de erros humanos comuns em tarefas repetitivas.</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -45,7 +48,7 @@
                                     </div>
                                     <div class="grid-5">
                                         <h3>Visão mais clara do seu negócio</h3>
-                                        <p>Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+                                        <p>Tenha uma nova ótica sobre a sua empresa, a utilização de soluções de software podem lhe fornecer uma visão diferenciada das mais diversas informações da sua organização.</p>
                                     </div>
                                 </div>
                             </div>
@@ -55,8 +58,8 @@
                                         <img class="icon-vantagens" src="{{ MEDIA_URL }}/img/icones/seuprojeto/target-icon.svg">
                                     </div>
                                     <div class="grid-5">
-                                        <h3> Facilidade na tomada de decisões</h3>
-                                        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis.</p>
+                                        <h3>Facilidade na tomada de decisões</h3>
+                                        <p>Uma melhor visualização dos dados que permeiam sua empresa vai também embasar melhor suas decisões de negócio, aumentando a segurança e a qualidade das suas decisões.</p>
                                     </div>
                                 </div>
 
@@ -65,8 +68,18 @@
                                         <img class="icon-vantagens" src="{{ MEDIA_URL }}/img/icones/seuprojeto/chart-icon.svg">
                                     </div>
                                     <div class="grid-5">
-                                        <h3> Retorno sobre o investimento</h3>
-                                        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis.</p>
+                                        <h3>Retorno sobre o investimento</h3>
+                                        <p>Para uma empresa madura, com processos já definidos, fazer um investimento em TI é de retorno garantido. Os ganhos tanto de desempenho quanto financeiros ultrapassam o valor investido em uma solução de software em um curto período de tempo.</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="grid-1">
+                                        <img class="icon-vantagens" src="{{ MEDIA_URL }}/img/icones/seuprojeto/clipboard-icon.svg">
+                                    </div>
+                                    <div class="grid-5">
+                                        <h3>{% trans "Solução personalizada" %}</h3>
+                                        <p>{% trans "Tenha todas as funcionalidades necessárias para realizar as tarefas que você precisa, do jeito que a sua empresa trabalha, sem a necessidade de se adaptar a um processo diferente do habitual." %}</p>
                                     </div>
                                 </div>
 							</div>
@@ -92,7 +105,7 @@
                                     <div class="grid-1"><img class="icon-vantagens" src="{{ MEDIA_URL }}/img/icones/seuprojeto/code-icon.svg"></div>
                                     <div class="grid-5">
                                         <h3>Utilizamos tecnologias sólidas</h3>
-                                        <p>{% trans "Trabalhamos com Python e Django, ferramentas poderosas utilizadas por grandes negócios como o" %} <a href="http://www.instagram.com">Instagram</a>, <a href="http://www.pinterest.com">Pinterest</a> {% trans "e o jornal" %} <a href="http://www.nytimes.com">The New York Times</a>.</p>
+                                        <p>{% trans "Trabalhamos com Python e Django, ferramentas poderosas utilizadas por grandes negócios como " %} <a href="http://www.globo.com">Globo.com</a>, <a href="http://www.instagram.com">Instagram</a>, <a href="http://www.pinterest.com">Pinterest</a> {% trans "e o jornal" %} <a href="http://www.nytimes.com">The New York Times</a>.</p>
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +132,7 @@
                             <div class="row">
                                 <div class="grid-6">
                                     <h4>Servidores gratúitos por 3 meses!</h4>
-                                    <p>{% trans "Nossos clientes tem direito a <strong>3 meses de uso gratuito da infraestrutura de servidores</strong> do nosso parceiro WebFaction." %}</p>
+                                    <p>{% trans "Nossos clientes tem direito a <strong>3 meses de uso gratuito da infraestrutura de servidores</strong> do nosso parceiro WebFaction. Um dos melhores serviços de hospedagem na web!" %}</p>
                                     <a class="text-right" href="http://www.webfaction.com" target="_blank"><img class="text-right" alt="Webfaction - Hosting for developers - Servidor de aplicação" src="{{MEDIA_URL}}img/icones/parceiros-webfaction.png"></a>
                                 </div>
                             </div>
@@ -134,7 +147,7 @@
                     <div class="grid-two-thirds">
                         <h2 class="text-big"><span id="entreemcontato">{% trans "Nós queremos te ajudar, nos diga como!" %}</span></h2>
 
-                        <p>{% trans "Nos envie o escopo do seu problema de negócio que pode ser informatizado, nós entraremos em contato marcando uma reunião para lhe apresentar uma proposta de trabalho personalizada para a sua empresa!" %}</p>
+                        <p>{% trans "Existe algo que poderia ser otimizado com a informatização da sua empresa? Responda as perguntas abaixo e entraremos em contato com uma proposta personalizada para o seu negócio!" %}</p>
                         
                         {% for field in form %}
 				            {{ field.errors }}
