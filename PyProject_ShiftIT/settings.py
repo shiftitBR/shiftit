@@ -11,6 +11,14 @@ DEBUG = False
 EMAIL = True
 TEMPLATE_DEBUG = DEBUG
 
+try:
+    if 'test' in sys.argv:
+        from test_settings import *
+    else:
+        from local_settings import *
+except ImportError:
+    pass
+
 ADMINS = (
      ('Shift it', 'suporte@shiftit.com.br'),
 )
@@ -38,14 +46,6 @@ MSGID_LANGUAGE = 'pt-br'
 SITE_ID = 1
 
 USE_I18N = True
-
-try:
-    if 'test' in sys.argv:
-        from test_settings import *
-    else:
-        from local_settings import *
-except ImportError:
-    pass
 
 USE_L10N = True
 

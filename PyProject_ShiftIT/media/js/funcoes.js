@@ -9,7 +9,6 @@ $(document).ready
 		{
 			
 			$('#contatoTel').keypress(permitirApenasNumeros('#contatoTel'));
-			$('#contatoTel').keypress(permitirApenasNumeros('#contatoTel'));
 		
 		}
 		
@@ -17,7 +16,12 @@ $(document).ready
 		{
 		
 			$('#contatoTel').keypress(permitirApenasNumeros('#contatoTel'));
-			$('#contatoTel').keypress(permitirApenasNumeros('#contatoTel'));
+		
+		}
+		if (window.location.pathname == "/seuprojeto/")
+		{
+		
+			$('#id_telefone').keypress(permitirApenasNumeros('#id_telefone'));
 		
 		}
 		

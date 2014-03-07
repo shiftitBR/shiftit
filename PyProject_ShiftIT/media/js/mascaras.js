@@ -266,6 +266,10 @@ $(document).ready
 		{
 			$("#contatoTel").mask("(99) 9999-9999");
 		}
+		if (window.location.pathname == "/seuprojeto/")
+		{
+			$("#id_telefone").mask("(99) 9999-9999");
+		}
 	}
 );
 
