@@ -218,7 +218,7 @@ msgid "Ligue para (48) 3206-6033 ou deixe o seu recado!"
 msgstr "Call +55 (48) 3206-6033 or leave a message!"
 
 #: flatpages/templates/o_que_fazemos/o_que_fazemos.html:8
-msgid "Conheça nosso Portfolio"
+msgid "Conheça nossos Cases de Sucesso"
 msgstr "Explore our Portfolio"
 
 #: flatpages/templates/o_que_fazemos/o_que_fazemos.html:10
