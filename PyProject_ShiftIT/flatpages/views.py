@@ -63,6 +63,15 @@ def o_que_fazemos(vRequest, vTitulo):
         context_instance=RequestContext(vRequest),
         )
     
+def servicos(vRequest, vTitulo):
+    iUsuario           = Usuario().obtemUsuario(vRequest.user.id)
+    
+    return render_to_response(
+        'o_que_fazemos/servicos.html',
+        locals(),
+        context_instance=RequestContext(vRequest),
+        )
+    
 def google(vRequest, vTitulo):
         
     return render_to_response(

@@ -10,6 +10,8 @@ urlpatterns= patterns('flatpages.views',
                             {'vTitulo': trans(u'Como Fazemos')}, name='como_fazemos'), 
                       url('^o_que_fazemos/$', 'o_que_fazemos',
                             {'vTitulo': trans(u'O que fazemos')}, name='o_que_fazemos'), 
+                      url('^servicos/$', 'servicos',
+                            {'vTitulo': trans(u'Serviços')}, name='servicos'), 
                       url('^google6196345173a7df0a.html/$', 'google',
                           {'vTitulo': trans(u'Google')}, name='Google'),
                       )
