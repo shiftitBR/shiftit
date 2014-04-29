@@ -1,0 +1,40 @@
+/* =============================================================
+  Landing
+  Barra de preços;
+ * ============================================================= */
+
+ul.price-table {
+  @extend .list-unstyled;
+  width: 100%;
+  display: block;
+  border-radius: calc-em(4px);
+  li:first-child {
+    padding: calc-em(8px);
+    background-color: #271C3A;
+    font-family: $font-secondary;
+    color: $color-white;
+    border-radius: calc-em(4px) calc-em(4px) 0 0;
+    text-align: center;
+    font-size: 2em;
+    transition: all 0.5s;
+  }
+  li {
+    font-size: calc-em(14px);
+    padding: calc-em(8px);
+    background-color: $color-gray-light;
+  }
+  li:last-child {
+    padding: calc-em(8px);
+    border-top: calc-em(4px) solid darken($color-primary, 5%);
+    border-radius: 0 0 calc-em(4px) calc-em(4px);
+    background-color: $color-primary;
+    font-family: $font-secondary;
+    color: $color-white;
+    text-align: center;
+  }
+  &:hover {
+    li:first-child {
+      background-color: lighten(#271C3A, 10%);
+    }
+  }
+}

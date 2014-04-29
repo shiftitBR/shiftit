@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load i18n %}
+<html lang="pt-br">
+  <head>
+    <title>Shift it - Desenvolvimento web</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="Desenvolvimento web, cloud, SaaS, django, python, html5, webdev">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Shift it é uma empresa de desenvolvimento de softwares para a internet. Utilizamos HTML5, Python e Django para criar aplicações completas que vivem na nuvem.">
+    <link rel="shortcut icon" type="image/ico" href="{{ MEDIA_URL }}img/icones/favicon16.png">
+    <!-- Typekit -->
+    <script type="text/javascript" src="//use.typekit.net/djb6mbm.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <!-- Feature Test -->
+    <script src="js/feature-test.js"></script>
+    <!-- HTML5 Shim for IE 6-8 -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="{{MEDIA_URL}}landing/css/style.css" type="text/css">
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      var WRInitTime=(new Date()).getTime();
+    </script>
+    <!--[if lt IE 8]>
+        <section class="container">
+            Seu navegador não é atualizado a algum tempo, certo? As tecnologias evoluem constantemente, e para aproveitar ao máximo o que a web tem a oferecer é recomendável que você mantenha seu navegador sempre atualizado! <a href="http://www.updateyourbrowser.net/pt">Clique aqui para baixar a versão mais nova do seu navegador favorito</a> e tenha uma melhor experiência com a internet.
+        </section>
+    <![endif]-->
+
+    {% block conteudo %}
+    {% endblock conteudo %}
+
+    <!-- ClickTale Bottom part -->
+    <script type='text/javascript'>
+    document.write(unescape("%3Cscript%20src='"+
+    (document.location.protocol=='https:'?
+    "https://clicktalecdn.sslcs.cdngc.net/www07/ptc/7f5ca614-5c58-4c66-bd6a-1813ecf51c83.js":
+    "http://cdn.clicktale.net/www07/ptc/7f5ca614-5c58-4c66-bd6a-1813ecf51c83.js")+"'%20type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <!-- ClickTale end of Bottom part -->
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-26439740-1']);
+      _gaq.push(['_setDomainName', 'shiftit.com.br']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <!-- Google Analytics end -->
+  </body>
+</html>

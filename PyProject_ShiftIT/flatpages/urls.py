@@ -11,7 +11,7 @@ urlpatterns= patterns('flatpages.views',
                       url('^o_que_fazemos/$', 'o_que_fazemos',
                             {'vTitulo': trans(u'O que fazemos')}, name='o_que_fazemos'), 
                       url('^servicos/$', 'servicos',
-                            {'vTitulo': trans(u'Serviços')}, name='servicos'), 
+                            {'vTitulo': trans(u'Servicos')}, name='servicos'), 
                       url('^google6196345173a7df0a.html/$', 'google',
                           {'vTitulo': trans(u'Google')}, name='Google'),
                       )
