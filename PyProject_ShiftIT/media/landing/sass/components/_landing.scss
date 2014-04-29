@@ -8,33 +8,60 @@ ul.price-table {
   width: 100%;
   display: block;
   border-radius: calc-em(4px);
+  transition: all 0.25s;
   li:first-child {
     padding: calc-em(8px);
-    background-color: #271C3A;
+    border-bottom: calc-em(4px) solid darken($color-primary, 5%);
+    border-radius: calc-em(4px) calc-em(4px) 0 0;
+    background-color: $color-primary;
     font-family: $font-secondary;
     color: $color-white;
-    border-radius: calc-em(4px) calc-em(4px) 0 0;
     text-align: center;
-    font-size: 2em;
-    transition: all 0.5s;
   }
   li {
+    @extend .text-center;
     font-size: calc-em(14px);
     padding: calc-em(8px);
     background-color: $color-gray-light;
   }
   li:last-child {
     padding: calc-em(8px);
-    border-top: calc-em(4px) solid darken($color-primary, 5%);
-    border-radius: 0 0 calc-em(4px) calc-em(4px);
-    background-color: $color-primary;
+    background-color: #271C3A;
     font-family: $font-secondary;
     color: $color-white;
+    border-radius: 0 0 calc-em(4px) calc-em(4px);
     text-align: center;
+    font-size: calc-em(18px);
+    transition: all 0.5s;
   }
   &:hover {
-    li:first-child {
-      background-color: lighten(#271C3A, 10%);
-    }
+    box-shadow: darken($color-gray-light, 25%) 4px 4px 0px;
   }
+}
+
+.circle-text {
+  width:50%;
+  margin: calc-em(8px) auto auto auto;
+    &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height:0;
+    padding-bottom: 100%;
+    border: calc-em(2px) solid darken($color-gray-light, 10%); 
+    -moz-border-radius: 50%; 
+    -webkit-border-radius: 50%; 
+    border-radius: 50%;
+  }
+  div {
+    float:left;
+    width:100%;
+    padding-top:50%;
+    line-height:1em;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-top:-0.5em;
+    text-align:center;
+    color: $color-black;
+}
 }
