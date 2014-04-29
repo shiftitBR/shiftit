@@ -35,7 +35,8 @@ ul.price-table {
     transition: all 0.5s;
   }
   &:hover {
-    box-shadow: darken($color-gray-light, 25%) 4px 4px 0px;
+    box-shadow: darken($color-gray-light, 25%) calc-em(1px) calc-em(1px) calc-em(4px);
+    margin: - calc-em(2px);
   }
 }
 
@@ -64,4 +65,10 @@ ul.price-table {
     text-align:center;
     color: $color-black;
 }
+}
+
+@media (min-width: $bp-medium) {
+  .border-right {
+    border-right: solid calc-em(2px) #271C3A;
+  }
 }
