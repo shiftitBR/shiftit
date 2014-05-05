@@ -21,7 +21,12 @@ def contato (vRequest, vTitulo):
             iEmail.data             = str(datetime.datetime.today())[:19]
             iEmail.save()
             
-            ComunicacaoControle().enviarEmail('[Contato Shift it]', iEmail.mensagem, 'contato@shiftit.com.br', iEmail.email) 
+            if 'gmail' in iEmail.email:
+                iRemetente  = 'contato@shiftit.com.br'
+            else:
+                iRemetente  = iEmail.email
+            
+            ComunicacaoControle().enviarEmail('[Contato Shift it]', iEmail.mensagem, 'contato@shiftit.com.br', iRemetente) 
             return HttpResponseRedirect('/')
     else:
         form= FormEmail()

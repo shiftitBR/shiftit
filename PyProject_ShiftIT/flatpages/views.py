@@ -21,7 +21,12 @@ def home(vRequest, vTitulo):
             iEmail.data         = str(datetime.datetime.today())[:19]
             iEmail.save()
             
-            ComunicacaoControle().enviarEmail('[Contato Shift it]', iEmail.mensagem, 'contato@shiftit.com.br', iEmail.email) 
+            if 'gmail' in iEmail.email:
+                iRemetente  = 'contato@shiftit.com.br'
+            else:
+                iRemetente  = iEmail.email
+            
+            ComunicacaoControle().enviarEmail('[Contato Shift it]', iEmail.mensagem, 'contato@shiftit.com.br', iRemetente) 
             messages.info(vRequest, 'Sua mensagem foi enviada com sucesso!')
             return HttpResponseRedirect('/')
         else:
@@ -65,6 +70,24 @@ def o_que_fazemos(vRequest, vTitulo):
     
 def servicos(vRequest, vTitulo):
     iUsuario           = Usuario().obtemUsuario(vRequest.user.id)
+    
+    if vRequest.method == 'POST':
+        form = FormEmail(vRequest.POST)
+
+        if form.is_valid() :
+            iEmail                  = form.save(commit=False)
+            iEmail.data             = str(datetime.datetime.today())[:19]
+            iEmail.save()
+            
+            if 'gmail' in iEmail.email:
+                iRemetente  = 'contato@shiftit.com.br'
+            else:
+                iRemetente  = iEmail.email
+            
+            ComunicacaoControle().enviarEmail('[Serviço Shift it]', iEmail.mensagem, 'contato@shiftit.com.br', iRemetente) 
+            return HttpResponseRedirect('/servicos/')
+    else:
+        form= FormEmail()
     
     return render_to_response(
         'o_que_fazemos/servicos.html',
