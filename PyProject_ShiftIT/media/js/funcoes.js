@@ -24,6 +24,12 @@ $(document).ready
 			$('#id_telefone').keypress(permitirApenasNumeros('#id_telefone'));
 		
 		}
+		if (window.location.pathname == "/servicos/")
+		{
+		
+			$('#contatoTel').keypress(permitirApenasNumeros('#contatoTel'));
+		
+		}
 		
 	}
 );

@@ -270,6 +270,10 @@ $(document).ready
 		{
 			$("#id_telefone").mask("(99) 9999-9999");
 		}
+		if (window.location.pathname == "/servicos/")
+		{
+			$("#contatoTel").mask("(99) 9999-9999");
+		}
 	}
 );
 
