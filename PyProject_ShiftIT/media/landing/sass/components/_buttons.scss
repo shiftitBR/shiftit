@@ -67,6 +67,7 @@ a .btn-secondary:hover,
 .btn-call {
 	@extend .btn;
 	@extend .btn-large;
+	color: $color-black;
 	background-color: #fff;
 	border-radius: 2em;
 	border: calc-em(2px) solid $color-primary;
@@ -75,6 +76,18 @@ a .btn-secondary:hover,
 		color: $color-white!important;
 	}
 }
+
+	.btn-call-small {
+		@extend .btn;
+		color: $color-black;
+		background-color: #fff;
+		border-radius: 2em;
+		border: calc-em(2px) solid $color-primary;
+		transition: all 0.2s;
+		&:hover {
+			color: $color-white!important;
+		}
+	}
 
 .btn-block,
 input[type="submit"].btn-block,

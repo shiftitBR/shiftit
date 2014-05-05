@@ -28,7 +28,8 @@ select {
 	margin-bottom: calc-em(19px);
 	padding: calc-em(5px);
 	border: calc-em(1px) solid lighten( $color-gray-dark, 22% );
-	border-radius: calc-em(1px);
+	border-radius: calc-em(4px);
+	border: calc-em(2px) solid $color-primary;
 }
 
 form button,
