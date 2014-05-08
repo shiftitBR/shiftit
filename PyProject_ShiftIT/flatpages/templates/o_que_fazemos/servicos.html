@@ -147,16 +147,20 @@
       </div>
     </div>
     <div class="row">
-      <div class="grid-half border-right">
-        <p class="text-center text-tall no-space">Ligue para <strong>(48) 3206 6033</strong><br>de segunda a sexta entre 09h e 19h.</p>
+      <div class="grid-half contato-phone border-right">
+        <img src="{{ MEDIA_URL }}landing/img/ilustracoes/phone.svg" alt="Ilustracão telefone">
+        <p class=" text-tall no-space">Ligue para <strong class="text-green">(48) 3206 6033</strong><br>de segunda a sexta entre 09h e 19h.</p>
       </div>
-      <div class="grid-half">
-        <p class="text-center text-tall no-space">Envie um email para <a href="mailto:contato@shiftit.com.br"><strong>contato@shiftit.com.br</strong></a>.<br>Entraremos em contato com você!</p>
+      <div class="grid-half contato-email">
+        <img src="{{ MEDIA_URL }}landing/img/ilustracoes/email.svg" alt="Ilustracão email">
+        <p class=" text-tall no-space">Envie um email para <a href="mailto:contato@shiftit.com.br"><strong>contato@shiftit.com.br</strong></a>.<br>Entraremos em contato com você!</p>
       </div>
     </div>
-    <div class="row">
-      <div class="grid-half float-center">
-        <h3 class="text-center">{% trans "Envie sua mensagem agora mesmo!" %}</h2>
+    <div class="row contato-form">
+      <div class="grid-half">
+        <h3 class="no-space">{% trans "Envie sua mensagem agora mesmo!" %}</h2>
+      </div>
+      <div class="grid-half">
         <form id="contato" method="post">{% csrf_token %}
             <fieldset>
                 <label for="contatoNome">{% trans "Nome" %}<input id="contatoNome" name="nome" type="text"></label>
