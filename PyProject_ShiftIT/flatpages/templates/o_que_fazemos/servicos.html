@@ -157,10 +157,8 @@
       </div>
     </div>
     <div class="row contato-form">
-      <div class="grid-half">
-        <h3 class="no-space">{% trans "Envie sua mensagem agora mesmo!" %}</h2>
-      </div>
-      <div class="grid-half">
+      <div class="grid-half float-center">
+        <h3 class="text-center">{% trans "Envie sua mensagem agora mesmo!" %}</h2>
         <form id="contato" method="post">{% csrf_token %}
             <fieldset>
                 <label for="contatoNome">{% trans "Nome" %}<input id="contatoNome" name="nome" type="text"></label>
