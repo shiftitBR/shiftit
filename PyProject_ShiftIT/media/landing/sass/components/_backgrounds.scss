@@ -41,19 +41,25 @@
 	@extend .bg-condensed;
 }
 
-.contato-phone, .contato-email {
+.bg-roxo {
 	background-color: #271C3A;
-	padding: 1.5625em 1em;
 	color: $color-white;
+}
+
+.contato-phone, .contato-email {
+	padding: 1.5625em 1em;
 	img {
-		float: left;
+		
 		max-width: calc-em(100px);
 	}
 }
 
-.contato-form {
+.bg-verde {
 	background-color: $color-primary;
 	color: $color-white;
+}
+
+.contato-form {
 	input, textarea {
 		border-color: darken($color-primary, 10%);
 	}

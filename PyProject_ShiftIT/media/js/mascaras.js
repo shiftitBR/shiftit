@@ -259,20 +259,20 @@ $(document).ready
 	//------------------------------Eventos------------------------------
 		if (window.location.pathname == "/")
 		{
-			$("#contatoTel").mask("(99) 9999-9999");
+			$("#contatoTel").mask("(99) 9999-9999?9",{placeholder:"  "});
 		}
 		
 		if (window.location.pathname == "/contato/")
 		{
-			$("#contatoTel").mask("(99) 9999-9999");
+			$("#contatoTel").mask("(99) 9999-9999?9",{placeholder:"  "});
 		}
 		if (window.location.pathname == "/seuprojeto/")
 		{
-			$("#id_telefone").mask("(99) 9999-9999");
+			$("#id_telefone").mask("(99) 9999-9999?9",{placeholder:"  "});
 		}
 		if (window.location.pathname == "/servicos/")
 		{
-			$("#contatoTel").mask("(99) 9999-9999");
+			$("#contatoTel").mask("(99) 9999-9999?9",{placeholder:"  "});
 		}
 	}
 );

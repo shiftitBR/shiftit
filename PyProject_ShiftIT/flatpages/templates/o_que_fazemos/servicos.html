@@ -141,33 +141,39 @@
 
 <div id="faleconosco" class="contato">
   <div class="container">
-    <div class="row">
-      <div class="grid-full">
-        <h2 class="text-center">Vamos trabalhar juntos!</h2>
+    <div class="grid-full">
+      <h2 class="text-center">Vamos trabalhar juntos!</h2>
+    </div>
+  </div>
+  <div class="bg-roxo">
+    <div class="container">
+      <div class="row">
+        <div class="grid-half contato-phone border-right">
+          <img src="{{ MEDIA_URL }}landing/img/ilustracoes/phone.svg" alt="Ilustracão telefone">
+          <p class=" text-tall no-space">Ligue para <strong class="text-green">(48) 3206 6033</strong><br>de segunda a sexta entre 09h e 19h.</p>
+        </div>
+        <div class="grid-half contato-email">
+          <img src="{{ MEDIA_URL }}landing/img/ilustracoes/email.svg" alt="Ilustracão email">
+          <p class=" text-tall no-space">Envie um email para <a href="mailto:contato@shiftit.com.br"><strong>contato@shiftit.com.br</strong></a>.<br>Entraremos em contato com você!</p>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="grid-half contato-phone border-right">
-        <img src="{{ MEDIA_URL }}landing/img/ilustracoes/phone.svg" alt="Ilustracão telefone">
-        <p class=" text-tall no-space">Ligue para <strong class="text-green">(48) 3206 6033</strong><br>de segunda a sexta entre 09h e 19h.</p>
-      </div>
-      <div class="grid-half contato-email">
-        <img src="{{ MEDIA_URL }}landing/img/ilustracoes/email.svg" alt="Ilustracão email">
-        <p class=" text-tall no-space">Envie um email para <a href="mailto:contato@shiftit.com.br"><strong>contato@shiftit.com.br</strong></a>.<br>Entraremos em contato com você!</p>
-      </div>
-    </div>
-    <div class="row contato-form">
-      <div class="grid-half float-center">
-        <h3 class="text-center">{% trans "Envie sua mensagem agora mesmo!" %}</h2>
-        <form id="contato" method="post">{% csrf_token %}
-            <fieldset>
-                <label for="contatoNome">{% trans "Nome" %}<input id="contatoNome" name="nome" type="text"></label>
-                <label for="contatoEmail">{% trans "Email" %}<input id="contatoEmail" name="email" type="email" required></label>
-                <label for="contatoTel">{% trans "Telefone" %}<input id="contatoTel" name="telefone" type="text"></label>
-                <label for="contatoMsg">{% trans "Mensagem" %}<textarea id="contatoMsg" name="mensagem" rows="5"> </textarea></label>
-                <button class="btn btn-green btn-large btn-block" type="submit">{% trans "Enviar" %}</button>
-            </fieldset>
-        </form>
+  </div>
+  <div class="bg-verde">
+    <div class="container">
+      <div class="row contato-form">
+        <div class="grid-half float-center">
+          <h3 class="text-center">{% trans "Envie sua mensagem agora mesmo!" %}</h3>
+          <form id="contato" method="post">{% csrf_token %}
+              <fieldset>
+                  <label for="contatoNome">{% trans "Nome" %}<input id="contatoNome" name="nome" type="text"></label>
+                  <label for="contatoEmail">{% trans "Email" %}<input id="contatoEmail" name="email" type="email" required></label>
+                  <label for="contatoTel">{% trans "Telefone" %}<input id="contatoTel" name="telefone" type="text"></label>
+                  <label for="contatoMsg">{% trans "Mensagem" %}<textarea id="contatoMsg" name="mensagem" rows="5"> </textarea></label>
+                  <button class="btn btn-green btn-large btn-block" type="submit">{% trans "Enviar" %}</button>
+              </fieldset>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -186,9 +192,9 @@
   </div>
 </footer>
 
+<!-- JS Landing Serviços -->
 <script src="{{ MEDIA_URL }}js/smooth-scroll.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script src="{{ MEDIA_URL }}js/mascaras.js"></script>
-        <script src="{{ MEDIA_URL }}js/alphanumeric.js"></script>
-		<script src="{{ MEDIA_URL }}js/funcoes.js"></script>
+<script src="{{ MEDIA_URL }}js/mascaras.js"></script>
+<script src="{{ MEDIA_URL }}js/alphanumeric.js"></script>
+<script src="{{ MEDIA_URL }}js/funcoes.js"></script>
 {% endblock conteudo %}
