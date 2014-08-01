@@ -40,3 +40,36 @@
 .vantagens, .planos, .contato, {
 	@extend .bg-condensed;
 }
+
+.bg-roxo {
+	background-color: #271C3A;
+	color: $color-white;
+}
+
+.contato-phone, .contato-email {
+	padding: 1.5625em 1em;
+	img {
+		
+		max-width: calc-em(100px);
+	}
+}
+
+.bg-verde {
+	background-color: $color-primary;
+	color: $color-white;
+}
+
+.contato-form {
+	input, textarea {
+		border-color: darken($color-primary, 10%);
+	}
+	button {
+		background-color: #271C3A;
+		&:hover {
+			background-color: lighten(#271C3A, 5%);
+		}
+	}
+	h3 {
+		font-weight: bold;
+	}
+}

@@ -83,6 +83,6 @@ ul.price-table {
 
 @media (min-width: $bp-medium) {
   .border-right {
-    border-right: solid calc-em(2px) #271C3A;
+    border-right: solid calc-em(4px) lighten(#271C3A, 5%);
   }
 }

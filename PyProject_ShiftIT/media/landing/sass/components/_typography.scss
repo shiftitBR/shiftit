@@ -33,6 +33,9 @@ p {
 .text-tall {
 	font-size: calc-em(19px);
 	line-height: 1.4;
+	.text-green {
+		color: $color-primary;
+	}
 }
 
 @media (min-width: $bp-medium) {
