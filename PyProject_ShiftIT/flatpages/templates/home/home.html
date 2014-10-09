@@ -1,60 +1,68 @@
-{% extends "base.html"%}
+{% extends "base_nova.html"%}
 {% load i18n %}
 {% block conteudo %}
 
-		<div class="bg bg-call bg-call-home">
-			<section class="container">
-				<div class="row">
-					<div class="grid-two-thirds">
-						<h2 class="text-big">{% trans "Simplicidade que transforma" %}</h2>
-
-						<p>{% trans "Seja uma ideia inovadora ou uma solução corporativa nós projetamos e desenvolvemos o seu software aliando tecnologia, agilidade e competência. Nosso objetivo é transformar o seu negócio através de uma solução simples, objetiva e eficiente." %}</p>
-					</div>
-				</div>
-			</section>
+<div class="bg">
+	<section class="container">
+		<div class="row">
+			<div class="grid-two-thirds">
+				<h1><img class="shift--logo" alt="Shift it" src="{{MEDIA_URL}}v4/img/branding/shift--recrutase.svg"></h1>
+				<p>Somos uma empresa de desenvolvimento de sistemas para a internet focada em compreender os problemas envolvidos na Gestão de Pessoas propor soluções tecnológicas inovadoras.</p>
+			</div>
 		</div>
-		<div class="bg">
-			<section class="container">
-				<div class="row">
-					<div class="grid-third">
-						<img class="" alt="Ilustração computador e a web" src="{{ MEDIA_URL }}img/ilustracoes/inicial-web.svg">
-						<h3>{% trans "Desenvolvimento Web" %}</h3>
-						<p>{% trans "Não fique para trás! Seu negócio pode ser mais ágil, eficiente e menos oneroso. Um sistema Web pode provocar uma verdadeira revolução na sua empresa, e nós da Shift it estamos dispostos a auxiliá-lo nesta tarefa." %}</p>
-					</div>
+	</section>
+</div>
 
-					<div class="grid-third">
-						<img class="" alt="Ilustração aparelho mobile" src="{{ MEDIA_URL }}img/ilustracoes/inicial-mobile.svg">
-						<h3>{% trans "Desenvolvimento mobile" %}</h3>
-						<p>{% trans "O mundo é cada vez mais móvel, ter a tecnologia ao seu alcance em qualquer lugar é algo que pode revolucionar o seu negócio. Nós desenvolvemos aplicações móveis centradas nas suas necessidades, não importando o dispositivo ou sistema operacional!" %}</p>
-					</div>
-
-					<div class="grid-third">
-						<img class="" alt="Ilustração sinal de diferença" src="{{ MEDIA_URL }}img/ilustracoes/inicial-diferenciais.svg">
-						<h3>{% trans "Diferenciais" %}</h3>
-						<p>{% trans "Para nós, cada projeto é um novo desafio. Seja a construção de uma ideia inovadora ou automação de um processo existente, a nossa equipe está preparada para escutar as suas necessidades e transforma-las em um software surpreendente." %}</p>
-					</div>
+<section class="produtos">
+	<div class="bg bg-recrutase">
+		<article class="container">
+			<div class="row">
+				<div class="grid-two-thirds">
+					<h2>Recruta.se</h1>
+					<p>O <strong><a href="http://recruta.se">Recruta.se</a></strong> é uma plataforma para gestores dos processos de Recrutamento & Seleção de pequenas e médias empresas e um ponto de contato entre a marca do empregador e seus candidatos.</p>
 				</div>
-			</section>
-		</div>
-
-		<div class="bg bg-ideia">
-			<section class="container">
-				<div class="row">	
-					<div class="grid-2 offset-2">
-						<h2 class="text-center">{% trans "Fale com a gente!" %}</h2>
-						<p class="text-center">{% trans "Ligue para (48) 3206-6033 ou deixe o seu recado!" %}</p>
-						<form id="contato" method="post">{% csrf_token %}
-                            <fieldset>
-                                <label for="contatoNome">{% trans "Nome" %}<input id="contatoNome" name="nome" type="text"></label>
-                                <label for="contatoEmail">{% trans "Email" %}<input id="contatoEmail" name="email" type="email" required></label>
-                                <label for="contatoTel">{% trans "Telefone" %}<input id="contatoTel" name="telefone" type="text"></label>
-                                <label for="contatoMsg">{% trans "Mensagem" %}<textarea id="contatoMsg" name="mensagem" rows="5"> </textarea></label>
-                                <button class="btn btn-green btn-large btn-block" type="submit">{% trans "Enviar" %}</button>
-                            </fieldset>
-                        </form>
-					</div>
+				<div class="grid-third">
+					<img alt="Recruta.se" src="{{MEDIA_URL}}v4/img/screenshots/produto--recrutase.png">
 				</div>
-			</section>
+			</div>
+		</article>
+	</div>
+	
+	<div class="bg bg-freelati">
+		<article class="container">
+			<div class="row">
+				<div class="grid-two-thirds">
+					<h2>FreelaTI.com</h1>
+					<p>O <strong><a href="http://freelati.com">FreelaTi.com</a></strong> foi nosso primeiro produto no segmento de gestão de pessoas. É uma ferramenta que ajuda empreendedores a encontrar freelancers na área de tecnologia da informação.</p>
+				</div>
+				<div class="grid-third">
+					<img alt="Recruta.se" src="{{MEDIA_URL}}v4/img/screenshots/produto--freelati.png">
+				</div>
+			</div>
+		</article>
+	</div>
+</section>
+
+<div class="bg bg-ideia	">
+	<section class="container">
+		<div class="row">	
+			<div class="grid-two-thirds">
+				<h2>{% trans "Quer falar com a gente?" %}</h2>
+				<p>Você pode telefonar para <strong>(48) 3206-6033</strong>, enviar um email para <strong><a href="mailto:contato@shiftit.com.br">contato@shiftit.com.br</a></strong> ou preencher o formulário abaixo!</p>
+				<form id="contato" method="post">{% csrf_token %}
+					<fieldset>
+						<label for="contatoNome">{% trans "Nome" %}<input id="contatoNome" name="nome" type="text"></label>
+						<div class="row">
+							<label for="contatoEmail" class="grid-half">{% trans "Email" %}<input id="contatoEmail" name="email" type="email" required></label>
+							<label for="contatoTel" class="grid-half">{% trans "Telefone" %}<input id="contatoTel" name="telefone" type="text"></label>
+						</div>
+						<label for="contatoMsg">{% trans "Mensagem" %}<textarea id="contatoMsg" name="mensagem" rows="5"> </textarea></label>
+						<button class="btn btn-block" type="submit">{% trans "Enviar" %}</button>
+					</fieldset>
+				</form>
+			</div>
 		</div>
+	</section>
+</div>
 		
 {% endblock conteudo %}
