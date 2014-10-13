@@ -1,0 +1,65 @@
+/* =============================================================
+
+	Backgrounds v2.0
+	Simple section dividers by Chris Ferdinandi.
+	http://gomakethings.com
+
+	Free to use under the MIT License.
+	http://gomakethings.com/mit/
+
+ * ============================================================= */
+
+.bg {
+	background-color: $color-white;
+	padding-top: calc-em(24px);
+	padding-bottom: calc-em(24px);
+}
+
+.bg-recrutase {
+	color: $color-white;
+	background-color: $color-primary;
+	position: relative;
+	a {
+		text-decoration: none;
+		color: $color-white;
+		display: inline-block;
+		border-bottom: 2px solid lighten($color-primary, 10%);
+		&:hover {
+			border-bottom: 2px solid lighten($color-primary, 20%);
+		}
+	}
+}
+
+.bg-freelati {
+	color: $color-black;
+	background-color: $color-gray-light;
+	position: relative;
+	a {
+		text-decoration: none;
+		color: $color-black;
+		display: inline-block;
+		border-bottom: 2px solid darken($color-gray-light, 10%);
+		&:hover {
+			border-bottom: 2px solid darken($color-gray-light, 20%);
+		}
+	}
+}
+
+.produtos {
+	img {
+		box-shadow: 4px 4px rgba(0,0,0,.15);
+		-webkit-transform: rotate(2deg);
+	}
+}
+
+.bg-secondary {
+	color: $color-white;
+	background-color: $color-primary;
+}
+
+.bg-condensed {
+	padding-top: calc-em(15px);
+	padding-bottom: calc-em(15px);
+}
+
+

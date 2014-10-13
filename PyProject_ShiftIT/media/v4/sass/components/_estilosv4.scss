@@ -1,0 +1,17 @@
+/* =============================================================
+  Shift v4
+  Estilos personalizados;
+ * ============================================================= */
+.shift--logo {
+	max-width: 2em;
+	text-align: left;
+}
+.equipe--fotografias {
+	padding: .2em;
+	background-color: $color-gray-light;
+	float: left;
+  img {
+    width: 50%;
+    float: left;
+  }
+}
